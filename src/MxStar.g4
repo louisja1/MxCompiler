@@ -35,38 +35,35 @@ expressionStatement
     ;
 
 expression
-    :   constant
-    |   Identifier
-    |   thisToken
-    |   <assoc=right> New newObject
-    |   '(' expression ')'
-    |   '[' expression ']'
-    |   expression '.' Identifier
-    |   expression op = ('++' | '--')
-    |   <assoc=right> op = ('++' | '--' | '+' | '-' | '~' | '!') expression
-    |   expression op = ('+' | '-') expression
-    |   expression op = ('<<' | '>>') expression
-    |   expression op = ('*' | '/' | '%') expression
-    |   expression op = ('==' | '!=') expression
-    |   expression op = ('<' | '<=' | '>' | '>=') expression
-    |   expression op = '&' expression
-    |   expression op = '^' expression
-    |   expression op = '|' expression
-    |   expression op = '&&' expression
-    |   expression op = '||' expression
-    |   <assoc=right> expression op = '=' expression
-    ;
-
-newObject
-    :   nonArrayType '(' expression (',' expression)* ')'
-    |   nonArrayType ('[' expression ']')+ ('['']')?
+    :   constant                                                                    #constantExpression
+    |   Identifier                                                                  #identifierExpression
+    |   thisToken                                                                   #thisExpression
+    |   New type ('[' expression ']')+                                              #newArrayExpression
+    |   New type                                                                    #newTypeExpression
+    |   '(' expression ')'                                                          #subgroupExpression
+    |   expression '(' (expression (',' expression)*)? ')'                          #functionExpression
+    |   '[' expression ']'                                                          #arrayExpression
+    |   expression '.' Identifier                                                   #memberExpression
+    |   expression op = ('++' | '--')                                               #suffixExpression
+    |   <assoc=right> op = ('++' | '--' | '+' | '-' | '~' | '!') expression         #prefixExpression
+    |   expression op = ('+' | '-') expression                                      #addSubExpression
+    |   expression op = ('<<' | '>>') expression                                    #shiftExpression
+    |   expression op = ('*' | '/' | '%') expression                                #mulDivModExpression
+    |   expression op = ('==' | '!=') expression                                    #equalityExpression
+    |   expression op = ('<' | '<=' | '>' | '>=') expression                        #relationExpression
+    |   expression op = '&' expression                                              #binaryAndExpression
+    |   expression op = '^' expression                                              #binaryXorExpression
+    |   expression op = '|' expression                                              #binaryOrExpression
+    |   expression op = '&&' expression                                             #logicAndExpression
+    |   expression op = '||' expression                                             #logicOrExpression
+    |   <assoc=right> expression op = '=' expression                                #assignExpression
     ;
 
 constant
-    :   Null
-    |   BoolConst
-    |   Number
-    |   StringConst
+    :   Null                                                                        #nullConstant
+    |   BoolConst                                                                   #boolConstant
+    |   Number                                                                      #numberConstant
+    |   StringConst                                                                 #stringConstant
     ;
 
 thisToken
@@ -98,11 +95,11 @@ type
     ;
 
 nonArrayType
-    :   Int
-    |   String
-    |   Bool
-    |   Identifier
-    |   Void
+    :   Int                                                                         #intType
+    |   String                                                                      #stringType
+    |   Bool                                                                        #boolType
+    |   Identifier                                                                  #classType
+    |   Void                                                                        #voidType
     ;
 
 arrayType
@@ -147,8 +144,47 @@ WhiteSpace : [ \t\n\r]+ -> channel(HIDDEN);
 BlockComment : '/*' .*? '*/' -> channel(HIDDEN);
 LineComment : '//' ~[\n\r]* -> channel(HIDDEN);
 
+//      symbols
 
+Less : '<';
+LessEqual : '<=';
+Greater : '>';
+GreaterEqual : '>=';
+Equal : '==';
+NotEqual : '!=';
 
+Add : '+';
+Sub : '-';
+Mul : '*';
+Div : '/';
+Mod : '%';
+
+AddAdd : '++';
+SubSub : '--';
+
+Assign : '=';
+
+LogicAnd : '&&';
+LogicOr : '||';
+Not : '!';
+
+BinaryAnd : '&';
+BinaryOr : '|';
+BinaryXor : '^';
+BinaryNot : '~';
+LeftShift : '<<';
+RightShift : '>>';
+
+Semi : ';';
+Comma : ',';
+Dot : '.';
+
+LeftParen : '(';
+RightParen : ')';
+LeftBracket : '[';
+RightBracket : ']';
+LeftBrace : '{';
+RightBrace : '}';
 
 
 

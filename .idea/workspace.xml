@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a635b1c4-7009-4249-8ba9-6353d1f80267" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MxStar.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/ANTLR/Demo.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/ANTLR/DemoBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/ANTLR/DemoLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/ANTLR/DemoLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/ANTLR/DemoListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/ANTLR/DemoParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/ANTLR/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/Demo.g4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MxStar.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MxStar.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MxStarBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MxStarBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MxStarBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MxStarBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MxStarLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MxStarLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MxStarLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MxStarLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MxStarListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MxStarListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MxStarParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MxStarParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MxStarVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MxStarVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MxStar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/MxStar.g4" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,17 +27,26 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="-457">
+              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MxStar.g4" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MxStar.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MxStar.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+            <state relative-caret-position="-1499">
+              <caret line="42" column="103" lean-forward="true" selection-start-line="42" selection-start-column="103" selection-end-line="42" selection-end-column="103" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MxStarListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gen/MxStarListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7680">
+              <caret line="512" column="24" lean-forward="true" selection-start-line="512" selection-start-column="24" selection-end-line="512" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -74,9 +83,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="29" />
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="123" />
+    <option name="y" value="37" />
     <option name="width" value="1260" />
     <option name="height" value="737" />
   </component>
@@ -124,7 +133,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.scopes" />
   </component>
@@ -210,20 +219,20 @@
       <option name="presentableId" value="Default" />
       <updated>1523806180898</updated>
       <workItem from="1523806182484" duration="2965000" />
-      <workItem from="1523967925910" duration="7152000" />
+      <workItem from="1523967925910" duration="13858000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10117000" />
+    <option name="totallyTimeSpent" value="16823000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="29" y="23" width="1260" height="737" extended-state="0" />
+    <frame x="231" y="23" width="1260" height="737" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info active="true" anchor="bottom" id="Tool Output" order="1" visible="true" weight="0.328125" />
+      <window_info anchor="bottom" id="Tool Output" order="1" weight="0.3296875" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -231,13 +240,13 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.32880846" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.3296875" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.2328125" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
       <window_info content_ui="combo" id="Project" order="5" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="5" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="5" weight="0.3296875" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
@@ -301,17 +310,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ANTLR/Demo.g4" />
     <entry file="file://$PROJECT_DIR$/src/ANTLR/ANTLR/Main.java" />
+    <entry file="file://$PROJECT_DIR$/gen/MxStar.tokens">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-477" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/LMxParser$AndExpressionContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="-457">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MxStar.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+        <state relative-caret-position="-1499">
+          <caret line="42" column="103" lean-forward="true" selection-start-line="42" selection-start-column="103" selection-end-line="42" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/MxStarListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7680">
+          <caret line="512" column="24" lean-forward="true" selection-start-line="512" selection-start-column="24" selection-end-line="512" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -332,7 +358,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -380,7 +406,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: org.antlr:antlr4-runtime:4.7.1</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
