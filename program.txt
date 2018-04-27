@@ -1,79 +1,123 @@
-string miracle = "\"orange________\"";
+int countA;
+int countB;
+int countC;
+C something;
 
-class moment_ring
+class A
 {
-	string[] singers;
-	string lryics;
-	void init()
+	A a;
+	B b;
+	A()
 	{
-		this.singers = new string[9];
-		lryics = "kii te yo ima no kimochi wa\nsouda na souda na katari kirenai\n...";
+		idx = countA++;
+		if(idx % 2 == 0)
+		{
+			a = new A;
+			if(countB % 2 == 0)
+				b = new B;
+			else
+				b = null;
+		}
+		else
+			a = null;
+		c = new C[2][];
+		c[0] = (new C[6][6][6][6])[2][3][3];
+		c[1] = null;
+		if(c.size() != 2)
+			println("Oops!");
+	}
+	C[] getc0()
+	{
+		return c[0];
+	}
+	C[][] c;
+	int idx;
+}
+
+class B
+{
+	int idx;
+	C c;
+	B()
+	{
+		idx = countB++;
+		c = (new A).getc0()[0].Me().Me();
 	}
 }
 
-int depth;
-
-void another_fun()
+class C
 {
-	moment_ring song;
-	song.init();
-	depth--;
-	if(depth > 0)
-		another_fun();
+	int idx;
+	C()
+	{
+		this.idx = countC++;
+		str = toString(idx);
+		something = Me();
+	}
+	C Me() { return this; }
+	string str;
+}
+
+void count()
+{
+	countA = 0;
+	countB = 0;
+	countC = 0;
+	B b = new B;
+	println(toString(countA) + " " + toString(countB) + " " + toString(countC));
+	countA = 1;
+	countB = 1;
+	countC = 1;
+	b = new B;
+	print(toString(countA-1) + " " + toString(countB-1) + " " + toString(countC-1));
+	print("\n");
+	println(toString(something.Me().str.substring(1, something.str.length()-1).parseInt()));
+	string temp = toString(something.str.ord(42 & 21));
+	if(something.str > temp)
+		println(something.str + ">" + temp);
 	else
-		//fun();
-		fun(2017);
+		println(something.str + "<=" + temp);
 }
 
-class test
-{
-	string txt;
-	test init()
-	{
-		txt = "you should pass this one";
-		return this;
-	}
-	test init2(test t)
-	{
-		t.txt = "TAT";
-		this.txt = t.txt;
-		return t;
-	}
-}
+///////////////////////////////////
 
 int main()
 {
-	int a;
+	{{{;};{}}};
+	int i;
+	for(i=0;;i++)
+		if(((i ^ 891 & 759) == 666) == !false)
+		{
+			println(toString(i));
+			int i = 0;
+			println(toString(i));
+			{
+				int i = 1;
+				println(toString(i));
+			}
+			count();
+			break;
+		}
+	while(true)
 	{
-		int a = 0;
-		println(toString(a));
+		if(i % 2 == 0)
+			continue;
+		print(toString(i)+",");
 	}
-	a = 1;
-	test nico;
-	println(nico.init().txt);
-	println(toString(nico.init().txt.ord(0)));
-	depth = 3;
-	another_fun();
-	;
-	return toString(fun(10).ord(0)).ord(0);
-}
-
-string fun(int pos)
-{
-	if(pos < 0)
-		return "";
-	return fun(pos - 1) + toString(miracle.ord(pos));
+	println("");
+	return 0;
 }
 
 
 
 /*!! metadata:
 === comment ===
-5140309234-xietiancheng/misc.txt
+naive-test-515030910628-zhangzhekai.txt
+naive test by zk
 === assert ===
 success_compile
 === phase ===
-semantic pretest
+semantic extended
 === is_public ===
 True
 

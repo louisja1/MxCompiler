@@ -47,16 +47,12 @@ public class SymbolTable {
 
     public void enterScope(Scope scope) {
         if (scope instanceof LoopStatement) {
-            //System.out.println("enter loop");
             loopStack.push((LoopStatement) scope);
         }
         if (scope instanceof FunctionType) {
-            //System.out.println(((FunctionType) scope).getRawName());
-            //System.out.println("enter function");
             currentFunction = (FunctionType) scope;
         }
         if (scope instanceof ClassType) {
-            //System.out.println("enter class");
             currentClass = (ClassType) scope;
         }
         scopeStack.push(scope);
@@ -66,16 +62,12 @@ public class SymbolTable {
     public void exitScope() {
         Scope last = scopeStack.peek();
         if (last instanceof LoopStatement) {
-            //System.out.println("exit loop");
             loopStack.pop();
         }
         if (last instanceof FunctionType) {
-            //System.out.println(((FunctionType) last).getRawName());
-            //System.out.println("exit function");
             currentFunction = null;
         }
         if (last instanceof ClassType) {
-            //System.out.println("exit class");
             currentClass = null;
         }
         scopeStack.pop();

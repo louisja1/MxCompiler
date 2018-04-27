@@ -11,7 +11,7 @@ public class OrExpression extends BaseExpression {
     private BaseExpression firstExpression, secondExpression;
 
     private OrExpression(BaseExpression _firstExpression, BaseExpression _secondExpression) {
-        super(BoolType.getInstance(), false);
+        super(IntType.getInstance(), false);
         this.firstExpression = _firstExpression;
         this.secondExpression = _secondExpression;
     }

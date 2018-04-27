@@ -11,7 +11,7 @@ public class AndExpression extends BaseExpression {
     private BaseExpression firstExpression, secondExpression;
 
     private AndExpression(BaseExpression _firstExpression, BaseExpression _secondExpression) {
-        super(BoolType.getInstance(), false);
+        super(IntType.getInstance(), false);
         this.firstExpression = _firstExpression;
         this.secondExpression = _secondExpression;
     }
