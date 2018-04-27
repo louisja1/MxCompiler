@@ -3,15 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a635b1c4-7009-4249-8ba9-6353d1f80267" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/program.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Statement/ForStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Statement/ForStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Statement/IfStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Statement/IfStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Statement/ReturnStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Statement/ReturnStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constructor/TreeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constructor/TreeListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SymbolTable/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SymbolTable/SymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constructor/TreeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Constructor/TreeListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Statement/ForStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Statement/ForStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Statement/IfStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Statement/IfStatement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Statement/ReturnStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Statement/ReturnStatement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/SymbolTable/SymbolTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SymbolTable/SymbolTable.class" afterDir="false" />
     </list>
@@ -26,20 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TreeListener.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Constructor/TreeListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="139" column="62" lean-forward="true" selection-start-line="139" selection-start-column="62" selection-end-line="139" selection-end-column="62" />
+            <state relative-caret-position="112">
+              <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,11 +33,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TreeListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Constructor/TreeListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="111" column="77" selection-start-line="111" selection-start-column="77" selection-end-line="111" selection-end-column="77" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MxStar.g4" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MxStar.g4">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ReturnStatement.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Statement/ReturnStatement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            <state relative-caret-position="206">
+              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -59,17 +66,17 @@
       <file leaf-file-name="SymbolTable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SymbolTable/SymbolTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="69" column="40" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+            <state relative-caret-position="140">
+              <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BreakStatement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Statement/BreakStatement.java">
+      <file leaf-file-name="program.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/program.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="164">
+              <caret line="65" column="1" lean-forward="true" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -157,11 +164,11 @@
         <option value="$PROJECT_DIR$/src/Statement/ForStatement.java" />
         <option value="$PROJECT_DIR$/src/Statement/IfStatement.java" />
         <option value="$PROJECT_DIR$/src/Statement/BreakStatement.java" />
+        <option value="$PROJECT_DIR$/src/Statement/ReturnStatement.java" />
+        <option value="$PROJECT_DIR$/src/SymbolTable/SymbolTable.java" />
+        <option value="$PROJECT_DIR$/src/Constructor/TreeListener.java" />
         <option value="$PROJECT_DIR$/program.txt" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/SymbolTable/SymbolTable.java" />
-        <option value="$PROJECT_DIR$/src/Statement/ReturnStatement.java" />
-        <option value="$PROJECT_DIR$/src/Constructor/TreeListener.java" />
       </list>
     </option>
   </component>
@@ -186,8 +193,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="169" />
-    <option name="y" value="23" />
+    <option name="x" value="55" />
+    <option name="y" value="48" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
   </component>
@@ -212,18 +219,6 @@
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Statement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SymbolTable" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
@@ -352,15 +347,15 @@
       <workItem from="1524142973904" duration="10284000" />
       <workItem from="1524325207094" duration="10912000" />
       <workItem from="1524407854744" duration="93350000" />
-      <workItem from="1524846929431" duration="3795000" />
+      <workItem from="1524846929431" duration="4667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140580000" />
+    <option name="totallyTimeSpent" value="141452000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="169" y="23" width="1280" height="777" extended-state="0" />
+    <frame x="55" y="48" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
@@ -382,7 +377,7 @@
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.3296875" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.3485294" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.34705883" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.23172414" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.19709209" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32941177" />
@@ -652,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MxStar.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="53" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Expression/FunctionExpression.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -786,13 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/program.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="54" column="14" lean-forward="true" selection-start-line="54" selection-start-column="14" selection-end-line="55" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Statement/BreakStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -800,31 +781,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/MxStar.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        <state relative-caret-position="153">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SymbolTable/SymbolTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="69" column="40" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+        <state relative-caret-position="140">
+          <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Statement/ReturnStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        <state relative-caret-position="206">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Constructor/TreeListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="139" column="62" lean-forward="true" selection-start-line="139" selection-start-column="62" selection-end-line="139" selection-end-column="62" />
+        <state relative-caret-position="144">
+          <caret line="111" column="77" selection-start-line="111" selection-start-column="77" selection-end-line="111" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="65" column="1" lean-forward="true" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

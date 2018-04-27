@@ -112,7 +112,7 @@ public class TreeListener extends PositionListener {
     public void enterBlockStatement(MxStarParser.BlockStatementContext ctx) {
         BlockStatement currentStatement = new BlockStatement();
         Scope currentScope = AST.symbolTable.getCurrentScope();
-        AST.symbolTable.enterScope(currentScope);
+        AST.symbolTable.enterScope(currentStatement);
         if (currentScope instanceof FunctionType) {
             FunctionType function = (FunctionType) currentScope;
             for (Symbol symbol : function.getParaList()) {
