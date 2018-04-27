@@ -38,7 +38,7 @@ public class NewExpression extends BaseExpression {
                         break;
                     }
                 }
-                if (restarenull = true) {
+                if (restarenull) {
                     if (expression != null) {
                         acceptive = false;
                         break;

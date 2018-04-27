@@ -54,7 +54,7 @@ public class NotEqualExpression extends BaseExpression {
             List<BaseExpression> expressionList = new Vector<>();
             expressionList.add(_firstExpression);
             expressionList.add(_secondExpression);
-            return FunctionExpression.getExpression(IdentifierExpression.getExpression("_built_NEQ"), expressionList);
+            return FunctionExpression.getExpression(IdentifierExpression.getExpression("_builtin_NEQ"), expressionList);
         }
         return new NotEqualExpression(_firstExpression, _secondExpression);
     }

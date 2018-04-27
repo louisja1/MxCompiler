@@ -11,7 +11,7 @@ public class BoolType extends NonArrayType {
 
     @Override
     public boolean beCompatibleWith(BaseType other) {
-        return other == IntType.getInstance();
+        return other == BoolType.getInstance();
     }
 
     @Override

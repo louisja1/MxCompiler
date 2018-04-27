@@ -35,7 +35,7 @@ public class BuiltinFunctionConstructor {
     private static void setSize() {
         List<Symbol> paralist = new Vector<>();
         paralist.add(new Symbol("this", null));
-        FunctionType size = new FunctionType("_builtin_size", VoidType.getInstance(), paralist);
+        FunctionType size = new FunctionType("_builtin_size", IntType.getInstance(), paralist);
         size.setBuiltin();
         AST.globalFunction.addFunction(size);
     }
@@ -43,7 +43,7 @@ public class BuiltinFunctionConstructor {
     private static void setPrint() {
         List<Symbol> paralist = new Vector<>();
         paralist.add(new Symbol("string", StringType.getInstance()));
-        FunctionType print = new FunctionType("_builtin_print", VoidType.getInstance(), paralist);
+        FunctionType print = new FunctionType("print", VoidType.getInstance(), paralist);
         print.setBuiltin();
         AST.globalFunction.addFunction(print);
     }
@@ -51,21 +51,21 @@ public class BuiltinFunctionConstructor {
     private static void setPrintln() {
         List<Symbol> paralist = new Vector<>();
         paralist.add(new Symbol("string", StringType.getInstance()));
-        FunctionType println = new FunctionType("_builtin_println", VoidType.getInstance(), paralist);
+        FunctionType println = new FunctionType("println", VoidType.getInstance(), paralist);
         println.setBuiltin();
         AST.globalFunction.addFunction(println);
     }
 
     private static void setGetString() {
         List<Symbol> paralist = new Vector<>();
-        FunctionType getstring = new FunctionType("_builtin_getstring", StringType.getInstance(), paralist);
+        FunctionType getstring = new FunctionType("getString", StringType.getInstance(), paralist);
         getstring.setBuiltin();
         AST.globalFunction.addFunction(getstring);
     }
 
     private static void setGetInt() {
         List<Symbol> paralist = new Vector<>();
-        FunctionType getint = new FunctionType("_builtin_getint", IntType.getInstance(), paralist);
+        FunctionType getint = new FunctionType("getInt", IntType.getInstance(), paralist);
         getint.setBuiltin();
         AST.globalFunction.addFunction(getint);
     }
@@ -73,7 +73,7 @@ public class BuiltinFunctionConstructor {
     private static void setToString() {
         List<Symbol> paralist = new Vector<>();
         paralist.add(new Symbol("int", IntType.getInstance()));
-        FunctionType tostring = new FunctionType("_builtin_tostring", StringType.getInstance(), paralist);
+        FunctionType tostring = new FunctionType("toString", StringType.getInstance(), paralist);
         tostring.setBuiltin();
         AST.globalFunction.addFunction(tostring);
     }
@@ -99,7 +99,6 @@ public class BuiltinFunctionConstructor {
     private static void setParseInt() {
         List<Symbol> paralist = new Vector<>();
         paralist.add(new Symbol("this", null));
-        paralist.add(new Symbol("string", StringType.getInstance()));
         FunctionType parseint = new FunctionType("_builtin_parseint", IntType.getInstance(), paralist);
         parseint.setBuiltin();
         AST.globalFunction.addFunction(parseint);
@@ -108,7 +107,7 @@ public class BuiltinFunctionConstructor {
     private static void setOrd() {
         List<Symbol> paralist = new Vector<>();
         paralist.add(new Symbol("this", null));
-        paralist.add(new Symbol("string", StringType.getInstance()));
+        paralist.add(new Symbol("pos", IntType.getInstance()));
         FunctionType ord = new FunctionType("_builtin_ord", IntType.getInstance(), paralist);
         ord.setBuiltin();
         AST.globalFunction.addFunction(ord);

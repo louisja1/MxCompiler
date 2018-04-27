@@ -30,7 +30,7 @@ public class ArrayType extends BaseType {
         if (other == NullType.getInstance()) {
             return true;
         }
-        if ((other instanceof ArrayType) && (baseType.beCompatibleWith((ArrayType) other)) && (dimension == ((ArrayType) other).getDimension())) {
+        if ((other instanceof ArrayType) && (baseType.beCompatibleWith(((ArrayType) other).getBaseType())) && (dimension == ((ArrayType) other).getDimension())) {
             return true;
         }
         return false;

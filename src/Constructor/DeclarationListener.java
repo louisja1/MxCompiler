@@ -131,6 +131,9 @@ public class DeclarationListener extends PositionListener {
     public void exitVariableDeclaration(MxStarParser.VariableDeclarationContext ctx) {
         String name = ctx.Identifier().getText();
         BaseType type = (BaseType) map.get(ctx.type());
+        if (type == VoidType.getInstance()) {
+            throw new CompilationError("Variable type can not be void type");
+        }
         VariableDeclarationStatement currentVariable = new VariableDeclarationStatement(type, name);
         map.put(ctx, currentVariable);
     }

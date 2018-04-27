@@ -54,7 +54,7 @@ public class EqualExpression extends BaseExpression {
             List<BaseExpression> expressionList = new Vector<>();
             expressionList.add(_firstExpression);
             expressionList.add(_secondExpression);
-            return FunctionExpression.getExpression(IdentifierExpression.getExpression("_built_EQ"), expressionList);
+            return FunctionExpression.getExpression(IdentifierExpression.getExpression("_builtin_EQ"), expressionList);
         }
         return new EqualExpression(_firstExpression, _secondExpression);
     }

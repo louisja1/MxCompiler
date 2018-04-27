@@ -46,7 +46,7 @@ public class AdditionExpression extends BaseExpression {
             List<BaseExpression> expressionList = new Vector<>();
             expressionList.add(_firstExpression);
             expressionList.add(_secondExpression);
-            return FunctionExpression.getExpression(IdentifierExpression.getExpression("_built_add"), expressionList);
+            return FunctionExpression.getExpression(IdentifierExpression.getExpression("_builtin_add"), expressionList);
         }
         throw new CompilationError("There is an invalid addition expression");
     }

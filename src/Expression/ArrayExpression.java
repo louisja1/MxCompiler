@@ -25,10 +25,10 @@ public class ArrayExpression extends BaseExpression {
     }
 
     public static BaseExpression getExpression(BaseExpression arrayExpression, BaseExpression indexExpression) {
-        if (arrayExpression.getType() instanceof ArrayType) {
+        if (!(arrayExpression.getType() instanceof ArrayType)) {
             throw new CompilationError("The array expression is not of array type");
         }
-        if (indexExpression.getType() == IntType.getInstance()) {
+        if (indexExpression.getType() != IntType.getInstance()) {
             throw new CompilationError("The index expression is not of int type");
         }
         return new ArrayExpression(((ArrayType) arrayExpression.getType()).reduceDimension(), arrayExpression, indexExpression);
