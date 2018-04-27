@@ -10,7 +10,6 @@ import java.util.Iterator;
 import java.util.Stack;
 
 public class SymbolTable {
-    private LoopStatement currentLoop;
     private FunctionType currentFunction;
     private ClassType currentClass;
     private Stack<Scope> scopeStack;
@@ -19,7 +18,6 @@ public class SymbolTable {
     private HashMap<String, Stack<Symbol>> symbolHistory;
 
     public SymbolTable() {
-        currentLoop = null;
         currentFunction = null;
         currentClass = null;
         scopeStack = new Stack<>();
@@ -29,7 +27,10 @@ public class SymbolTable {
     }
 
     public LoopStatement getCurrentLoop() {
-        return currentLoop;
+        if (loopStack.empty()) {
+            return null;
+        }
+        return loopStack.peek();
     }
 
     public ClassType getCurrentClass() {

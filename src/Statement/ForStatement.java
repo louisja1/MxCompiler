@@ -2,6 +2,8 @@ package Statement;
 
 import Constant.BoolConstant;
 import Expression.BaseExpression;
+import Type.BoolType;
+import Error.CompilationError;
 
 public class ForStatement extends LoopStatement {
     private BaseExpression initiate, condition, variance;
@@ -19,6 +21,9 @@ public class ForStatement extends LoopStatement {
     }
 
     public void addCondition(BaseExpression _condition) {
+        if (!(_condition.getType() == BoolType.getInstance())) {
+            throw new CompilationError("The condition expression of for statement is not a bool type");
+        }
         this.condition = _condition;
     }
 

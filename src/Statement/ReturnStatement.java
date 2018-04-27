@@ -21,10 +21,10 @@ public class ReturnStatement extends BrunchStatement {
                 throw new CompilationError("the construction function should not have a return statement");
             }
         } else {
-            if (currentFunction.getReturnType() == VoidType.getInstance() && expression != null) {
+            if (currentFunction.getReturnType() != VoidType.getInstance() && _expression == null) {
                 throw new CompilationError("the void function should not have a return expression");
             }
-            if (expression != null && expression.getType().beCompatibleWith(function.getReturnType())) {
+            if (_expression != null && !_expression.getType().beCompatibleWith(currentFunction.getReturnType())) {
                 throw new CompilationError("the return expression should be compatible with function return type");
             }
         }

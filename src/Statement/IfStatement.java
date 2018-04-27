@@ -1,12 +1,17 @@
 package Statement;
 
 import Expression.BaseExpression;
+import Type.BoolType;
+import Error.CompilationError;
 
 public class IfStatement extends BaseStatement {
         private BaseExpression condition;
         private BaseStatement trueStatement, falseStatement;
 
         public IfStatement(BaseExpression _condition, BaseStatement _trueStatemnt) {
+            if (_condition.getType() != BoolType.getInstance()) {
+                throw new CompilationError("The condition expression for if statement is not a bool type");
+            }
             this.condition = _condition;
             this.trueStatement = _trueStatemnt;
             this.falseStatement = null;
