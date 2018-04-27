@@ -12,5 +12,4 @@ public class ExpressionStatement extends BaseStatement {
     public BaseExpression getExpression() {
         return expression;
     }
-
 }
