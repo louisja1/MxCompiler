@@ -19,16 +19,16 @@ import java.io.InputStream;
 public class Main {
     public static void main(String[] args) throws Exception {
         //File file = new File("program.txt");
-        InputStream fin = System.in;/*new FileInputStream(file);*/
+        InputStream fin = System.in;/*new FileInputStream(file); */
         buildAST(fin);
     }
 
     public static void buildAST(InputStream fin) throws Exception {
         CharStream input = CharStreams.fromStream(fin);
         MxStarLexer lexer = new MxStarLexer(input);
-        lexer.addErrorListener(MxStarErrorListener.getInstance());
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MxStarParser parser = new MxStarParser(tokens);
+        parser.removeErrorListeners();
         parser.addErrorListener(MxStarErrorListener.getInstance());
         try {
             ParseTree tree = parser.program();
