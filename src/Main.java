@@ -10,6 +10,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import Error.CompilationError;
+import Error.MxStarErrorListener;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,8 +26,10 @@ public class Main {
     public static void buildAST(InputStream fin) throws Exception {
         CharStream input = CharStreams.fromStream(fin);
         MxStarLexer lexer = new MxStarLexer(input);
+        lexer.addErrorListener(MxStarErrorListener.getInstance());
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MxStarParser parser = new MxStarParser(tokens);
+        parser.addErrorListener(MxStarErrorListener.getInstance());
         try {
             ParseTree tree = parser.program();
             AST.init();
