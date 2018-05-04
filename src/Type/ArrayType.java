@@ -1,10 +1,15 @@
 package Type;
 
+import Error.CompilationError;
+
 public class ArrayType extends BaseType {
     private int dimension;
     private NonArrayType baseType;
 
     public ArrayType(NonArrayType _baseType, int _dimension) {
+        if (_baseType == VoidType.getInstance()) {
+            throw new CompilationError("The base type of array is not permitted");
+        }
         dimension = _dimension;
         baseType = _baseType;
     }

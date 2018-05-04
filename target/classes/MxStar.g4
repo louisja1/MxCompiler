@@ -35,7 +35,7 @@ expression
     |   Identifier                                                                  #identifierExpression
     |   thisToken                                                                   #thisExpression
     |   New type ('[' expression? ']')+                                             #newArrayExpression
-    |   New type                                                                    #newTypeExpression
+    |   New type ('('')')?                                                          #newTypeExpression
     |   '(' expression ')'                                                          #subgroupExpression
     |   expression '(' (expression (',' expression)*)? ')'                          #functionExpression
     |   expression '[' expression ']'                                               #arrayExpression
