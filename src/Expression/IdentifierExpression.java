@@ -25,7 +25,7 @@ public class IdentifierExpression extends BaseExpression {
         if (currentSymbol.classScope instanceof ClassType) {
             return MemberExpression.getExpression(IdentifierExpression.getExpression("this"), idname);
         } else {
-            return new IdentifierExpression(currentSymbol, !(currentType instanceof FunctionType));
+            return new IdentifierExpression(currentSymbol, !(currentType instanceof FunctionType || idname == "this"));
         }
     }
 

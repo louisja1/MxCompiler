@@ -1,36 +1,20 @@
-// class 'this'
-// scope in class
-bool a;
-bool b;
-class A {
-    int a;
-    int b;
-    A () {
-        a = 1;
-        b = a + 1;
-        this.a = b;
-        this.b = this.a + 1;
-        {
-            string a = toString(this.b);
-            string b = a;
-        }
-    }
+int __print() {
+
 }
 int main() {
-    A a = new A();
-	println("too young too simple.");
-	return 0;
+int a = (new int[123])[31];
+__print();
 }
 
 /*!! metadata:
 === comment ===
-刘啸远 test scope in class, 'this'
+金之涵
 === is_public ===
 True
 === assert ===
-success_compile
+failure_compile
 === timeout ===
-0
+0.0
 === input ===
 
 === phase ===

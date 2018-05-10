@@ -123,7 +123,7 @@ Class : 'class';
 This : 'this';
 
 //      identifier
-Identifier : [_a-zA-Z][_a-zA-Z0-9]*;
+Identifier : [a-zA-Z][_a-zA-Z0-9]*;
 
 //      whitespace
 WhiteSpace : [ \t\n\r]+ -> channel(HIDDEN);

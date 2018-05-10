@@ -2,6 +2,7 @@ package SymbolTable;
 
 import Type.FunctionType;
 import java.util.HashMap;
+
 import Error.CompilationError;
 
 public class FunctionTable {
@@ -28,6 +29,9 @@ public class FunctionTable {
     }
 
     public FunctionType getFunctionType(String name) {
+        if (!functionMap.containsKey(name)) {
+            throw new CompilationError("There is not a function [" + name + "]");
+        }
         return functionMap.get(name);
     }
 

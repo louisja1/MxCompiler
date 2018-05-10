@@ -89,6 +89,7 @@ public class DeclarationListener extends PositionListener {
             FunctionType function = new FunctionType(name, returnType, parameterList);
             map.put(ctx, function);
         } else {
+            // construction function
             List<Symbol> parameterList = new Vector<>();
             for (int i = 0; i < ctx.Identifier().size(); i++) {
                 String parameterName = ctx.Identifier(i).getText();

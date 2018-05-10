@@ -19,7 +19,7 @@ bool vvvvvv() {
 
 void vvvvwv() {
     int tmp = vvwvvv();
-    if ((vvwvvv() ^ vwvvvv().parseInt()) > -(++tmp)-- || (vvvvvv() == (vwvvvv() + vwvvvv() >= vwvvvv()))) {
+    if ((vvwvvv() ^ vwvvvv().parseInt()) > -(++tmp) || (vvvvvv() == (vwvvvv() + vwvvvv() >= vwvvvv()))) {
         for ( ; ; ) {
             break;
         }
