@@ -80,19 +80,20 @@ public class NewExpression extends BaseExpression {
     private void allocate(VirtualRegister base, BaseType type, List<Operand> operandList, List<BaseInstruction> instructionList) {
         if (type instanceof ClassType) {
             instructionList.add(new AllocateInstruction(base, new Immediate(((ClassType) type).getAllocateSize())));
+            if (((ClassType) type).getConstructionFunction() != null) {
+                List<Operand> parameterList = new Vector<>();
+                VirtualRegister reg = VirtualRegisterManager.getTemporaryRegister();
+                reg.setPhysicalRegisterName(VirtualRegisterManager.parameterRegList.get(0));
 
-            List<Operand> parameterList = new Vector<>();
-            VirtualRegister reg = VirtualRegisterManager.getTemporaryRegister();
-            reg.setPhysicalRegisterName(VirtualRegisterManager.parameterRegList.get(0));
-
-            instructionList.add(new MoveInstruction(reg, base));
-            instructionList.add(new FunctionCallInstruction(((ClassType) type).getConstructionFunction(), null, parameterList));
+                instructionList.add(new MoveInstruction(reg, base));
+                instructionList.add(new FunctionCallInstruction(((ClassType) type).getConstructionFunction(), null, parameterList));
+            }
         } else {
             VirtualRegister allocateSize = VirtualRegisterManager.getTemporaryRegister();
             instructionList.add(new MoveInstruction(allocateSize, operandList.get(0)));
             instructionList.add(new UnaryInstruction(Operator.UnaryOp.INC, allocateSize));
             instructionList.add(new BinaryInstruction(Operator.BinaryOp.SHL, allocateSize, new Immediate(3)));
-            instructionList.add(new MoveInstruction(base, allocateSize));
+            instructionList.add(new AllocateInstruction(base, allocateSize));
 
             if (operandList.get(0) instanceof Address) {
                 VirtualRegister tmp = VirtualRegisterManager.getTemporaryRegister();

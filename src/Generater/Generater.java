@@ -104,7 +104,7 @@ public class Generater {
             String stringConstant = IR.constString.get(i);
             str.append(Generater.formatInstruction("dq", String.valueOf(stringConstant.length())));
             str.append("_string_constant_" + String.valueOf(i) + ":\n");
-            str.append(Generater.formatInstruction("db", stringConstant));
+            str.append(Generater.formatInstruction("db", "\"" + stringConstant + "\", 0"));
         }
         return str.toString();
     }

@@ -20,7 +20,10 @@ section	.text
      mov      qword [rbp - 8],                  rax
      add      qword [rbp - 8],                    1
      sal      qword [rbp - 8],                    3
-     mov                  rax,      qword [rbp - 8]
+     mov                  rdi,      qword [rbp - 8]
+     sub                  rsp,                    8
+    call               malloc
+     add                  rsp,                    8
      mov     qword [rbp - 16],                  rax
      mov                  rcx,     qword [rbp - 16]
      mov                  rax,                    4
@@ -43,7 +46,8 @@ main.0.enter:
      mov      qword [rbp - 8],                  rax
      add      qword [rbp - 8],                    1
      sal      qword [rbp - 8],                    3
-     mov                  rax,      qword [rbp - 8]
+     mov                  rdi,      qword [rbp - 8]
+    call               malloc
      mov     qword [rbp - 16],                  rax
      mov                  rcx,     qword [rbp - 16]
      mov                  rax,                    4
@@ -100,6 +104,7 @@ print:
      sub                  rsp,                    8
     call               printf
      add                  rsp,                    8
+     ret
 println:
      sub                  rsp,                    8
     call                 puts

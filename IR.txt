@@ -3,7 +3,7 @@ void @GlobalDeclaration() {
 		mov $t11(null) 4
 		INC $t11(null)
 		SHL $t11(null) 3
-		mov $t10(null) $t11(null)
+		$t10(null) = allocate $t11(null)
 		mov Address($t10(null) + 0) 4
 		ADD $t10(null) 8
 		mov Address($a(@a) + 0) $t10(null)
@@ -15,7 +15,7 @@ func main() {
 		mov $t1(null) 4
 		INC $t1(null)
 		SHL $t1(null) 3
-		mov $t0(null) $t1(null)
+		$t0(null) = allocate $t1(null)
 		mov Address($t0(null) + 0) 4
 		ADD $t0(null) 8
 		mov $b(null) $t0(null)

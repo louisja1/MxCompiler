@@ -60,6 +60,7 @@ public class BuiltinFunctionGenerater {
         str.append(formatInstruction("mov", "rsi", "rdi"));
         str.append(formatInstruction("mov", "rdi", "_print_format"));
         str.append(callInstruction("printf"));
+        str.append(formatInstruction("ret"));
         return str.toString();
     }
 

@@ -1072,15 +1072,15 @@ public class MxStarParser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
 					case 1:
 						{
-						_localctx = new AddSubExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new MulDivModExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(114);
 						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
 						setState(115);
-						((AddSubExpressionContext)_localctx).op = _input.LT(1);
+						((MulDivModExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==Add || _la==Sub) ) {
-							((AddSubExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Mul) | (1L << Div) | (1L << Mod))) != 0)) ) {
+							((MulDivModExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1093,15 +1093,15 @@ public class MxStarParser extends Parser {
 						break;
 					case 2:
 						{
-						_localctx = new ShiftExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new AddSubExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(117);
 						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
 						setState(118);
-						((ShiftExpressionContext)_localctx).op = _input.LT(1);
+						((AddSubExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==LeftShift || _la==RightShift) ) {
-							((ShiftExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						if ( !(_la==Add || _la==Sub) ) {
+							((AddSubExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1114,15 +1114,15 @@ public class MxStarParser extends Parser {
 						break;
 					case 3:
 						{
-						_localctx = new MulDivModExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new ShiftExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(120);
 						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
 						setState(121);
-						((MulDivModExpressionContext)_localctx).op = _input.LT(1);
+						((ShiftExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Mul) | (1L << Div) | (1L << Mod))) != 0)) ) {
-							((MulDivModExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						if ( !(_la==LeftShift || _la==RightShift) ) {
+							((ShiftExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1135,15 +1135,15 @@ public class MxStarParser extends Parser {
 						break;
 					case 4:
 						{
-						_localctx = new EqualityExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new RelationExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(123);
 						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
 						setState(124);
-						((EqualityExpressionContext)_localctx).op = _input.LT(1);
+						((RelationExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==Equal || _la==NotEqual) ) {
-							((EqualityExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Less) | (1L << LessEqual) | (1L << Greater) | (1L << GreaterEqual))) != 0)) ) {
+							((RelationExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1156,15 +1156,15 @@ public class MxStarParser extends Parser {
 						break;
 					case 5:
 						{
-						_localctx = new RelationExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new EqualityExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(126);
 						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
 						setState(127);
-						((RelationExpressionContext)_localctx).op = _input.LT(1);
+						((EqualityExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Less) | (1L << LessEqual) | (1L << Greater) | (1L << GreaterEqual))) != 0)) ) {
-							((RelationExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						if ( !(_la==Equal || _la==NotEqual) ) {
+							((EqualityExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -2233,8 +2233,8 @@ public class MxStarParser extends Parser {
 		"\u00ea\n\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\17\5\17\u00f4\n\17\3"+
 		"\17\3\17\3\17\7\17\u00f9\n\17\f\17\16\17\u00fc\13\17\3\20\3\20\3\20\3"+
 		"\20\3\20\7\20\u0103\n\20\f\20\16\20\u0106\13\20\3\20\3\20\3\20\2\4\16"+
-		"\34\21\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36\2\t\6\2\37 $%))--\3\2\37"+
-		" \3\2./\3\2!#\3\2\35\36\3\2\31\34\3\2$%\2\u0135\2%\3\2\2\2\4*\3\2\2\2"+
+		"\34\21\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36\2\t\6\2\37 $%))--\3\2!#"+
+		"\3\2\37 \3\2./\3\2\31\34\3\2\35\36\3\2$%\2\u0135\2%\3\2\2\2\4*\3\2\2\2"+
 		"\6?\3\2\2\2\bA\3\2\2\2\nP\3\2\2\2\fS\3\2\2\2\16r\3\2\2\2\20\u00b5\3\2"+
 		"\2\2\22\u00b7\3\2\2\2\24\u00b9\3\2\2\2\26\u00d8\3\2\2\2\30\u00e3\3\2\2"+
 		"\2\32\u00e5\3\2\2\2\34\u00f3\3\2\2\2\36\u00fd\3\2\2\2 $\5\4\3\2!$\5\36"+

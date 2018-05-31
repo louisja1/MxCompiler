@@ -41,12 +41,12 @@ expression
     |   expression '[' expression ']'                                               #arrayExpression
     |   expression '.' Identifier                                                   #memberExpression
     |   expression op = ('++' | '--')                                               #suffixExpression
-    |   <assoc=right> op = ('++' | '--' | '+' | '-' | '~' | '!') expression         #prefixExpression
+    |   <assoc=right> op = ('+' | '-' | '~' | '!' | '++' | '--') expression         #prefixExpression
+    |   expression op = ('*' | '/' | '%') expression                                #mulDivModExpression
     |   expression op = ('+' | '-') expression                                      #addSubExpression
     |   expression op = ('<<' | '>>') expression                                    #shiftExpression
-    |   expression op = ('*' | '/' | '%') expression                                #mulDivModExpression
-    |   expression op = ('==' | '!=') expression                                    #equalityExpression
     |   expression op = ('<' | '<=' | '>' | '>=') expression                        #relationExpression
+    |   expression op = ('==' | '!=') expression                                    #equalityExpression
     |   expression op = '&' expression                                              #binaryAndExpression
     |   expression op = '^' expression                                              #binaryXorExpression
     |   expression op = '|' expression                                              #binaryOrExpression

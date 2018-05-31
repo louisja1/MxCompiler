@@ -39,7 +39,7 @@ public class AllocateInstruction extends BaseInstruction {
         str.append(Generater.callInstruction("malloc"));
         str.append(Generater.popCaller(Generater.currentFunction.usedCallerRegisterList));
         PhysicalBaseOperand physicalTarget = PhysicalBaseOperand.get(str, target);
-        str.append(Generater.formatInstruction("mov","rax",physicalTarget.toString()));
+        str.append(Generater.formatInstruction("mov", physicalTarget.toString(),"rax"));
 
         return str.toString();
     }
