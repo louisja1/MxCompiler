@@ -1,6 +1,6 @@
 package Error;
 
-import Constructor.PositionListener;
+import AST.Constructor.PositionListener;
 
 public class CompilationError extends Error {
     public CompilationError(String message) {

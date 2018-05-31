@@ -1,0 +1,45 @@
+package AST.Expression.Suffix;
+
+import AST.Expression.BaseExpression;
+import AST.Type.IntType;
+import Error.CompilationError;
+import IR.Instruction.BaseInstruction;
+import IR.Instruction.MoveInstruction;
+import IR.Instruction.UnaryInstruction;
+import IR.Operand.VirtualRegister;
+import Other.Operator;
+import IR.VirtualRegisterManager;
+
+import java.util.List;
+
+public class SuffixDecrementExpression extends BaseExpression {
+    private BaseExpression objectExpression;
+
+    private SuffixDecrementExpression(BaseExpression _objectExpression) {
+        super(_objectExpression.getType(), false);
+        this.objectExpression = _objectExpression;
+    }
+
+    public BaseExpression getObjectExpression() {
+        return objectExpression;
+    }
+
+    public static BaseExpression getExpression(BaseExpression _objectExpression) {
+        if (_objectExpression.getType() != IntType.getInstance()) {
+            throw new CompilationError("There is no suffix decrement for [" + _objectExpression.getType().toString() + "]");
+        }
+        if (!_objectExpression.isLeftValue()) {
+            throw new CompilationError("Object should be a left-value for suffix increment");
+        }
+        return new SuffixDecrementExpression(_objectExpression);
+    }
+
+    @Override
+    public void generateIR(List<BaseInstruction> instructionList) {
+        objectExpression.generateIR(instructionList);
+        VirtualRegister result = VirtualRegisterManager.getTemporaryRegister();
+        instructionList.add(new MoveInstruction(result, objectExpression.getOperand()));
+        instructionList.add(new UnaryInstruction(Operator.UnaryOp.DEC, objectExpression.getOperand()));
+        this.setOperand(result);
+    }
+}

@@ -1,7 +1,7 @@
-import Constructor.AST;
-import Constructor.ClassNameListener;
-import Constructor.DeclarationListener;
-import Constructor.TreeListener;
+import AST.Constructor.AST;
+import AST.Constructor.ClassNameListener;
+import AST.Constructor.DeclarationListener;
+import AST.Constructor.TreeListener;
 import Parser.MxStarLexer;
 import Parser.MxStarParser;
 import org.antlr.v4.runtime.CharStream;
@@ -10,7 +10,9 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import Error.CompilationError;
-import Error.MxStarErrorListener;
+import AST.Constructor.MxStarErrorListener;
+import IR.IR;
+import Generater.Generater;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,9 +20,12 @@ import java.io.InputStream;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        //File file = new File("program.txt");
-        InputStream fin = System.in;/* new FileInputStream(file);*/
+        File file = new File("program.txt");
+        InputStream fin = new FileInputStream(file);/* System.in;*/
         buildAST(fin);
+        generateIR();
+        codegen();
+        System.exit(0);
     }
 
     public static void buildAST(InputStream fin) throws Exception {
@@ -44,6 +49,15 @@ public class Main {
             System.out.println(ce.getMessage());
             System.exit(1);
         }
-        System.exit(0);
+    }
+
+    public static void generateIR() throws Exception {
+        IR.init();
+        IR.generateIR();
+        //IR.printIR();
+    }
+
+    public static void codegen() throws Exception {
+        Generater.codegen();
     }
 }

@@ -1,0 +1,81 @@
+void @GlobalDeclaration { 
+	@GlobalDeclaration.0.enter :
+		jump @GlobalDeclaration.1.exit
+	@GlobalDeclaration.1.exit :
+}
+func main { 
+	main.0.enter :
+		mov $a(null) 5
+		mov $b(null) 0
+		cmp $b(null) 0
+		set NEQ $t0(null)
+		cmp $t0(null) 1
+		cjump EQ main.1.logic_true
+		jump main.2.logic_false
+	main.1.logic_true :
+		mov $t2(null) $a(null)
+		DIV $t2(null) $b(null)
+		cmp $t2(null) 1
+		set NEQ $t3(null)
+		mov $t1(null) $t3(null)
+		jump main.3.logic_exit
+	main.2.logic_false :
+		mov $t1(null) 0
+		jump main.3.logic_exit
+	main.3.logic_exit :
+		mov $d(null) $t1(null)
+		cmp $d(null) 1
+		cjump EQ main.4.if_true
+		jump main.5.if_false
+	main.4.if_true :
+		mov $c(null) 10
+		jump main.6.if_exit
+	main.5.if_false :
+		mov $c(null) 20
+		jump main.6.if_exit
+	main.6.if_exit :
+		cmp $c(null) 10
+		set EQ $t4(null)
+		cmp $t4(null) 1
+		cjump EQ main.7.logic_true
+		jump main.8.logic_false
+	main.7.logic_true :
+		mov $t6(null) $a(null)
+		DIV $t6(null) $b(null)
+		cmp $t6(null) 0
+		set EQ $t7(null)
+		mov $t5(null) $t7(null)
+		jump main.9.logic_exit
+	main.8.logic_false :
+		mov $t5(null) 0
+		jump main.9.logic_exit
+	main.9.logic_exit :
+		cmp $t5(null) 1
+		cjump EQ main.10.logic_true
+		jump main.11.logic_false
+	main.10.logic_true :
+		cmp $a(null) 5
+		set EQ $t9(null)
+		mov $t8(null) $t9(null)
+		jump main.12.logic_exit
+	main.11.logic_false :
+		mov $t8(null) 0
+		jump main.12.logic_exit
+	main.12.logic_exit :
+		mov $t10(null) $t8(null)
+		cmp $t10(null) 1
+		set NEQ $t10(null)
+		mov $e(null) $t10(null)
+		cmp $e(null) 1
+		cjump EQ main.13.if_true
+		jump main.14.if_false
+	main.13.if_true :
+		mov $c(null) 30
+		jump main.15.if_exit
+	main.14.if_false :
+		jump main.15.if_exit
+	main.15.if_exit :
+		ret $c(null)
+		jump main.16.exit
+	main.16.exit :
+}

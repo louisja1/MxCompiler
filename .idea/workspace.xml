@@ -1,7 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a635b1c4-7009-4249-8ba9-6353d1f80267" name="Default" comment="" />
+    <list default="true" id="a635b1c4-7009-4249-8ba9-6353d1f80267" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Error/RuntimeError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generater/Generater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalBaseOperand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalImmediate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalStringConstantTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Block.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/FunctionIR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/IR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/AllocateInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/BaseInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/BinaryInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/CjumpInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/CompareInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/CsetInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/FunctionCallInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/JumpInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/LabelInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/MoveInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/ReturnInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Instruction/UnaryInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Operand/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Operand/Immediate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Operand/Operand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Operand/StringConstantTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/Operand/VirtualRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IR/VirtualRegisterManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Other/Indent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Other/Operator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/program.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/program.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AST/Error/MxStarErrorListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constant/BaseConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constant/BaseConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constant/BoolConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constant/BoolConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constant/IntConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constant/IntConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constant/NullConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constant/NullConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constant/StringConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constant/StringConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constructor/AST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constructor/AST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constructor/BuiltinFunctionConstructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constructor/BuiltinFunctionConstructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constructor/ClassNameListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constructor/ClassNameListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constructor/DeclarationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constructor/DeclarationListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constructor/PositionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constructor/PositionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constructor/TreeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Constructor/TreeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Error/CompilationError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Error/CompilationError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Arithmetic/AdditionExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Arithmetic/AdditionExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Arithmetic/DivisionExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Arithmetic/DivisionExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Arithmetic/LeftShiftExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Arithmetic/LeftShiftExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Arithmetic/ModuleExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Arithmetic/ModuleExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Arithmetic/MultiplicationExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Arithmetic/MultiplicationExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Arithmetic/RightShiftExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Arithmetic/RightShiftExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Arithmetic/SubtractionExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Arithmetic/SubtractionExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/ArrayExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/ArrayExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/AssignExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/AssignExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/BaseExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/BaseExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Bit/AndExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Bit/AndExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Bit/OrExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Bit/OrExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Bit/XorExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Bit/XorExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/FunctionExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/FunctionExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/IdentifierExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/IdentifierExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Logic/LogicAndExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Logic/LogicAndExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Logic/LogicOrExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Logic/LogicOrExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/MemberExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/MemberExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/NewExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/NewExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Prefix/PrefixDecrementExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Prefix/PrefixDecrementExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Prefix/PrefixIncrementExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Prefix/PrefixIncrementExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Prefix/PrefixMinusExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Prefix/PrefixMinusExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Prefix/PrefixNotExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Prefix/PrefixNotExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Prefix/PrefixPlusExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Prefix/PrefixPlusExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Prefix/PrefixReverseExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Prefix/PrefixReverseExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Relation/EqualExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Relation/EqualExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Relation/GreaterEqualExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Relation/GreaterEqualExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Relation/GreaterExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Relation/GreaterExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Relation/LessEqualExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Relation/LessEqualExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Relation/LessExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Relation/LessExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Relation/NotEqualExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Relation/NotEqualExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Suffix/SuffixDecrementExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Suffix/SuffixDecrementExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Expression/Suffix/SuffixIncrementExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/Suffix/SuffixIncrementExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/BaseStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/BaseStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/BlockStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/BlockStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/BreakStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/BreakStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/BrunchStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/BrunchStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/ContinueStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/ContinueStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/ExpressionStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/ExpressionStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/ForStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/ForStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/IfStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/IfStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/LoopStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/LoopStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/ReturnStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/ReturnStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/VariableDeclarationStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/VariableDeclarationStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Statement/WhileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/WhileStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SymbolTable/ClassTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/SymbolTable/ClassTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SymbolTable/FunctionTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/SymbolTable/FunctionTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SymbolTable/GlobalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/SymbolTable/GlobalScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SymbolTable/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/SymbolTable/Scope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SymbolTable/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/SymbolTable/Symbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SymbolTable/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/SymbolTable/SymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SymbolTable/VariableTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/SymbolTable/VariableTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Type/ArrayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Type/ArrayType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Type/BaseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Type/BaseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Type/BoolType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Type/BoolType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Type/ClassType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Type/ClassType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Type/FunctionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Type/FunctionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Type/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Type/IntType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Type/NonArrayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Type/NonArrayType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Type/NullType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Type/NullType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Type/StringType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Type/StringType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Type/VoidType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Type/VoidType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constant/BaseConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constant/BoolConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constant/IntConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constant/NullConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constant/StringConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constructor/AST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constructor/BuiltinFunctionConstructor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constructor/ClassNameListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constructor/DeclarationListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constructor/PositionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Constructor/TreeListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Error/CompilationError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Error/CompilationError.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Error/MxStarErrorListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Arithmetic/AdditionExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Arithmetic/DivisionExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Arithmetic/LeftShiftExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Arithmetic/ModuleExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Arithmetic/MultiplicationExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Arithmetic/RightShiftExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Arithmetic/SubtractionExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/ArrayExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/AssignExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/BaseExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Bit/AndExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Bit/OrExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Bit/XorExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/FunctionExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/IdentifierExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Logic/LogicAndExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Logic/LogicOrExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/MemberExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/NewExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Prefix/PrefixDecrementExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Prefix/PrefixIncrementExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Prefix/PrefixMinusExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Prefix/PrefixNotExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Prefix/PrefixPlusExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Prefix/PrefixReverseExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Relation/EqualExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Relation/GreaterEqualExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Relation/GreaterExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Relation/LessEqualExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Relation/LessExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Relation/NotEqualExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Suffix/SuffixDecrementExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Expression/Suffix/SuffixIncrementExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/BaseStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/BlockStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/BreakStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/BrunchStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/ContinueStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/ExpressionStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/ForStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/IfStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/LoopStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/ReturnStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/VariableDeclarationStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Statement/WhileStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SymbolTable/ClassTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SymbolTable/FunctionTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SymbolTable/GlobalScope.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SymbolTable/Scope.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SymbolTable/Symbol.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SymbolTable/SymbolTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SymbolTable/VariableTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Type/ArrayType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Type/BaseType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Type/BoolType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Type/ClassType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Type/FunctionType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Type/IntType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Type/NonArrayType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Type/NullType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Type/StringType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Type/VoidType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.c" beforeDir="false" afterPath="$PROJECT_DIR$/test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.ll" beforeDir="false" afterPath="$PROJECT_DIR$/test.ll" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,7 +202,38 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Generater.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Generater/Generater.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="35" column="89" lean-forward="true" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseInstruction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/IR/Instruction/BaseInstruction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FunctionCallInstruction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/IR/Instruction/FunctionCallInstruction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="69" column="89" selection-start-line="69" selection-start-column="89" selection-end-line="69" selection-end-column="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -25,32 +246,45 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Reverse</find>
-      <find>ArrayType</find>
-      <find>symboltable</find>
-      <find>IntType</find>
-      <find>symbolTable</find>
-      <find>System</find>
-      <find>forEach</find>
-      <find>_built_</find>
-      <find>size</find>
-      <find>.add</find>
-      <find>For</find>
-      <find>main</find>
-      <find>System.out</find>
-      <find>enterScope</find>
-      <find>the void</find>
       <find>system</find>
-      <find>System.o</find>
       <find>&amp;</find>
       <find>vvwvvv</find>
       <find>addClassScope</find>
       <find>existFunc</find>
       <find>implements</find>
-      <find>there is already a func</find>
+      <find />
+      <find>globalVariable</find>
+      <find>StringBuffer</find>
+      <find>toString()</find>
+      <find>setoperand</find>
+      <find>modify</find>
+      <find>setOperand</find>
+      <find>object</find>
+      <find>System.o</find>
+      <find>objecteE</find>
+      <find />
+      <find>Nasm</find>
+      <find>_format</find>
+      <find>@</find>
+      <find>\te</find>
+      <find>\n&quot;</find>
+      <find>&quot;e</find>
+      <find>systemReg</find>
+      <find>registerMap</find>
+      <find>caller</find>
+      <find>parameterReglist</find>
+      <find>parameterRegList</find>
+      <find>callee</find>
+      <find>callInstruction</find>
     </findStrings>
     <replaceStrings>
       <replace>vwvvvvv</replace>
+      <replace>objectE</replace>
+      <replace>NASM</replace>
+      <replace>&quot;,&quot;</replace>
+      <replace>formatInstruction(&quot;e</replace>
+      <replace>physicalRegisterName</replace>
+      <replace>PhysicalRegisterName</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -59,57 +293,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Expression/Relation/GreaterEqualExpression.java" />
-        <option value="$PROJECT_DIR$/src/Statement/BaseStatement.java" />
-        <option value="$PROJECT_DIR$/src/SymbolTable/ClassTable.java" />
-        <option value="$PROJECT_DIR$/src/SymbolTable/Scope.java" />
-        <option value="$PROJECT_DIR$/src/SymbolTable/GlobalScope.java" />
-        <option value="$PROJECT_DIR$/src/Statement/BlockStatement.java" />
-        <option value="$PROJECT_DIR$/src/TreeListener.java" />
-        <option value="$PROJECT_DIR$/src/Error/CompilationError.java" />
-        <option value="$PROJECT_DIR$/src/Constructor/ClassNameListener.java" />
-        <option value="$PROJECT_DIR$/src/Type/BaseType.java" />
-        <option value="$PROJECT_DIR$/src/program.txt" />
-        <option value="$PROJECT_DIR$/src/Type/FunctionType.java" />
-        <option value="$PROJECT_DIR$/src/Expression/NewExpression.java" />
-        <option value="$PROJECT_DIR$/src/Statement/VariableDeclarationStatement.java" />
-        <option value="$PROJECT_DIR$/src/Type/BoolType.java" />
-        <option value="$PROJECT_DIR$/src/Expression/ArrayExpression.java" />
-        <option value="$PROJECT_DIR$/src/Expression/Arithmetic/AdditionExpression.java" />
-        <option value="$PROJECT_DIR$/src/Expression/Relation/EqualExpression.java" />
-        <option value="$PROJECT_DIR$/src/Expression/Relation/NotEqualExpression.java" />
-        <option value="$PROJECT_DIR$/src/Expression/MemberExpression.java" />
-        <option value="$PROJECT_DIR$/build.bash" />
-        <option value="$PROJECT_DIR$/semantic.bash" />
-        <option value="$PROJECT_DIR$/src/Constructor/BuiltinFunctionConstructor.java" />
-        <option value="$PROJECT_DIR$/src/Statement/ExpressionStatement.java" />
-        <option value="$PROJECT_DIR$/src/Statement/ForStatement.java" />
-        <option value="$PROJECT_DIR$/src/Statement/IfStatement.java" />
-        <option value="$PROJECT_DIR$/src/Statement/BreakStatement.java" />
-        <option value="$PROJECT_DIR$/src/Statement/ReturnStatement.java" />
-        <option value="$PROJECT_DIR$/src/Constructor/TreeListener.java" />
-        <option value="$PROJECT_DIR$/src/Expression/Arithmetic/MultiplicationExpression.java" />
-        <option value="$PROJECT_DIR$/src/Expression/Bit/OrExpression.java" />
-        <option value="$PROJECT_DIR$/src/Expression/Bit/AndExpression.java" />
-        <option value="$PROJECT_DIR$/src/Expression/Bit/XorExpression.java" />
-        <option value="$PROJECT_DIR$/src/SymbolTable/SymbolTable.java" />
-        <option value="$PROJECT_DIR$/src/Error/MxStarErrorListener.java" />
-        <option value="$PROJECT_DIR$/src/Expression/FunctionExpression.java" />
-        <option value="$PROJECT_DIR$/data/2.mx" />
-        <option value="$PROJECT_DIR$/src/Type/ArrayType.java" />
-        <option value="$PROJECT_DIR$/src/SymbolTable/FunctionTable.java" />
-        <option value="$PROJECT_DIR$/src/Constructor/PositionListener.java" />
-        <option value="$PROJECT_DIR$/data/1.mx" />
-        <option value="$PROJECT_DIR$/src/MxStar.g4" />
-        <option value="$PROJECT_DIR$/src/Parser/MxStarBaseListener.java" />
-        <option value="$PROJECT_DIR$/src/Parser/MxStarLexer.java" />
-        <option value="$PROJECT_DIR$/src/Parser/MxStarListener.java" />
-        <option value="$PROJECT_DIR$/src/Parser/MxStarParser.java" />
-        <option value="$PROJECT_DIR$/src/Constructor/DeclarationListener.java" />
-        <option value="$PROJECT_DIR$/src/Expression/AssignExpression.java" />
-        <option value="$PROJECT_DIR$/src/Expression/IdentifierExpression.java" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/Prefix/PrefixPlusExpression.java" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/Prefix/PrefixNotExpression.java" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/Prefix/PrefixReverseExpression.java" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/Suffix/SuffixDecrementExpression.java" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/Suffix/SuffixIncrementExpression.java" />
+        <option value="$PROJECT_DIR$/src/AST/Constant/BoolConstant.java" />
+        <option value="$PROJECT_DIR$/src/AST/Constant/NullConstant.java" />
+        <option value="$PROJECT_DIR$/src/AST/Constant/StringConstant.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/BaseStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/ExpressionStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/BreakStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/ContinueStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/ForStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/LoopStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/WhileStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/IfStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/SymbolTable/Symbol.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/VariableDeclarationStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/Type/FunctionType.java" />
+        <option value="$PROJECT_DIR$/src/IR/Block.java" />
+        <option value="$PROJECT_DIR$/src/IR/IR.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/BlockStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/Statement/ReturnStatement.java" />
+        <option value="$PROJECT_DIR$/src/AST/Constant/IntConstant.java" />
         <option value="$PROJECT_DIR$/program.txt" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java" />
+        <option value="$PROJECT_DIR$/src/IR/Operand/Address.java" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/FunctionExpression.java" />
+        <option value="$PROJECT_DIR$/src/IR/Operand/VirtualRegister.java" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/NewExpression.java" />
+        <option value="$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalBaseOperand.java" />
+        <option value="$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalAddress.java" />
+        <option value="$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalImmediate.java" />
+        <option value="$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalStringConstantTag.java" />
+        <option value="$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalRegister.java" />
+        <option value="$PROJECT_DIR$/src/IR/VirtualRegisterManager.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/BinaryInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/CjumpInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/CompareInstruction.java" />
+        <option value="$PROJECT_DIR$/src/Generater/Generater.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/CsetInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/FunctionIR.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/JumpInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/LabelInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/MoveInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/ReturnInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/UnaryInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/BaseInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/AllocateInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/FunctionCallInstruction.java" />
       </list>
     </option>
   </component>
@@ -136,8 +370,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="462" />
-    <option name="y" value="87" />
+    <option name="x" value="59" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
   </component>
@@ -149,7 +383,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,13 +401,39 @@
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Constructor" type="462c0819:PsiDirectoryNode" />
+              <item name="Generater" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Type" type="462c0819:PsiDirectoryNode" />
+              <item name="Generater" type="462c0819:PsiDirectoryNode" />
+              <item name="PhysicalOperand" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="IR" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="IR" type="462c0819:PsiDirectoryNode" />
+              <item name="Instruction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Other" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Parser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
@@ -182,8 +443,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,10 +468,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="Constructor" />
-      <recent name="Expression" />
-      <recent name="Expression.Arithmetic" />
+      <recent name="Other" />
+      <recent name="IR.Operand" />
+      <recent name="AST.Constructor" />
       <recent name="" />
+      <recent name="AST" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Parser" />
@@ -314,77 +575,83 @@
       <workItem from="1525870778832" duration="566000" />
       <workItem from="1525916126067" duration="1279000" />
       <workItem from="1527079637580" duration="3511000" />
+      <workItem from="1527172150467" duration="1894000" />
+      <workItem from="1527175189192" duration="58343000" />
+      <workItem from="1527679621266" duration="27902000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176441000" />
+    <option name="totallyTimeSpent" value="264580000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="462" y="87" width="1280" height="777" extended-state="0" />
+    <frame x="141" y="64" width="1280" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="bottom" id="Tool Output" order="1" weight="0.0" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info id="Image Layers" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50080776" side_tool="true" weight="0.32689655" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.32875606" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="0" weight="0.3296875" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.34705883" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.23172414" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.0" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="ANTLR Preview" order="5" weight="0.3296875" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49919224" weight="0.32647058" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info id="Image Layers" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.3296875" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.34705883" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.23172414" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19951534" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32941177" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49919224" weight="0.32647058" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.32941177" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.32941177" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.32941177" />
       <window_info id="Designer" order="0" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info id="Image Layers" order="4" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.34705883" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.34705883" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.23172414" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.23172414" />
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Tool Output" order="1" weight="0.0" />
-      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50080776" side_tool="true" weight="0.32689655" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49919224" weight="0.32647058" />
+      <window_info anchor="bottom" id="Tool Output" order="2" weight="0.0" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50080776" side_tool="true" weight="0.32689655" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49919224" weight="0.32647058" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="0" weight="0.3296875" />
+      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="1" weight="0.3296875" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.32875606" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="5" weight="0.3296875" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2197092" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="6" weight="0.3296875" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.226979" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="TODO" order="13" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.32941177" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.32941177" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,379 +665,442 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Statement/BlockStatement.java">
+    <entry file="file://$PROJECT_DIR$/src/AST/Statement/ForStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Statement/LoopStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Statement/WhileStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Statement/IfStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="54" column="30" lean-forward="true" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+          <folding>
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#972#973#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#1109#1110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/SymbolTable/Symbol.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Statement/BrunchStatement.java">
+    <entry file="file://$PROJECT_DIR$/src/AST/Statement/VariableDeclarationStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Statement/ContinueStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Statement/BreakStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Statement/ExpressionStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Statement/IfStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Statement/ReturnStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-143">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Statement/ForStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Statement/WhileStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Statement/BaseStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Error/CompilationError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Type/BaseType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Type/ArrayType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="10" column="82" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Other/Pair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Type/ClassType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Type/IntType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Type/StringType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Type/VoidType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Type/NullType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SymbolTable/ClassTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" column="48" lean-forward="true" selection-start-line="25" selection-start-column="48" selection-end-line="28" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Expression/MemberExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-563">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Expression/FunctionExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constructor/BuiltinFunctionConstructor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1388">
-          <caret line="100" column="103" lean-forward="true" selection-start-line="100" selection-start-column="103" selection-end-line="100" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SymbolTable/VariableTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SymbolTable/GlobalScope.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SymbolTable/SymbolTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Type/BoolType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constructor/ClassNameListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Expression/Prefix/PrefixMinusExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Expression/Suffix/SuffixDecrementExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/2.mx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Error/MxStarErrorListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/1.mx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constructor/TreeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="240" column="5" selection-start-line="240" selection-start-column="5" selection-end-line="240" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parser/MxStarLexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parser/MxStarListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parser/MxStarParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parser/MxStarBaseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/program.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Expression/IdentifierExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="27" column="115" selection-start-line="27" selection-start-column="115" selection-end-line="27" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Expression/AssignExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="115" selection-start-line="22" selection-start-column="115" selection-end-line="22" selection-end-column="115" />
+        <state relative-caret-position="228">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MxStar.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="125" column="14" selection-start-line="125" selection-start-column="14" selection-end-line="125" selection-end-column="14" />
+        <state relative-caret-position="180">
+          <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constructor/PositionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/IR/Block.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+        <state relative-caret-position="393">
+          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constructor/AST.java">
+    <entry file="file://$PROJECT_DIR$/src/AST/Type/FunctionType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        <state relative-caret-position="354">
+          <caret line="48" lean-forward="true" selection-start-line="45" selection-start-column="23" selection-end-line="48" />
+          <folding>
+            <element signature="e#2052#2053#0" expanded="true" />
+            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#2136#2137#0" expanded="true" />
+            <element signature="e#2173#2174#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Type/FunctionType.java">
+    <entry file="file://$PROJECT_DIR$/src/AST/Statement/BlockStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        <state relative-caret-position="240">
+          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SymbolTable/FunctionTable.java">
+    <entry file="file://$PROJECT_DIR$/src/AST/Constant/IntConstant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+        <state relative-caret-position="254">
+          <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constructor/DeclarationListener.java">
+    <entry file="file://$PROJECT_DIR$/src/AST/Statement/ReturnStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="113" column="96" selection-start-line="113" selection-start-column="96" selection-end-line="113" selection-end-column="96" />
+        <state relative-caret-position="284">
+          <caret line="53" column="56" lean-forward="true" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IR.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-538">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Statement/VariableDeclarationStatement.java">
+    <entry file="file://$PROJECT_DIR$/src/AST/Constructor/DeclarationListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="-143">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SymbolTable/Symbol.java">
+    <entry file="file://$PROJECT_DIR$/src/IR/Operand/Operand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Operand/StringConstantTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Type/ArrayType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-185">
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Expression/ArrayExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-413">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Constructor/BuiltinFunctionConstructor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Operand/Immediate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Operand/Address.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Operand/VirtualRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <element signature="e#627#628#0" expanded="true" />
+            <element signature="e#659#660#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Expression/FunctionExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="69" column="9" lean-forward="true" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Expression/NewExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalImmediate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+          <folding>
+            <element signature="e#161#162#0" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalStringConstantTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program.asm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#169#170#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/VirtualRegisterManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/IR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="59" column="68" lean-forward="true" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="269" column="4" selection-start-line="269" selection-start-column="4" selection-end-line="279" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Other/Operator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/BinaryInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/CjumpInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="114" selection-start-line="25" selection-start-column="114" selection-end-line="25" selection-end-column="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/CompareInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="44" column="113" selection-start-line="44" selection-start-column="113" selection-end-line="44" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/CsetInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/FunctionIR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="150" column="9" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/JumpInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/LabelInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="34" column="85" selection-start-line="34" selection-start-column="85" selection-end-line="34" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/MoveInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="46" column="113" selection-start-line="46" selection-start-column="113" selection-end-line="46" selection-end-column="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/ReturnInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/UnaryInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+          <folding>
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalBaseOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="67" lean-forward="true" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generater/Generater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="35" column="89" lean-forward="true" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/AllocateInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="39" column="90" selection-start-line="39" selection-start-column="90" selection-end-line="39" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/BaseInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/FunctionCallInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="69" column="89" selection-start-line="69" selection-start-column="89" selection-end-line="69" selection-end-column="89" />
         </state>
       </provider>
     </entry>
@@ -791,7 +1121,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -839,7 +1169,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: org.antlr:antlr4-runtime:4.7.1</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>

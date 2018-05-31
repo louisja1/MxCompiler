@@ -1,27 +1,18 @@
-int __print() {
-
-}
 int main() {
-int a = (new int[123])[31];
-__print();
+    int a = 5;
+    int b = 0;
+    int c;
+    bool d = b != 0 && a/b != 1;
+    if (d) {
+        c = 10;
+    } else {
+        c = 20;
+    }
+
+    bool e;
+    e = !(c == 10 && a/b == 0 && a == 5);
+    if (e)
+        c = 30;
+
+    return c;
 }
-
-/*!! metadata:
-=== comment ===
-金之涵
-=== is_public ===
-True
-=== assert ===
-failure_compile
-=== timeout ===
-0.0
-=== input ===
-
-=== phase ===
-semantic pretest
-=== output ===
-
-=== exitcode ===
-0
-
-!!*/
