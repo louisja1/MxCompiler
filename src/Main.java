@@ -20,8 +20,8 @@ import java.io.InputStream;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        File file = new File("program.txt");
-        InputStream fin = new FileInputStream(file);/* System.in;*/
+        //File file = new File("program.txt");
+        InputStream fin = System.in;/* new FileInputStream(file);*/
         buildAST(fin);
         generateIR();
         codegen();
