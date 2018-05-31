@@ -1,81 +1,64 @@
-void @GlobalDeclaration { 
+void @GlobalDeclaration() { 
 	@GlobalDeclaration.0.enter :
 		jump @GlobalDeclaration.1.exit
 	@GlobalDeclaration.1.exit :
 }
-func main { 
+func main() { 
 	main.0.enter :
-		mov $a(null) 5
-		mov $b(null) 0
-		cmp $b(null) 0
-		set NEQ $t0(null)
-		cmp $t0(null) 1
-		cjump EQ main.1.logic_true
-		jump main.2.logic_false
-	main.1.logic_true :
-		mov $t2(null) $a(null)
-		DIV $t2(null) $b(null)
-		cmp $t2(null) 1
-		set NEQ $t3(null)
-		mov $t1(null) $t3(null)
-		jump main.3.logic_exit
-	main.2.logic_false :
-		mov $t1(null) 0
-		jump main.3.logic_exit
-	main.3.logic_exit :
-		mov $d(null) $t1(null)
-		cmp $d(null) 1
-		cjump EQ main.4.if_true
-		jump main.5.if_false
-	main.4.if_true :
-		mov $c(null) 10
-		jump main.6.if_exit
-	main.5.if_false :
-		mov $c(null) 20
-		jump main.6.if_exit
-	main.6.if_exit :
-		cmp $c(null) 10
-		set EQ $t4(null)
-		cmp $t4(null) 1
-		cjump EQ main.7.logic_true
-		jump main.8.logic_false
-	main.7.logic_true :
-		mov $t6(null) $a(null)
-		DIV $t6(null) $b(null)
-		cmp $t6(null) 0
-		set EQ $t7(null)
-		mov $t5(null) $t7(null)
-		jump main.9.logic_exit
-	main.8.logic_false :
-		mov $t5(null) 0
-		jump main.9.logic_exit
-	main.9.logic_exit :
-		cmp $t5(null) 1
-		cjump EQ main.10.logic_true
-		jump main.11.logic_false
-	main.10.logic_true :
-		cmp $a(null) 5
-		set EQ $t9(null)
-		mov $t8(null) $t9(null)
-		jump main.12.logic_exit
-	main.11.logic_false :
-		mov $t8(null) 0
-		jump main.12.logic_exit
-	main.12.logic_exit :
-		mov $t10(null) $t8(null)
-		cmp $t10(null) 1
-		set NEQ $t10(null)
-		mov $e(null) $t10(null)
-		cmp $e(null) 1
-		cjump EQ main.13.if_true
-		jump main.14.if_false
-	main.13.if_true :
-		mov $c(null) 30
-		jump main.15.if_exit
-	main.14.if_false :
-		jump main.15.if_exit
-	main.15.if_exit :
-		ret $c(null)
-		jump main.16.exit
-	main.16.exit :
+		mov $t1(rdi) 18
+		mov $t2(rsi) 12
+		mov $t3(rdx) 6
+		call tak 6
+		mov $t4(null) $t0(rax)
+		ret $t4(null)
+		jump main.1.exit
+	main.1.exit :
+}
+func tak(x, y, z) { 
+	tak.0.enter :
+		mov $x(null) $t5(rdi)
+		mov $y(null) $t6(rsi)
+		mov $z(null) $t7(rdx)
+		cmp $y(null) $x(null)
+		set LE $t8(null)
+		cmp $t8(null) 1
+		cjump EQ tak.1.if_true
+		jump tak.2.if_false
+	tak.1.if_true :
+		mov $t9(null) $x(null)
+		SUB $t9(null) 1
+		mov $t11(rdi) $t9(null)
+		mov $t12(rsi) $y(null)
+		mov $t13(rdx) $z(null)
+		call tak $z(null)
+		mov $t14(null) $t10(rax)
+		mov $t15(null) $y(null)
+		SUB $t15(null) 1
+		mov $t17(rdi) $t15(null)
+		mov $t18(rsi) $z(null)
+		mov $t19(rdx) $x(null)
+		call tak $x(null)
+		mov $t20(null) $t16(rax)
+		mov $t21(null) $z(null)
+		SUB $t21(null) 1
+		mov $t23(rdi) $t21(null)
+		mov $t24(rsi) $x(null)
+		mov $t25(rdx) $y(null)
+		call tak $y(null)
+		mov $t26(null) $t22(rax)
+		mov $t28(rdi) $t14(null)
+		mov $t29(rsi) $t20(null)
+		mov $t30(rdx) $t26(null)
+		call tak $t26(null)
+		mov $t31(null) $t27(rax)
+		mov $t32(null) 1
+		ADD $t32(null) $t31(null)
+		ret $t32(null)
+		jump tak.4.exit
+	tak.2.if_false :
+		ret $z(null)
+		jump tak.4.exit
+	tak.3.if_exit :
+		jump tak.4.exit
+	tak.4.exit :
 }

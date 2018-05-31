@@ -21,7 +21,7 @@ import java.io.InputStream;
 public class Main {
     public static void main(String[] args) throws Exception {
         //File file = new File("program.txt");
-        InputStream fin = System.in;/* new FileInputStream(file);*/
+        InputStream fin = System.in;/* new FileInputStream(file); */
         buildAST(fin);
         generateIR();
         codegen();
@@ -54,7 +54,7 @@ public class Main {
     public static void generateIR() throws Exception {
         IR.init();
         IR.generateIR();
-        //IR.printIR();
+        IR.printIR();
     }
 
     public static void codegen() throws Exception {

@@ -50,7 +50,7 @@ public class FunctionIR {
                 instructionList.add(new MoveInstruction(parameterList.get(i), tmp));
                 registerMap.put(tmp, tmp.physicalRegisterName);
             } else {
-                idMap.put(parameterList.get(i), new Integer(4 - i));
+                idMap.put(parameterList.get(i), 4 - i);
             }
         }
         function.getBlockStatement().generateIR(instructionList);
@@ -85,11 +85,16 @@ public class FunctionIR {
         } else {
             str.append("func ");
         }
-        str.append(function.getName());
+        str.append(function.getName() + "(");
+        boolean first = true;
         for (VirtualRegister parameter : parameterList) {
+            if (!first) {
+                str.append(", ");
+            }
+            first = false;
             str.append(parameter.getName());
         }
-        str.append(" { \n");
+        str.append(") { \n");
         for (Block block : blockList) {
             str.append(block.toString(cnt + 1));
         }

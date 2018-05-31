@@ -7,6 +7,7 @@ import AST.Type.VoidType;
 import Error.CompilationError;
 import IR.Instruction.BaseInstruction;
 import IR.Instruction.FunctionCallInstruction;
+import IR.Instruction.LabelInstruction;
 import IR.Instruction.MoveInstruction;
 import IR.Operand.Operand;
 import IR.Operand.VirtualRegister;
@@ -79,7 +80,7 @@ public class FunctionExpression extends BaseExpression {
             instructionList.add(new MoveInstruction(reg, parameterList.get(i)));
         }
         for (int i = 0; i < 6 && i < parameterList.size(); i++) {
-            instructionList.remove(0);
+            parameterList.remove(0);
         }
         instructionList.add(new FunctionCallInstruction(function, returnReg, parameterList));
         if (function.getReturnType() != VoidType.getInstance()) {

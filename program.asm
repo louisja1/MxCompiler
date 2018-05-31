@@ -23,124 +23,112 @@ main:
     push                  rbp
      mov                  rbp,                  rsp
     call   @GlobalDeclaration
-     sub                  rsp,                  128
+     sub                  rsp,                   40
 main.0.enter:
-     mov                  rax,                    5
-     mov      qword [rbp - 8],                  rax
-     mov                  rax,                    0
-     mov     qword [rbp - 16],                  rax
-     cmp     qword [rbp - 16],                    0
-     mov                  rax,     qword [rbp - 24]
-     mov                  rax,                    0
-   setne                   al
-     mov     qword [rbp - 24],                  rax
-     cmp     qword [rbp - 24],                    1
-      je    main.1.logic_true
-     jmp   main.2.logic_false
-main.1.logic_true:
-     mov                  rax,      qword [rbp - 8]
-     mov     qword [rbp - 32],                  rax
-     mov                  rax,     qword [rbp - 32]
-     mov                  rcx,     qword [rbp - 16]
-     cdq
-    idiv                  ecx
-     mov     qword [rbp - 32],                  rax
-     cmp     qword [rbp - 32],                    1
-     mov                  rax,     qword [rbp - 40]
-     mov                  rax,                    0
-   setne                   al
+     mov                  rdi,                   18
+     mov                  rsi,                   12
+     mov                  rdx,                    6
+    push                    6
+    call                  tak
+     add                  rsp,                    8
      mov     qword [rbp - 40],                  rax
      mov                  rax,     qword [rbp - 40]
-     mov     qword [rbp - 48],                  rax
-     jmp    main.3.logic_exit
-main.2.logic_false:
+     jmp          main.1.exit
+main.1.exit:
+     add                  rsp,                   40
+     pop                  rbp
+     ret
+tak:
+    push                  rbp
+     mov                  rbp,                  rsp
+     sub                  rsp,                  224
+tak.0.enter:
+     mov                  rax,                  rdi
+     mov      qword [rbp - 8],                  rax
+     mov                  rax,                  rsi
+     mov     qword [rbp - 16],                  rax
+     mov                  rax,                  rdx
+     mov     qword [rbp - 24],                  rax
+     mov                  rax,     qword [rbp - 16]
+     cmp                  rax,      qword [rbp - 8]
+     mov                  rax,     qword [rbp - 32]
      mov                  rax,                    0
-     mov     qword [rbp - 48],                  rax
-     jmp    main.3.logic_exit
-main.3.logic_exit:
-     mov                  rax,     qword [rbp - 48]
-     mov     qword [rbp - 56],                  rax
-     cmp     qword [rbp - 56],                    1
-      je       main.4.if_true
-     jmp      main.5.if_false
-main.4.if_true:
-     mov                  rax,                   10
-     mov     qword [rbp - 64],                  rax
-     jmp       main.6.if_exit
-main.5.if_false:
-     mov                  rax,                   20
-     mov     qword [rbp - 64],                  rax
-     jmp       main.6.if_exit
-main.6.if_exit:
-     cmp     qword [rbp - 64],                   10
-     mov                  rax,     qword [rbp - 72]
-     mov                  rax,                    0
-    sete                   al
-     mov     qword [rbp - 72],                  rax
-     cmp     qword [rbp - 72],                    1
-      je    main.7.logic_true
-     jmp   main.8.logic_false
-main.7.logic_true:
+    setl                   al
+     mov     qword [rbp - 32],                  rax
+     cmp     qword [rbp - 32],                    1
+      je        tak.1.if_true
+     jmp       tak.2.if_false
+tak.1.if_true:
      mov                  rax,      qword [rbp - 8]
+     mov     qword [rbp - 40],                  rax
+     sub     qword [rbp - 40],                    1
+     mov                  rdi,     qword [rbp - 40]
+     mov                  rsi,     qword [rbp - 16]
+     mov                  rdx,     qword [rbp - 24]
+    push                  rdi
+    push                  rsi
+     sub                  rsp,                    8
+    push     qword [rbp - 24]
+    call                  tak
+     add                  rsp,                   16
+     pop                  rsi
+     pop                  rdi
      mov     qword [rbp - 80],                  rax
-     mov                  rax,     qword [rbp - 80]
-     mov                  rcx,     qword [rbp - 16]
-     cdq
-    idiv                  ecx
-     mov     qword [rbp - 80],                  rax
-     cmp     qword [rbp - 80],                    0
-     mov                  rax,     qword [rbp - 88]
-     mov                  rax,                    0
-    sete                   al
+     mov                  rax,     qword [rbp - 16]
      mov     qword [rbp - 88],                  rax
-     mov                  rax,     qword [rbp - 88]
-     mov     qword [rbp - 96],                  rax
-     jmp    main.9.logic_exit
-main.8.logic_false:
-     mov                  rax,                    0
-     mov     qword [rbp - 96],                  rax
-     jmp    main.9.logic_exit
-main.9.logic_exit:
-     cmp     qword [rbp - 96],                    1
-      je   main.10.logic_true
-     jmp  main.11.logic_false
-main.10.logic_true:
-     cmp      qword [rbp - 8],                    5
-     mov                  rax,    qword [rbp - 104]
-     mov                  rax,                    0
-    sete                   al
-     mov    qword [rbp - 104],                  rax
-     mov                  rax,    qword [rbp - 104]
-     mov    qword [rbp - 112],                  rax
-     jmp   main.12.logic_exit
-main.11.logic_false:
-     mov                  rax,                    0
-     mov    qword [rbp - 112],                  rax
-     jmp   main.12.logic_exit
-main.12.logic_exit:
-     mov                  rax,    qword [rbp - 112]
-     mov    qword [rbp - 120],                  rax
-     cmp    qword [rbp - 120],                    1
-     mov                  rax,    qword [rbp - 120]
-     mov                  rax,                    0
-   setne                   al
-     mov    qword [rbp - 120],                  rax
-     mov                  rax,    qword [rbp - 120]
+     sub     qword [rbp - 88],                    1
+     mov                  rdi,     qword [rbp - 88]
+     mov                  rsi,     qword [rbp - 24]
+     mov                  rdx,      qword [rbp - 8]
+    push                  rdi
+    push                  rsi
+     sub                  rsp,                    8
+    push      qword [rbp - 8]
+    call                  tak
+     add                  rsp,                   16
+     pop                  rsi
+     pop                  rdi
      mov    qword [rbp - 128],                  rax
-     cmp    qword [rbp - 128],                    1
-      je      main.13.if_true
-     jmp     main.14.if_false
-main.13.if_true:
-     mov                  rax,                   30
-     mov     qword [rbp - 64],                  rax
-     jmp      main.15.if_exit
-main.14.if_false:
-     jmp      main.15.if_exit
-main.15.if_exit:
-     mov                  rax,     qword [rbp - 64]
-     jmp         main.16.exit
-main.16.exit:
-     add                  rsp,                  128
+     mov                  rax,     qword [rbp - 24]
+     mov    qword [rbp - 136],                  rax
+     sub    qword [rbp - 136],                    1
+     mov                  rdi,    qword [rbp - 136]
+     mov                  rsi,      qword [rbp - 8]
+     mov                  rdx,     qword [rbp - 16]
+    push                  rdi
+    push                  rsi
+     sub                  rsp,                    8
+    push     qword [rbp - 16]
+    call                  tak
+     add                  rsp,                   16
+     pop                  rsi
+     pop                  rdi
+     mov    qword [rbp - 176],                  rax
+     mov                  rdi,     qword [rbp - 80]
+     mov                  rsi,    qword [rbp - 128]
+     mov                  rdx,    qword [rbp - 176]
+    push                  rdi
+    push                  rsi
+     sub                  rsp,                    8
+    push    qword [rbp - 176]
+    call                  tak
+     add                  rsp,                   16
+     pop                  rsi
+     pop                  rdi
+     mov    qword [rbp - 216],                  rax
+     mov                  rax,                    1
+     mov    qword [rbp - 224],                  rax
+     mov                  rax,    qword [rbp - 216]
+     add    qword [rbp - 224],                  rax
+     mov                  rax,    qword [rbp - 224]
+     jmp           tak.4.exit
+tak.2.if_false:
+     mov                  rax,     qword [rbp - 24]
+     jmp           tak.4.exit
+tak.3.if_exit:
+     jmp           tak.4.exit
+tak.4.exit:
+     add                  rsp,                  224
      pop                  rbp
      ret
 

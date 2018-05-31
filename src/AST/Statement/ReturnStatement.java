@@ -7,6 +7,7 @@ import Error.CompilationError;
 import AST.Type.VoidType;
 import IR.Instruction.BaseInstruction;
 import IR.Instruction.JumpInstruction;
+import IR.Instruction.LabelInstruction;
 import IR.Instruction.ReturnInstruction;
 
 import java.util.List;

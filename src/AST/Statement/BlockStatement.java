@@ -2,6 +2,7 @@ package AST.Statement;
 
 import AST.SymbolTable.Scope;
 import IR.Instruction.BaseInstruction;
+import IR.Instruction.LabelInstruction;
 
 import java.util.ArrayList;
 import java.util.List;
