@@ -116,7 +116,7 @@ public class BuiltinFunctionGenerater {
         str.append(formatInstruction("add","r15","8"));
         str.append(formatInstruction("mov","rdi","r15"));
         str.append(formatInstruction("mov","rsi","_toString_format"));
-        str.append(formatInstruction("pop","rxi"));
+        str.append(formatInstruction("pop","rdx"));
         str.append(callInstruction("sprintf"));
         str.append(formatInstruction("mov","rdi","r15"));
         str.append(callInstruction("strlen"));

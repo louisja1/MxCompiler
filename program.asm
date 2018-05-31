@@ -1,140 +1,93 @@
   global                 main
-   exter               printf
-   exter               malloc
-   exter               strcpy
-   exter                scanf
-   exter               strlen
-   exter               sscanf
-   exter              sprintf
-   exter               memcpy
-   exter               strcmp
-   exter                 puts
+  extern               printf
+  extern               malloc
+  extern               strcpy
+  extern                scanf
+  extern               strlen
+  extern               sscanf
+  extern              sprintf
+  extern               memcpy
+  extern               strcmp
+  extern                 puts
 
 section	.text
 @GlobalDeclaration:
     push                  rbp
      mov                  rbp,                  rsp
+     sub                  rsp,                   24
 @GlobalDeclaration.0.enter:
+     mov                  rax,                    4
+     mov      qword [rbp - 8],                  rax
+     add      qword [rbp - 8],                    1
+     sal      qword [rbp - 8],                    3
+     mov                  rax,      qword [rbp - 8]
+     mov     qword [rbp - 16],                  rax
+     mov                  rcx,     qword [rbp - 16]
+     mov                  rax,                    4
+     mov          qword [rcx],                  rax
+     add     qword [rbp - 16],                    8
+     mov                  rax,     qword [rbp - 16]
+     mov           qword [@a],                  rax
      jmp @GlobalDeclaration.1.exit
 @GlobalDeclaration.1.exit:
+     add                  rsp,                   24
      pop                  rbp
      ret
 main:
     push                  rbp
      mov                  rbp,                  rsp
     call   @GlobalDeclaration
-     sub                  rsp,                   40
+     sub                  rsp,                   96
 main.0.enter:
-     mov                  rdi,                   18
-     mov                  rsi,                   12
-     mov                  rdx,                    6
-    push                    6
-    call                  tak
-     add                  rsp,                    8
+     mov                  rax,                    4
+     mov      qword [rbp - 8],                  rax
+     add      qword [rbp - 8],                    1
+     sal      qword [rbp - 8],                    3
+     mov                  rax,      qword [rbp - 8]
+     mov     qword [rbp - 16],                  rax
+     mov                  rcx,     qword [rbp - 16]
+     mov                  rax,                    4
+     mov          qword [rcx],                  rax
+     add     qword [rbp - 16],                    8
+     mov                  rax,     qword [rbp - 16]
+     mov     qword [rbp - 24],                  rax
+     mov                  rax,                    2
+     mov     qword [rbp - 32],                  rax
+     sal     qword [rbp - 32],                    3
+     mov                  rax,     qword [rbp - 24]
      mov     qword [rbp - 40],                  rax
-     mov                  rax,     qword [rbp - 40]
+     mov                  rax,     qword [rbp - 32]
+     add     qword [rbp - 40],                  rax
+     mov                  rcx,     qword [rbp - 40]
+     mov                  rax,                    2
+     mov          qword [rcx],                  rax
+     mov                  rax,     qword [rbp - 24]
+     mov           qword [@a],                  rax
+     mov                  rax,                    2
+     mov     qword [rbp - 56],                  rax
+     sal     qword [rbp - 56],                    3
+     mov                  rax,           qword [@a]
+     mov     qword [rbp - 64],                  rax
+     mov                  rax,     qword [rbp - 56]
+     add     qword [rbp - 64],                  rax
+     mov                  rcx,     qword [rbp - 64]
+     mov                  rdi,          qword [rcx]
+    call             toString
+     mov     qword [rbp - 88],                  rax
+     mov                  rdi,     qword [rbp - 88]
+    call              println
+     mov                  rax,                    0
      jmp          main.1.exit
 main.1.exit:
-     add                  rsp,                   40
-     pop                  rbp
-     ret
-tak:
-    push                  rbp
-     mov                  rbp,                  rsp
-     sub                  rsp,                  224
-tak.0.enter:
-     mov                  rax,                  rdi
-     mov      qword [rbp - 8],                  rax
-     mov                  rax,                  rsi
-     mov     qword [rbp - 16],                  rax
-     mov                  rax,                  rdx
-     mov     qword [rbp - 24],                  rax
-     mov                  rax,     qword [rbp - 16]
-     cmp                  rax,      qword [rbp - 8]
-     mov                  rax,     qword [rbp - 32]
-     mov                  rax,                    0
-    setl                   al
-     mov     qword [rbp - 32],                  rax
-     cmp     qword [rbp - 32],                    1
-      je        tak.1.if_true
-     jmp       tak.2.if_false
-tak.1.if_true:
-     mov                  rax,      qword [rbp - 8]
-     mov     qword [rbp - 40],                  rax
-     sub     qword [rbp - 40],                    1
-     mov                  rdi,     qword [rbp - 40]
-     mov                  rsi,     qword [rbp - 16]
-     mov                  rdx,     qword [rbp - 24]
-    push                  rdi
-    push                  rsi
-     sub                  rsp,                    8
-    push     qword [rbp - 24]
-    call                  tak
-     add                  rsp,                   16
-     pop                  rsi
-     pop                  rdi
-     mov     qword [rbp - 80],                  rax
-     mov                  rax,     qword [rbp - 16]
-     mov     qword [rbp - 88],                  rax
-     sub     qword [rbp - 88],                    1
-     mov                  rdi,     qword [rbp - 88]
-     mov                  rsi,     qword [rbp - 24]
-     mov                  rdx,      qword [rbp - 8]
-    push                  rdi
-    push                  rsi
-     sub                  rsp,                    8
-    push      qword [rbp - 8]
-    call                  tak
-     add                  rsp,                   16
-     pop                  rsi
-     pop                  rdi
-     mov    qword [rbp - 128],                  rax
-     mov                  rax,     qword [rbp - 24]
-     mov    qword [rbp - 136],                  rax
-     sub    qword [rbp - 136],                    1
-     mov                  rdi,    qword [rbp - 136]
-     mov                  rsi,      qword [rbp - 8]
-     mov                  rdx,     qword [rbp - 16]
-    push                  rdi
-    push                  rsi
-     sub                  rsp,                    8
-    push     qword [rbp - 16]
-    call                  tak
-     add                  rsp,                   16
-     pop                  rsi
-     pop                  rdi
-     mov    qword [rbp - 176],                  rax
-     mov                  rdi,     qword [rbp - 80]
-     mov                  rsi,    qword [rbp - 128]
-     mov                  rdx,    qword [rbp - 176]
-    push                  rdi
-    push                  rsi
-     sub                  rsp,                    8
-    push    qword [rbp - 176]
-    call                  tak
-     add                  rsp,                   16
-     pop                  rsi
-     pop                  rdi
-     mov    qword [rbp - 216],                  rax
-     mov                  rax,                    1
-     mov    qword [rbp - 224],                  rax
-     mov                  rax,    qword [rbp - 216]
-     add    qword [rbp - 224],                  rax
-     mov                  rax,    qword [rbp - 224]
-     jmp           tak.4.exit
-tak.2.if_false:
-     mov                  rax,     qword [rbp - 24]
-     jmp           tak.4.exit
-tak.3.if_exit:
-     jmp           tak.4.exit
-tak.4.exit:
-     add                  rsp,                  224
+     add                  rsp,                   96
      pop                  rbp
      ret
 
 section	.data
 
 section	.bss
+@a:
+    resq                    1
 
 
 section	.text
@@ -186,7 +139,7 @@ toString:
      add                  r15,                    8
      mov                  rdi,                  r15
      mov                  rsi,     _toString_format
-     pop                  rxi
+     pop                  rdx
     call              sprintf
      mov                  rdi,                  r15
     call               strlen

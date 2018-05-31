@@ -5,20 +5,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IR.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IR.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program.asm" beforeDir="false" afterPath="$PROJECT_DIR$/program.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/program.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AST/Expression/FunctionExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Expression/FunctionExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AST/Statement/BlockStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/BlockStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AST/Statement/ReturnStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/ReturnStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/FunctionIR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/FunctionIR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Generater/Generater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generater/Generater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AST/Expression/FunctionExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AST/Expression/FunctionExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AST/Statement/BlockStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AST/Statement/BlockStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AST/Statement/ReturnStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AST/Statement/ReturnStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/FunctionIR.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/FunctionIR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/BinaryInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/BinaryInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/program.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generater/BuiltinFunctionGenerater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generater/BuiltinFunctionGenerater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generater/Generater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generater/Generater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/program.asm" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,11 +24,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="program.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/program.txt">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="195">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuiltinFunctionGenerater.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -43,17 +48,8 @@
       <file leaf-file-name="program.asm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/program.asm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" column="51" lean-forward="true" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+            <state relative-caret-position="365">
+              <caret line="141" column="29" selection-start-line="141" selection-start-column="26" selection-end-line="141" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -71,9 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>vvwvvv</find>
-      <find>addClassScope</find>
-      <find>existFunc</find>
       <find>implements</find>
       <find>there is already a func</find>
       <find>globalVariable</find>
@@ -101,6 +94,9 @@
       <find>callInstruction</find>
       <find>func</find>
       <find>&quot;funct</find>
+      <find>axi</find>
+      <find>pop</find>
+      <find>rxi</find>
     </findStrings>
     <replaceStrings>
       <replace>vwvvvvv</replace>
@@ -138,7 +134,6 @@
         <option value="$PROJECT_DIR$/src/AST/Type/FunctionType.java" />
         <option value="$PROJECT_DIR$/src/IR/Block.java" />
         <option value="$PROJECT_DIR$/src/AST/Constant/IntConstant.java" />
-        <option value="$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java" />
         <option value="$PROJECT_DIR$/src/IR/Operand/Address.java" />
         <option value="$PROJECT_DIR$/src/IR/Operand/VirtualRegister.java" />
         <option value="$PROJECT_DIR$/src/AST/Expression/NewExpression.java" />
@@ -150,7 +145,6 @@
         <option value="$PROJECT_DIR$/src/IR/VirtualRegisterManager.java" />
         <option value="$PROJECT_DIR$/src/IR/Instruction/CjumpInstruction.java" />
         <option value="$PROJECT_DIR$/src/IR/Instruction/CompareInstruction.java" />
-        <option value="$PROJECT_DIR$/src/Generater/Generater.java" />
         <option value="$PROJECT_DIR$/src/IR/Instruction/CsetInstruction.java" />
         <option value="$PROJECT_DIR$/src/IR/Instruction/JumpInstruction.java" />
         <option value="$PROJECT_DIR$/src/IR/Instruction/LabelInstruction.java" />
@@ -168,6 +162,8 @@
         <option value="$PROJECT_DIR$/src/IR/IR.java" />
         <option value="$PROJECT_DIR$/program.txt" />
         <option value="$PROJECT_DIR$/src/IR/FunctionIR.java" />
+        <option value="$PROJECT_DIR$/src/Generater/Generater.java" />
+        <option value="$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
@@ -195,8 +191,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="43" />
-    <option name="y" value="44" />
+    <option name="x" value="75" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
   </component>
@@ -226,7 +222,14 @@
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="IR" type="462c0819:PsiDirectoryNode" />
+              <item name="Generater" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Generater" type="462c0819:PsiDirectoryNode" />
+              <item name="PhysicalOperand" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
@@ -370,15 +373,15 @@
       <workItem from="1527079637580" duration="3511000" />
       <workItem from="1527172150467" duration="1894000" />
       <workItem from="1527175189192" duration="58343000" />
-      <workItem from="1527679621266" duration="31670000" />
+      <workItem from="1527679621266" duration="33905000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268348000" />
+    <option name="totallyTimeSpent" value="270583000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="44" width="1280" height="777" extended-state="0" />
+    <frame x="75" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
@@ -642,9 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/program.asm">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalRegister.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -669,13 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="269" column="4" selection-start-line="269" selection-start-column="4" selection-end-line="279" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -790,16 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Generater/Generater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="35" column="89" lean-forward="true" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IR/Instruction/BaseInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -866,13 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/program.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IR/IR.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
@@ -880,17 +856,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/program.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program.asm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/program.asm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="51" lean-forward="true" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
+        <state relative-caret-position="365">
+          <caret line="141" column="29" selection-start-line="141" selection-start-column="26" selection-end-line="141" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generater/Generater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="163" column="28" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        <state relative-caret-position="195">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

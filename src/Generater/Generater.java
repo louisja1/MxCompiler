@@ -64,16 +64,16 @@ public class Generater {
     public static String toNASM() {
         StringBuilder str = new StringBuilder();
         str.append(formatInstruction("global","main"));
-        str.append(formatInstruction("exter","printf"));
-        str.append(formatInstruction("exter","malloc"));
-        str.append(formatInstruction("exter","strcpy"));
-        str.append(formatInstruction("exter","scanf"));
-        str.append(formatInstruction("exter","strlen"));
-        str.append(formatInstruction("exter","sscanf"));
-        str.append(formatInstruction("exter","sprintf"));
-        str.append(formatInstruction("exter","memcpy"));
-        str.append(formatInstruction("exter","strcmp"));
-        str.append(formatInstruction("exter","puts"));
+        str.append(formatInstruction("extern","printf"));
+        str.append(formatInstruction("extern","malloc"));
+        str.append(formatInstruction("extern","strcpy"));
+        str.append(formatInstruction("extern","scanf"));
+        str.append(formatInstruction("extern","strlen"));
+        str.append(formatInstruction("extern","sscanf"));
+        str.append(formatInstruction("extern","sprintf"));
+        str.append(formatInstruction("extern","memcpy"));
+        str.append(formatInstruction("extern","strcmp"));
+        str.append(formatInstruction("extern","puts"));
 
         str.append("\n");
         str.append(Generater.getTextSection());

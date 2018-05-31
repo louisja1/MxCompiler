@@ -1,64 +1,40 @@
 void @GlobalDeclaration() { 
 	@GlobalDeclaration.0.enter :
+		mov $t11(null) 4
+		INC $t11(null)
+		SHL $t11(null) 3
+		mov $t10(null) $t11(null)
+		mov Address($t10(null) + 0) 4
+		ADD $t10(null) 8
+		mov Address($a(@a) + 0) $t10(null)
 		jump @GlobalDeclaration.1.exit
 	@GlobalDeclaration.1.exit :
 }
 func main() { 
 	main.0.enter :
-		mov $t1(rdi) 18
-		mov $t2(rsi) 12
-		mov $t3(rdx) 6
-		call tak 6
-		mov $t4(null) $t0(rax)
-		ret $t4(null)
+		mov $t1(null) 4
+		INC $t1(null)
+		SHL $t1(null) 3
+		mov $t0(null) $t1(null)
+		mov Address($t0(null) + 0) 4
+		ADD $t0(null) 8
+		mov $b(null) $t0(null)
+		mov $t2(null) 2
+		SHL $t2(null) 3
+		mov $t3(null) $b(null)
+		ADD $t3(null) $t2(null)
+		mov Address($t3(null) + 0) 2
+		mov Address($a(@a) + 0) $b(null)
+		mov $t4(null) 2
+		SHL $t4(null) 3
+		mov $t5(null) Address($a(@a) + 0)
+		ADD $t5(null) $t4(null)
+		mov $t7(rdi) Address($t5(null) + 0)
+		call toString
+		mov $t8(null) $t6(rax)
+		mov $t9(rdi) $t8(null)
+		call println
+		ret 0
 		jump main.1.exit
 	main.1.exit :
-}
-func tak(x, y, z) { 
-	tak.0.enter :
-		mov $x(null) $t5(rdi)
-		mov $y(null) $t6(rsi)
-		mov $z(null) $t7(rdx)
-		cmp $y(null) $x(null)
-		set LE $t8(null)
-		cmp $t8(null) 1
-		cjump EQ tak.1.if_true
-		jump tak.2.if_false
-	tak.1.if_true :
-		mov $t9(null) $x(null)
-		SUB $t9(null) 1
-		mov $t11(rdi) $t9(null)
-		mov $t12(rsi) $y(null)
-		mov $t13(rdx) $z(null)
-		call tak $z(null)
-		mov $t14(null) $t10(rax)
-		mov $t15(null) $y(null)
-		SUB $t15(null) 1
-		mov $t17(rdi) $t15(null)
-		mov $t18(rsi) $z(null)
-		mov $t19(rdx) $x(null)
-		call tak $x(null)
-		mov $t20(null) $t16(rax)
-		mov $t21(null) $z(null)
-		SUB $t21(null) 1
-		mov $t23(rdi) $t21(null)
-		mov $t24(rsi) $x(null)
-		mov $t25(rdx) $y(null)
-		call tak $y(null)
-		mov $t26(null) $t22(rax)
-		mov $t28(rdi) $t14(null)
-		mov $t29(rsi) $t20(null)
-		mov $t30(rdx) $t26(null)
-		call tak $t26(null)
-		mov $t31(null) $t27(rax)
-		mov $t32(null) 1
-		ADD $t32(null) $t31(null)
-		ret $t32(null)
-		jump tak.4.exit
-	tak.2.if_false :
-		ret $z(null)
-		jump tak.4.exit
-	tak.3.if_exit :
-		jump tak.4.exit
-	tak.4.exit :
 }
