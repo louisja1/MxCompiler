@@ -12,7 +12,6 @@ import IR.Operand.VirtualRegister;
 import IR.VirtualRegisterManager;
 import Other.Operator;
 import Error.RuntimeError;
-import com.sun.tools.javah.Gen;
 
 public class BinaryInstruction extends BaseInstruction {
     public Operator.BinaryOp op;

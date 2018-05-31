@@ -25,7 +25,7 @@ public class Main {
         buildAST(fin);
         generateIR();
         codegen();
-        System.exit(0);
+        //System.exit(0);
     }
 
     public static void buildAST(InputStream fin) throws Exception {
