@@ -5,6 +5,7 @@ import AST.Statement.VariableDeclarationStatement;
 import IR.FunctionIR;
 import IR.IR;
 import Other.Operator;
+import Other.StringFormatter;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -104,7 +105,7 @@ public class Generater {
             String stringConstant = IR.constString.get(i);
             str.append(Generater.formatInstruction("dq", String.valueOf(stringConstant.length())));
             str.append("_string_constant_" + String.valueOf(i) + ":\n");
-            str.append(Generater.formatInstruction("db", "\"" + stringConstant + "\", 0"));
+            str.append(Generater.formatInstruction("db", StringFormatter.modifyInvisibleCharacters(stringConstant)));
         }
         return str.toString();
     }
