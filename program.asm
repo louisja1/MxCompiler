@@ -646,7 +646,7 @@ _string_constant_0:
       db               " ", 0
       dq                    1
 _string_constant_1:
-      db            "", 10, 0
+      db                10, 0
 
 section	.bss
 @a:
