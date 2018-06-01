@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a635b1c4-7009-4249-8ba9-6353d1f80267" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/data/3.mx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IR.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IR.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Other/StringFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Other/StringFormatter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program" beforeDir="false" afterPath="$PROJECT_DIR$/program" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program.asm" beforeDir="false" afterPath="$PROJECT_DIR$/program.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program.o" beforeDir="false" afterPath="$PROJECT_DIR$/program.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/program.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Other/StringFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Other/StringFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Other/StringFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Other/StringFormatter.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,41 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Generater.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Generater/Generater.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="100" column="43" lean-forward="true" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringFormatter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Other/StringFormatter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="program.asm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/program.asm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="213" column="24" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="program.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/program.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+            <state relative-caret-position="183">
+              <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -66,8 +33,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+            <state relative-caret-position="171">
+              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,7 +55,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setOperand</find>
       <find>object</find>
       <find>System.o</find>
       <find>objecteE</find>
@@ -118,6 +84,7 @@
       <find>&quot;malloc&quot;</find>
       <find>call</find>
       <find>stringConstant</find>
+      <find>);</find>
     </findStrings>
     <replaceStrings>
       <replace>vwvvvvv</replace>
@@ -126,6 +93,7 @@
       <replace>&quot;,&quot;</replace>
       <replace>formatInstruction(&quot;e</replace>
       <replace>physicalRegisterName</replace>
+      <replace>;</replace>
       <replace>PhysicalRegisterName</replace>
     </replaceStrings>
   </component>
@@ -135,8 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AST/SymbolTable/Symbol.java" />
-        <option value="$PROJECT_DIR$/src/AST/Type/FunctionType.java" />
         <option value="$PROJECT_DIR$/src/IR/Block.java" />
         <option value="$PROJECT_DIR$/src/AST/Constant/IntConstant.java" />
         <option value="$PROJECT_DIR$/src/IR/Operand/Address.java" />
@@ -182,9 +148,11 @@
         <option value="$PROJECT_DIR$/src/IR/Instruction/AllocateInstruction.java" />
         <option value="$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java" />
         <option value="$PROJECT_DIR$/src/IR/Instruction/FunctionCallInstruction.java" />
-        <option value="$PROJECT_DIR$/program.txt" />
         <option value="$PROJECT_DIR$/src/Generater/Generater.java" />
         <option value="$PROJECT_DIR$/src/Other/StringFormatter.java" />
+        <option value="$PROJECT_DIR$/data/3.mx" />
+        <option value="$PROJECT_DIR$/program.txt" />
+        <option value="$PROJECT_DIR$/data/3.cpp" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
@@ -212,8 +180,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="137" />
-    <option name="y" value="43" />
+    <option name="x" value="76" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
   </component>
@@ -238,31 +206,6 @@
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Generater" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="IR" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="IR" type="462c0819:PsiDirectoryNode" />
-              <item name="Instruction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Other" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
@@ -406,15 +349,15 @@
       <workItem from="1527079637580" duration="3511000" />
       <workItem from="1527172150467" duration="1894000" />
       <workItem from="1527175189192" duration="58343000" />
-      <workItem from="1527679621266" duration="52549000" />
+      <workItem from="1527679621266" duration="57602000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289227000" />
+    <option name="totallyTimeSpent" value="294280000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="137" y="43" width="1280" height="777" extended-state="0" />
+    <frame x="76" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
@@ -436,9 +379,9 @@
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.3296875" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.34705883" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.34705883" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.23172414" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.19951534" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19951534" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32941177" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -498,46 +441,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalStringConstantTag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="e#169#170#0" expanded="true" />
-            <element signature="e#208#209#0" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
-            <element signature="e#284#285#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IR/VirtualRegisterManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Generater/PhysicalOperand/PhysicalAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Other/Operator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -863,41 +766,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Other/StringFormatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/program.asm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="213" column="24" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/program.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Generater/Generater.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="100" column="43" lean-forward="true" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
+        <state relative-caret-position="21">
+          <caret line="94" column="39" lean-forward="true" selection-start-line="93" selection-start-column="54" selection-end-line="94" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Constant/NullConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/3.mx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="13" lean-forward="true" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="37" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/3.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Other/StringFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="171">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -5,376 +5,390 @@ void @GlobalDeclaration() {
 }
 func main() { 
 	main.0.enter :
-		call getString
-		mov $t1(null) $t0(rax)
-		mov $t3(rdi) $t1(null)
-		call _builtin_parseint
-		mov $t4(null) $t2(rax)
-		mov Address($n(@n) + 0) $t4(null)
-		mov $t6(null) Address($n(@n) + 0)
-		INC $t6(null)
-		SHL $t6(null) 3
-		$t5(null) = allocate $t6(null)
-		mov $t7(null) Address($n(@n) + 0)
-		mov Address($t5(null) + 0) $t7(null)
-		ADD $t5(null) 8
-		mov Address($a(@a) + 0) $t5(null)
-		mov $i(null) 0
-		jump main.1.loop_condition
-	main.1.loop_condition :
-		mov $t9(rdi) Address($a(@a) + 0)
-		call _builtin_size
-		mov $t10(null) $t8(rax)
-		cmp $i(null) $t10(null)
-		set LE $t11(null)
-		cmp $t11(null) 1
-		cjump EQ main.2.loop_body
-		jump main.4.loop_exit
-	main.2.loop_body :
-		mov $t12(null) $i(null)
-		SHL $t12(null) 3
-		mov $t13(null) Address($a(@a) + 0)
-		ADD $t13(null) $t12(null)
-		mov Address($t13(null) + 0) $i(null)
-		jump main.3.loop_next
-	main.3.loop_next :
-		mov $t14(null) $i(null)
-		ADD $t14(null) 1
-		mov $i(null) $t14(null)
-		jump main.1.loop_condition
-	main.4.loop_exit :
-		call makeHeap
-		mov $t16(null) $t15(rax)
-		call heapSort
-		mov $t18(null) $t17(rax)
-		mov $i(null) 0
-		jump main.5.loop_condition
-	main.5.loop_condition :
-		mov $t20(rdi) Address($a(@a) + 0)
-		call _builtin_size
-		mov $t21(null) $t19(rax)
-		cmp $i(null) $t21(null)
-		set LE $t22(null)
-		cmp $t22(null) 1
-		cjump EQ main.6.loop_body
-		jump main.8.loop_exit
-	main.6.loop_body :
-		mov $t23(null) $i(null)
-		SHL $t23(null) 3
-		mov $t24(null) Address($a(@a) + 0)
-		ADD $t24(null) $t23(null)
-		mov $t26(rdi) Address($t24(null) + 0)
-		call toString
-		mov $t27(null) $t25(rax)
+		mov $a(null) _string_constant_0
+		mov $b(null) _string_constant_1
+		mov $c(null) _string_constant_2
+		mov $t1(rdi) $c(null)
+		mov $t2(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t3(null) $t0(rax)
+		mov $t5(rdi) $t3(null)
+		mov $t6(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t7(null) $t4(rax)
+		mov $t9(rdi) $t7(null)
+		mov $t10(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t11(null) $t8(rax)
+		mov $t13(rdi) $t11(null)
+		mov $t14(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t15(null) $t12(rax)
+		mov $t17(rdi) $t15(null)
+		mov $t18(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t19(null) $t16(rax)
+		mov $t21(rdi) $t19(null)
+		mov $t22(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t23(null) $t20(rax)
+		mov $t25(rdi) $t23(null)
+		mov $t26(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t27(null) $t24(rax)
 		mov $t29(rdi) $t27(null)
-		mov $t30(rsi) _string_constant_0
-		call _builtin_add _string_constant_0
+		mov $t30(rsi) $c(null)
+		call _builtin_add $c(null)
 		mov $t31(null) $t28(rax)
-		mov $t32(rdi) $t31(null)
+		mov $t33(rdi) $t31(null)
+		mov $t34(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t35(null) $t32(rax)
+		mov $t36(rdi) $t35(null)
 		call print
-		jump main.7.loop_next
-	main.7.loop_next :
-		mov $t33(null) $i(null)
-		ADD $t33(null) 39997
-		mov $i(null) $t33(null)
-		jump main.5.loop_condition
-	main.8.loop_exit :
-		mov $t34(rdi) _string_constant_1
+		mov $t38(rdi) $c(null)
+		mov $t39(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t40(null) $t37(rax)
+		mov $t42(rdi) $t40(null)
+		mov $t43(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t44(null) $t41(rax)
+		mov $t46(rdi) $t44(null)
+		mov $t47(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t48(null) $t45(rax)
+		mov $t50(rdi) $t48(null)
+		mov $t51(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t52(null) $t49(rax)
+		mov $t54(rdi) $t52(null)
+		mov $t55(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t56(null) $t53(rax)
+		mov $t58(rdi) $t56(null)
+		mov $t59(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t60(null) $t57(rax)
+		mov $t62(rdi) $t60(null)
+		mov $t63(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t64(null) $t61(rax)
+		mov $t66(rdi) $t64(null)
+		mov $t67(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t68(null) $t65(rax)
+		mov $t70(rdi) $t68(null)
+		mov $t71(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t72(null) $t69(rax)
+		mov $t73(rdi) $t72(null)
+		call print
+		mov $t75(rdi) $b(null)
+		mov $t76(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t77(null) $t74(rax)
+		mov $t79(rdi) $t77(null)
+		mov $t80(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t81(null) $t78(rax)
+		mov $t83(rdi) $t81(null)
+		mov $t84(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t85(null) $t82(rax)
+		mov $t87(rdi) $t85(null)
+		mov $t88(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t89(null) $t86(rax)
+		mov $t91(rdi) $t89(null)
+		mov $t92(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t93(null) $t90(rax)
+		mov $t95(rdi) $t93(null)
+		mov $t96(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t97(null) $t94(rax)
+		mov $t99(rdi) $t97(null)
+		mov $t100(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t101(null) $t98(rax)
+		mov $t103(rdi) $t101(null)
+		mov $t104(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t105(null) $t102(rax)
+		mov $t107(rdi) $t105(null)
+		mov $t108(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t109(null) $t106(rax)
+		mov $t110(rdi) $t109(null)
+		call print
+		mov $t112(rdi) $b(null)
+		mov $t113(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t114(null) $t111(rax)
+		mov $t116(rdi) $t114(null)
+		mov $t117(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t118(null) $t115(rax)
+		mov $t120(rdi) $t118(null)
+		mov $t121(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t122(null) $t119(rax)
+		mov $t124(rdi) $t122(null)
+		mov $t125(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t126(null) $t123(rax)
+		mov $t128(rdi) $t126(null)
+		mov $t129(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t130(null) $t127(rax)
+		mov $t132(rdi) $t130(null)
+		mov $t133(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t134(null) $t131(rax)
+		mov $t136(rdi) $t134(null)
+		mov $t137(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t138(null) $t135(rax)
+		mov $t140(rdi) $t138(null)
+		mov $t141(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t142(null) $t139(rax)
+		mov $t144(rdi) $t142(null)
+		mov $t145(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t146(null) $t143(rax)
+		mov $t147(rdi) $t146(null)
+		call print
+		mov $t149(rdi) $b(null)
+		mov $t150(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t151(null) $t148(rax)
+		mov $t153(rdi) $t151(null)
+		mov $t154(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t155(null) $t152(rax)
+		mov $t157(rdi) $t155(null)
+		mov $t158(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t159(null) $t156(rax)
+		mov $t161(rdi) $t159(null)
+		mov $t162(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t163(null) $t160(rax)
+		mov $t165(rdi) $t163(null)
+		mov $t166(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t167(null) $t164(rax)
+		mov $t169(rdi) $t167(null)
+		mov $t170(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t171(null) $t168(rax)
+		mov $t173(rdi) $t171(null)
+		mov $t174(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t175(null) $t172(rax)
+		mov $t177(rdi) $t175(null)
+		mov $t178(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t179(null) $t176(rax)
+		mov $t181(rdi) $t179(null)
+		mov $t182(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t183(null) $t180(rax)
+		mov $t184(rdi) $t183(null)
+		call print
+		mov $t186(rdi) $a(null)
+		mov $t187(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t188(null) $t185(rax)
+		mov $t190(rdi) $t188(null)
+		mov $t191(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t192(null) $t189(rax)
+		mov $t194(rdi) $t192(null)
+		mov $t195(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t196(null) $t193(rax)
+		mov $t198(rdi) $t196(null)
+		mov $t199(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t200(null) $t197(rax)
+		mov $t202(rdi) $t200(null)
+		mov $t203(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t204(null) $t201(rax)
+		mov $t206(rdi) $t204(null)
+		mov $t207(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t208(null) $t205(rax)
+		mov $t210(rdi) $t208(null)
+		mov $t211(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t212(null) $t209(rax)
+		mov $t214(rdi) $t212(null)
+		mov $t215(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t216(null) $t213(rax)
+		mov $t218(rdi) $t216(null)
+		mov $t219(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t220(null) $t217(rax)
+		mov $t221(rdi) $t220(null)
+		call print
+		mov $t223(rdi) $b(null)
+		mov $t224(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t225(null) $t222(rax)
+		mov $t227(rdi) $t225(null)
+		mov $t228(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t229(null) $t226(rax)
+		mov $t231(rdi) $t229(null)
+		mov $t232(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t233(null) $t230(rax)
+		mov $t235(rdi) $t233(null)
+		mov $t236(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t237(null) $t234(rax)
+		mov $t239(rdi) $t237(null)
+		mov $t240(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t241(null) $t238(rax)
+		mov $t243(rdi) $t241(null)
+		mov $t244(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t245(null) $t242(rax)
+		mov $t247(rdi) $t245(null)
+		mov $t248(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t249(null) $t246(rax)
+		mov $t251(rdi) $t249(null)
+		mov $t252(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t253(null) $t250(rax)
+		mov $t255(rdi) $t253(null)
+		mov $t256(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t257(null) $t254(rax)
+		mov $t258(rdi) $t257(null)
+		call print
+		mov $t260(rdi) $a(null)
+		mov $t261(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t262(null) $t259(rax)
+		mov $t264(rdi) $t262(null)
+		mov $t265(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t266(null) $t263(rax)
+		mov $t268(rdi) $t266(null)
+		mov $t269(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t270(null) $t267(rax)
+		mov $t272(rdi) $t270(null)
+		mov $t273(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t274(null) $t271(rax)
+		mov $t276(rdi) $t274(null)
+		mov $t277(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t278(null) $t275(rax)
+		mov $t280(rdi) $t278(null)
+		mov $t281(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t282(null) $t279(rax)
+		mov $t284(rdi) $t282(null)
+		mov $t285(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t286(null) $t283(rax)
+		mov $t288(rdi) $t286(null)
+		mov $t289(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t290(null) $t287(rax)
+		mov $t292(rdi) $t290(null)
+		mov $t293(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t294(null) $t291(rax)
+		mov $t295(rdi) $t294(null)
+		call print
+		mov $t297(rdi) $c(null)
+		mov $t298(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t299(null) $t296(rax)
+		mov $t301(rdi) $t299(null)
+		mov $t302(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t303(null) $t300(rax)
+		mov $t305(rdi) $t303(null)
+		mov $t306(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t307(null) $t304(rax)
+		mov $t309(rdi) $t307(null)
+		mov $t310(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t311(null) $t308(rax)
+		mov $t313(rdi) $t311(null)
+		mov $t314(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t315(null) $t312(rax)
+		mov $t317(rdi) $t315(null)
+		mov $t318(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t319(null) $t316(rax)
+		mov $t321(rdi) $t319(null)
+		mov $t322(rsi) $a(null)
+		call _builtin_add $a(null)
+		mov $t323(null) $t320(rax)
+		mov $t325(rdi) $t323(null)
+		mov $t326(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t327(null) $t324(rax)
+		mov $t329(rdi) $t327(null)
+		mov $t330(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t331(null) $t328(rax)
+		mov $t332(rdi) $t331(null)
+		call print
+		mov $t334(rdi) $a(null)
+		mov $t335(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t336(null) $t333(rax)
+		mov $t338(rdi) $t336(null)
+		mov $t339(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t340(null) $t337(rax)
+		mov $t342(rdi) $t340(null)
+		mov $t343(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t344(null) $t341(rax)
+		mov $t346(rdi) $t344(null)
+		mov $t347(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t348(null) $t345(rax)
+		mov $t350(rdi) $t348(null)
+		mov $t351(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t352(null) $t349(rax)
+		mov $t354(rdi) $t352(null)
+		mov $t355(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t356(null) $t353(rax)
+		mov $t358(rdi) $t356(null)
+		mov $t359(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t360(null) $t357(rax)
+		mov $t362(rdi) $t360(null)
+		mov $t363(rsi) $b(null)
+		call _builtin_add $b(null)
+		mov $t364(null) $t361(rax)
+		mov $t366(rdi) $t364(null)
+		mov $t367(rsi) $c(null)
+		call _builtin_add $c(null)
+		mov $t368(null) $t365(rax)
+		mov $t369(rdi) $t368(null)
 		call print
 		ret 0
-		jump main.9.exit
-	main.9.exit :
-}
-void exchange(x, y) { 
-	exchange.0.enter :
-		mov $x(null) $t55(rdi)
-		mov $y(null) $t56(rsi)
-		mov $t57(null) $x(null)
-		SHL $t57(null) 3
-		mov $t58(null) Address($a(@a) + 0)
-		ADD $t58(null) $t57(null)
-		mov $t(null) Address($t58(null) + 0)
-		mov $t59(null) $x(null)
-		SHL $t59(null) 3
-		mov $t60(null) Address($a(@a) + 0)
-		ADD $t60(null) $t59(null)
-		mov $t61(null) $y(null)
-		SHL $t61(null) 3
-		mov $t62(null) Address($a(@a) + 0)
-		ADD $t62(null) $t61(null)
-		mov $t63(null) Address($t62(null) + 0)
-		mov Address($t60(null) + 0) $t63(null)
-		mov $t64(null) $y(null)
-		SHL $t64(null) 3
-		mov $t65(null) Address($a(@a) + 0)
-		ADD $t65(null) $t64(null)
-		mov Address($t65(null) + 0) $t(null)
-		jump exchange.1.exit
-	exchange.1.exit :
-}
-func adjustHeap(n) { 
-	adjustHeap.0.enter :
-		mov $n(null) $t66(rdi)
-		mov $i(null) 0
-		mov $j(null) 0
-		mov $t(null) 0
-		jump adjustHeap.1.loop_condition
-	adjustHeap.1.loop_condition :
-		mov $t67(null) $i(null)
-		SHL $t67(null) 1
-		cmp $t67(null) $n(null)
-		set LE $t68(null)
-		cmp $t68(null) 1
-		cjump EQ adjustHeap.2.loop_body
-		jump adjustHeap.12.loop_exit
-	adjustHeap.2.loop_body :
-		mov $t69(null) $i(null)
-		SHL $t69(null) 1
-		mov $j(null) $t69(null)
-		mov $t70(null) $i(null)
-		SHL $t70(null) 1
-		mov $t71(null) $t70(null)
-		ADD $t71(null) 1
-		cmp $t71(null) $n(null)
-		set LE $t72(null)
-		cmp $t72(null) 1
-		cjump EQ adjustHeap.3.logic_true
-		jump adjustHeap.4.logic_false
-	adjustHeap.3.logic_true :
-		mov $t74(null) $i(null)
-		SHL $t74(null) 1
-		mov $t75(null) $t74(null)
-		ADD $t75(null) 1
-		mov $t76(null) $t75(null)
-		SHL $t76(null) 3
-		mov $t77(null) Address($a(@a) + 0)
-		ADD $t77(null) $t76(null)
-		mov $t78(null) $i(null)
-		SHL $t78(null) 1
-		mov $t79(null) $t78(null)
-		SHL $t79(null) 3
-		mov $t80(null) Address($a(@a) + 0)
-		ADD $t80(null) $t79(null)
-		mov $t82(null) Address($t77(null) + 0)
-		cmp $t82(null) Address($t80(null) + 0)
-		set LE $t81(null)
-		mov $t73(null) $t81(null)
-		jump adjustHeap.5.logic_exit
-	adjustHeap.4.logic_false :
-		mov $t73(null) 0
-		jump adjustHeap.5.logic_exit
-	adjustHeap.5.logic_exit :
-		cmp $t73(null) 1
-		cjump EQ adjustHeap.6.if_true
-		jump adjustHeap.7.if_false
-	adjustHeap.6.if_true :
-		mov $t83(null) $i(null)
-		SHL $t83(null) 1
-		mov $t84(null) $t83(null)
-		ADD $t84(null) 1
-		mov $j(null) $t84(null)
-		jump adjustHeap.8.if_exit
-	adjustHeap.7.if_false :
-		jump adjustHeap.8.if_exit
-	adjustHeap.8.if_exit :
-		mov $t85(null) $i(null)
-		SHL $t85(null) 3
-		mov $t86(null) Address($a(@a) + 0)
-		ADD $t86(null) $t85(null)
-		mov $t87(null) $j(null)
-		SHL $t87(null) 3
-		mov $t88(null) Address($a(@a) + 0)
-		ADD $t88(null) $t87(null)
-		mov $t90(null) Address($t86(null) + 0)
-		cmp $t90(null) Address($t88(null) + 0)
-		set GR $t89(null)
-		cmp $t89(null) 1
-		cjump EQ adjustHeap.9.if_true
-		jump adjustHeap.10.if_false
-	adjustHeap.9.if_true :
-		mov $t91(null) $i(null)
-		SHL $t91(null) 3
-		mov $t92(null) Address($a(@a) + 0)
-		ADD $t92(null) $t91(null)
-		mov $t(null) Address($t92(null) + 0)
-		mov $t93(null) $i(null)
-		SHL $t93(null) 3
-		mov $t94(null) Address($a(@a) + 0)
-		ADD $t94(null) $t93(null)
-		mov $t95(null) $j(null)
-		SHL $t95(null) 3
-		mov $t96(null) Address($a(@a) + 0)
-		ADD $t96(null) $t95(null)
-		mov $t97(null) Address($t96(null) + 0)
-		mov Address($t94(null) + 0) $t97(null)
-		mov $t98(null) $j(null)
-		SHL $t98(null) 3
-		mov $t99(null) Address($a(@a) + 0)
-		ADD $t99(null) $t98(null)
-		mov Address($t99(null) + 0) $t(null)
-		mov $i(null) $j(null)
-		jump adjustHeap.11.if_exit
-	adjustHeap.10.if_false :
-		jump adjustHeap.12.loop_exit
-	adjustHeap.11.if_exit :
-		jump adjustHeap.1.loop_condition
-	adjustHeap.12.loop_exit :
-		ret 0
-		jump adjustHeap.13.exit
-	adjustHeap.13.exit :
-}
-func heapSort() { 
-	heapSort.0.enter :
-		mov $t(null) 0
-		mov $k(null) 0
-		jump heapSort.1.loop_condition
-	heapSort.1.loop_condition :
-		cmp $k(null) Address($n(@n) + 0)
-		set LE $t35(null)
-		cmp $t35(null) 1
-		cjump EQ heapSort.2.loop_body
-		jump heapSort.4.loop_exit
-	heapSort.2.loop_body :
-		mov $t36(null) 0
-		SHL $t36(null) 3
-		mov $t37(null) Address($a(@a) + 0)
-		ADD $t37(null) $t36(null)
-		mov $t(null) Address($t37(null) + 0)
-		mov $t38(null) 0
-		SHL $t38(null) 3
-		mov $t39(null) Address($a(@a) + 0)
-		ADD $t39(null) $t38(null)
-		mov $t40(null) Address($n(@n) + 0)
-		SUB $t40(null) $k(null)
-		mov $t41(null) $t40(null)
-		SUB $t41(null) 1
-		mov $t42(null) $t41(null)
-		SHL $t42(null) 3
-		mov $t43(null) Address($a(@a) + 0)
-		ADD $t43(null) $t42(null)
-		mov $t44(null) Address($t43(null) + 0)
-		mov Address($t39(null) + 0) $t44(null)
-		mov $t45(null) Address($n(@n) + 0)
-		SUB $t45(null) $k(null)
-		mov $t46(null) $t45(null)
-		SUB $t46(null) 1
-		mov $t47(null) $t46(null)
-		SHL $t47(null) 3
-		mov $t48(null) Address($a(@a) + 0)
-		ADD $t48(null) $t47(null)
-		mov Address($t48(null) + 0) $t(null)
-		mov $t49(null) Address($n(@n) + 0)
-		SUB $t49(null) $k(null)
-		mov $t50(null) $t49(null)
-		SUB $t50(null) 1
-		mov $t52(rdi) $t50(null)
-		call adjustHeap
-		mov $t53(null) $t51(rax)
-		jump heapSort.3.loop_next
-	heapSort.3.loop_next :
-		mov $t54(null) $k(null)
-		ADD $t54(null) 1
-		mov $k(null) $t54(null)
-		jump heapSort.1.loop_condition
-	heapSort.4.loop_exit :
-		ret 0
-		jump heapSort.5.exit
-	heapSort.5.exit :
-}
-func makeHeap() { 
-	makeHeap.0.enter :
-		mov $t100(null) Address($n(@n) + 0)
-		SUB $t100(null) 1
-		mov $t101(null) $t100(null)
-		SHR $t101(null) 1
-		mov $i(null) $t101(null)
-		mov $t(null) 0
-		mov $j(null) 0
-		jump makeHeap.1.loop_condition
-	makeHeap.1.loop_condition :
-		cmp $i(null) 0
-		set GREQ $t102(null)
-		cmp $t102(null) 1
-		cjump EQ makeHeap.2.loop_body
-		jump makeHeap.12.loop_exit
-	makeHeap.2.loop_body :
-		mov $t103(null) $i(null)
-		SHL $t103(null) 1
-		mov $j(null) $t103(null)
-		mov $t104(null) $i(null)
-		SHL $t104(null) 1
-		mov $t105(null) $t104(null)
-		ADD $t105(null) 1
-		cmp $t105(null) Address($n(@n) + 0)
-		set LE $t106(null)
-		cmp $t106(null) 1
-		cjump EQ makeHeap.3.logic_true
-		jump makeHeap.4.logic_false
-	makeHeap.3.logic_true :
-		mov $t108(null) $i(null)
-		SHL $t108(null) 1
-		mov $t109(null) $t108(null)
-		ADD $t109(null) 1
-		mov $t110(null) $t109(null)
-		SHL $t110(null) 3
-		mov $t111(null) Address($a(@a) + 0)
-		ADD $t111(null) $t110(null)
-		mov $t112(null) $i(null)
-		SHL $t112(null) 1
-		mov $t113(null) $t112(null)
-		SHL $t113(null) 3
-		mov $t114(null) Address($a(@a) + 0)
-		ADD $t114(null) $t113(null)
-		mov $t116(null) Address($t111(null) + 0)
-		cmp $t116(null) Address($t114(null) + 0)
-		set LE $t115(null)
-		mov $t107(null) $t115(null)
-		jump makeHeap.5.logic_exit
-	makeHeap.4.logic_false :
-		mov $t107(null) 0
-		jump makeHeap.5.logic_exit
-	makeHeap.5.logic_exit :
-		cmp $t107(null) 1
-		cjump EQ makeHeap.6.if_true
-		jump makeHeap.7.if_false
-	makeHeap.6.if_true :
-		mov $t117(null) $i(null)
-		SHL $t117(null) 1
-		mov $t118(null) $t117(null)
-		ADD $t118(null) 1
-		mov $j(null) $t118(null)
-		jump makeHeap.8.if_exit
-	makeHeap.7.if_false :
-		jump makeHeap.8.if_exit
-	makeHeap.8.if_exit :
-		mov $t119(null) $i(null)
-		SHL $t119(null) 3
-		mov $t120(null) Address($a(@a) + 0)
-		ADD $t120(null) $t119(null)
-		mov $t121(null) $j(null)
-		SHL $t121(null) 3
-		mov $t122(null) Address($a(@a) + 0)
-		ADD $t122(null) $t121(null)
-		mov $t124(null) Address($t120(null) + 0)
-		cmp $t124(null) Address($t122(null) + 0)
-		set GR $t123(null)
-		cmp $t123(null) 1
-		cjump EQ makeHeap.9.if_true
-		jump makeHeap.10.if_false
-	makeHeap.9.if_true :
-		mov $t125(rdi) $i(null)
-		mov $t126(rsi) $j(null)
-		call exchange $j(null)
-		jump makeHeap.11.if_exit
-	makeHeap.10.if_false :
-		jump makeHeap.11.if_exit
-	makeHeap.11.if_exit :
-		mov $t127(null) $i(null)
-		SUB $t127(null) 1
-		mov $i(null) $t127(null)
-		jump makeHeap.1.loop_condition
-	makeHeap.12.loop_exit :
-		ret 0
-		jump makeHeap.13.exit
-	makeHeap.13.exit :
+		jump main.1.exit
+	main.1.exit :
 }
