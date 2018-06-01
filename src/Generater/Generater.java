@@ -103,9 +103,10 @@ public class Generater {
         str.append("section\t.data\n");
         for (int i = 0; i < IR.constString.size(); i++) {
             String stringConstant = IR.constString.get(i);
-            str.append(Generater.formatInstruction("dq", String.valueOf(stringConstant.length())));
+            stringConstant = StringFormatter.modifyInvisibleCharacters(stringConstant);
+            str.append(Generater.formatInstruction("dq", String.valueOf(StringFormatter.length)));
             str.append("_string_constant_" + String.valueOf(i) + ":\n");
-            str.append(Generater.formatInstruction("db", StringFormatter.modifyInvisibleCharacters(stringConstant)));
+            str.append(Generater.formatInstruction("db", stringConstant));
         }
         return str.toString();
     }
