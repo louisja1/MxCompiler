@@ -59,9 +59,8 @@ public class SubtractionExpression extends BaseExpression {
             this.setOperand(new Immediate(0));
             return;
         }
-        VirtualRegister result = VirtualRegisterManager.getTemporaryRegister();
-        instructionList.add(new MoveInstruction(result, first));
-        instructionList.add(new BinaryInstruction(Operator.BinaryOp.SUB, result, second));
-        this.setOperand(result);
+        this.setOperand(VirtualRegisterManager.getTemporaryRegister());
+        instructionList.add(new MoveInstruction(this.getOperand(), first));
+        instructionList.add(new BinaryInstruction(Operator.BinaryOp.SUB, this.getOperand(), second));
     }
 }

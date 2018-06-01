@@ -74,9 +74,7 @@ public class ForStatement extends LoopStatement {
         instructionList.add(new JumpInstruction(loopConditionLabel));
 
         instructionList.add(loopConditionLabel);
-        if (condition != null) {
-            condition.generateIR(instructionList);
-        }
+        condition.generateIR(instructionList);
         instructionList.add(new CompareInstruction(condition.getOperand(), new Immediate(1)));
         instructionList.add(new CjumpInstruction(Operator.ConditionOp.EQ, loopBodyLabel));
         instructionList.add(new JumpInstruction(loopExitLabel));

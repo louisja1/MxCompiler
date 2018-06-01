@@ -158,7 +158,7 @@ public class BuiltinFunctionGenerater {
         str.append(formatInstruction("mov", "qword [rax - 8]", "r14"));
         str.append(formatInstruction("mov","r15","rax"));
         str.append(formatInstruction("add","r15","r14"));
-        str.append(formatInstruction("mov","qword [r15]","0"));
+        str.append(formatInstruction("mov","r15","0"));
         str.append(formatInstruction("pop","r14"));
         str.append(formatInstruction("pop","r15"));
         str.append(formatInstruction("ret"));
@@ -192,12 +192,12 @@ public class BuiltinFunctionGenerater {
         str.append("_builtin_add:\n");
         rsp = 1;
         str.append(formatInstruction("push","r15"));
+        str.append(formatInstruction("push","r14"));
+        str.append(formatInstruction("push","r13"));
         str.append(formatInstruction("mov","r15","qword [rdi - 8]"));
         str.append(formatInstruction("add","r15","qword [rsi - 8]"));
         str.append(formatInstruction("add", "r15", "9"));
-        str.append(formatInstruction("push","r14"));
         str.append(formatInstruction("mov","r14","rdi")); // left string
-        str.append(formatInstruction("push","r13"));
         str.append(formatInstruction("mov","r13","rsi")); // right string
         str.append(formatInstruction("mov","rdi","r15"));
         str.append(callInstruction("malloc"));
@@ -214,8 +214,6 @@ public class BuiltinFunctionGenerater {
         str.append(formatInstruction("mov","rsi","r13"));
         str.append(callInstruction("strcpy"));
         str.append(formatInstruction("mov","rax","r14"));
-        str.append(formatInstruction("add","r15","qword [r13 - 8]"));
-        str.append(formatInstruction("mov","qword [r15]", "0"));
         str.append(formatInstruction("pop","r13"));
         str.append(formatInstruction("pop","r14"));
         str.append(formatInstruction("pop","r15"));

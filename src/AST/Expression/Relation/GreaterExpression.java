@@ -69,6 +69,7 @@ public class GreaterExpression extends BaseExpression {
         secondExpression.generateIR(instructionList);
         Operand first =  firstExpression.getOperand();
         Operand second = secondExpression.getOperand();
+        this.setOperand(VirtualRegisterManager.getTemporaryRegister());
         if (first == second) {
             this.setOperand(new Immediate(0));
             return;
@@ -84,8 +85,7 @@ public class GreaterExpression extends BaseExpression {
         } else {
             instructionList.add(new CompareInstruction(first, second));
         }
-        VirtualRegister result = VirtualRegisterManager.getTemporaryRegister();
-        instructionList.add(new CsetInstruction(Operator.ConditionOp.GR, result));
-        this.setOperand(result);
+        instructionList.add(new CsetInstruction(Operator.ConditionOp.GR, this.getOperand()));
+        this.setOperand(this.getOperand());
     }
 }

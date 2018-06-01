@@ -6,9 +6,6 @@ import IR.Operand.Operand;
 import IR.Operand.VirtualRegister;
 import IR.VirtualRegisterManager;
 
-import java.util.List;
-import java.util.Vector;
-
 public class AllocateInstruction extends BaseInstruction {
     private VirtualRegister target;
     private Operand allocateSize;
@@ -35,7 +32,7 @@ public class AllocateInstruction extends BaseInstruction {
         PhysicalBaseOperand physicalAllocateSize = PhysicalBaseOperand.get(str, allocateSize);
         str.append(Generater.pushCaller(Generater.currentFunction.usedCallerRegisterList));
 
-        str.append(Generater.formatInstruction("mov","rdi",physicalAllocateSize.toString()));
+        str.append(Generater.formatInstruction("mov","rdi", physicalAllocateSize.toString()));
         str.append(Generater.callInstruction("malloc"));
         str.append(Generater.popCaller(Generater.currentFunction.usedCallerRegisterList));
         PhysicalBaseOperand physicalTarget = PhysicalBaseOperand.get(str, target);

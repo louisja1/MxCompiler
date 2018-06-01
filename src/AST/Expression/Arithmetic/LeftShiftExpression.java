@@ -50,9 +50,8 @@ public class LeftShiftExpression extends BaseExpression {
         secondExpression.generateIR(instructionList);
         Operand first =  firstExpression.getOperand();
         Operand second = secondExpression.getOperand();
-        VirtualRegister result = VirtualRegisterManager.getTemporaryRegister();
-        instructionList.add(new MoveInstruction(result, first));
-        instructionList.add(new BinaryInstruction(Operator.BinaryOp.SHL, result, second));
-        this.setOperand(result);
+        this.setOperand(VirtualRegisterManager.getTemporaryRegister());
+        instructionList.add(new MoveInstruction(this.getOperand(), first));
+        instructionList.add(new BinaryInstruction(Operator.BinaryOp.SHL, this.getOperand(), second));
     }
 }

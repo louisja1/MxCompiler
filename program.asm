@@ -178,7 +178,7 @@ _builtin_substring:
      mov      qword [rax - 8],                  r14
      mov                  r15,                  rax
      add                  r15,                  r14
-     mov          qword [r15],                    0
+     mov                  r15,                    0
      pop                  r14
      pop                  r15
      ret
@@ -196,12 +196,12 @@ _builtin_ord:
      ret
 _builtin_add:
     push                  r15
+    push                  r14
+    push                  r13
      mov                  r15,      qword [rdi - 8]
      add                  r15,      qword [rsi - 8]
      add                  r15,                    9
-    push                  r14
      mov                  r14,                  rdi
-    push                  r13
      mov                  r13,                  rsi
      mov                  rdi,                  r15
     call               malloc
@@ -218,8 +218,6 @@ _builtin_add:
      mov                  rsi,                  r13
     call               strcpy
      mov                  rax,                  r14
-     add                  r15,      qword [r13 - 8]
-     mov          qword [r15],                    0
      pop                  r13
      pop                  r14
      pop                  r15

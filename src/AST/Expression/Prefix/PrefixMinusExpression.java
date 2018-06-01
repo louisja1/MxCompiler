@@ -34,9 +34,8 @@ public class PrefixMinusExpression extends BaseExpression {
     @Override
     public void generateIR(List<BaseInstruction> instructionList) {
         objectExpression.generateIR(instructionList);
-        VirtualRegister result = VirtualRegisterManager.getTemporaryRegister();
-        instructionList.add(new MoveInstruction(result, objectExpression.getOperand()));
-        instructionList.add(new UnaryInstruction(Operator.UnaryOp.NEG, result));
-        this.setOperand(result);
+        this.setOperand(VirtualRegisterManager.getTemporaryRegister());
+        instructionList.add(new MoveInstruction(this.getOperand(), objectExpression.getOperand()));
+        instructionList.add(new UnaryInstruction(Operator.UnaryOp.NEG, this.getOperand()));
     }
 }

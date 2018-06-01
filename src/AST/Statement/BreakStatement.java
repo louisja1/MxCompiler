@@ -24,6 +24,6 @@ public class BreakStatement extends BrunchStatement {
 
     @Override
     public void generateIR(List<BaseInstruction> instructionList) {
-        instructionList.add(new JumpInstruction(loop.loopNextLabel));
+        instructionList.add(new JumpInstruction(loop.loopExitLabel));
     }
 }

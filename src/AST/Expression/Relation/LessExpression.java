@@ -69,6 +69,7 @@ public class LessExpression extends BaseExpression {
         secondExpression.generateIR(instructionList);
         Operand first =  firstExpression.getOperand();
         Operand second = secondExpression.getOperand();
+        this.setOperand(VirtualRegisterManager.getTemporaryRegister());
         if (first == second) {
             this.setOperand(new Immediate(0));
             return;
@@ -84,8 +85,6 @@ public class LessExpression extends BaseExpression {
         } else {
             instructionList.add(new CompareInstruction(first, second));
         }
-        VirtualRegister result = VirtualRegisterManager.getTemporaryRegister();
-        instructionList.add(new CsetInstruction(Operator.ConditionOp.LE, result));
-        this.setOperand(result);
+        instructionList.add(new CsetInstruction(Operator.ConditionOp.LE, this.getOperand()));
     }
 }
