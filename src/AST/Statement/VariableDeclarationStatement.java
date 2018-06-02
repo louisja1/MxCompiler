@@ -1,6 +1,9 @@
 package AST.Statement;
 
+import AST.Constant.IntConstant;
+import AST.Expression.ArrayExpression;
 import AST.Expression.BaseExpression;
+import AST.Expression.NewExpression;
 import AST.Type.BaseType;
 import AST.Type.ClassType;
 import AST.SymbolTable.Symbol;

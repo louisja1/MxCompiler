@@ -42,7 +42,7 @@ public class AssignExpression extends BaseExpression {
     public void generateIR(List<BaseInstruction> instructionList) {
         objectExpression.generateIR(instructionList);
         valueExpression.generateIR(instructionList);
-
+        this.setOperand(objectExpression.getOperand());
         if (objectExpression.getOperand() instanceof Address && valueExpression.getOperand() instanceof Address) {
             VirtualRegister media = VirtualRegisterManager.getTemporaryRegister();
             instructionList.add(new MoveInstruction(media, valueExpression.getOperand()));

@@ -35,6 +35,7 @@ public class DeclarationListener extends PositionListener {
             VariableDeclarationStatement variable = (VariableDeclarationStatement) map.get(tmp);
             variable.getSymbol().setGlobal();
             AST.globalVariable.addVariable(variable);
+            AST.orderedGlobalVariable.add(variable);
         }
     }
 

@@ -7,6 +7,7 @@ import AST.Type.BaseType;
 import AST.Type.ClassType;
 import AST.Type.FunctionType;
 import IR.Instruction.BaseInstruction;
+import IR.Operand.Address;
 
 import java.util.List;
 

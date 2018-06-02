@@ -2,6 +2,8 @@ package IR.Instruction;
 
 import Generater.Generater;
 import Generater.PhysicalOperand.PhysicalBaseOperand;
+import IR.Operand.Address;
+import IR.Operand.Immediate;
 import IR.Operand.Operand;
 import IR.Operand.VirtualRegister;
 import IR.VirtualRegisterManager;

@@ -42,19 +42,19 @@ public class IR {
             }
         }
         for (ClassType _class : AST.globalClass.getClassMap().values()) {
-            if (_class.getConstructionFunction() != null) {
-                FunctionType constructionFunction = _class.getConstructionFunction();
-                functionMap.put(constructionFunction.getName(), new FunctionIR(constructionFunction));
-            }
             for (FunctionType function : _class.getMemberFunctionTable().values()) {
                 if (!function.isBuiltin()) {
                     functionMap.put(function.getName(), new FunctionIR(function));
                 }
             }
+            if (_class.getConstructionFunction() != null) {
+                FunctionType constructionFunction = _class.getConstructionFunction();
+                functionMap.put(constructionFunction.getName(), new FunctionIR(constructionFunction));
+            }
         }
         // combine global variable declaration as a global function
         BlockStatement blockStatement = new BlockStatement();
-        for (VariableDeclarationStatement variable : AST.globalVariable.getVariableMap().values()) {
+        for (VariableDeclarationStatement variable : AST.orderedGlobalVariable) {
             blockStatement.addStatement(variable);
         }
         FunctionType function = new FunctionType("@GlobalDeclaration", VoidType.getInstance(), new Vector<>());

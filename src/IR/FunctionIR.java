@@ -54,7 +54,7 @@ public class FunctionIR {
             }
         }
         function.getBlockStatement().generateIR(instructionList);
-        if (instructionList.size() == 1 || !(instructionList.get(instructionList.size() - 1) instanceof JumpInstruction)) {
+        if (instructionList.isEmpty() || !(instructionList.get(instructionList.size() - 1) instanceof JumpInstruction)) {
             instructionList.add(new JumpInstruction(exitBlock));
         }
         instructionList.add(exitBlock);
@@ -151,12 +151,12 @@ public class FunctionIR {
             }
         }
 
+        //pop callee
+        str.append(Generater.popCallee());
+
         if (VirtualRegisterManager.cntOfRegisterInRedZone > 0) {
             str.append(Generater.formatInstruction("add", "rsp", String.valueOf(8 * VirtualRegisterManager.cntOfRegisterInRedZone)));
         }
-
-        //pop callee
-        str.append(Generater.popCallee());
 
         str.append(Generater.formatInstruction("pop","rbp"));
         str.append(Generater.formatInstruction("ret"));

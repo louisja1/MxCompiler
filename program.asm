@@ -23,613 +23,636 @@ main:
     push                  rbp
      mov                  rbp,                  rsp
     call   @GlobalDeclaration
-     sub                  rsp,                 2984
+     sub                  rsp,                  304
 main.0.enter:
-     mov                  rax,   _string_constant_0
-     mov      qword [rbp - 8],                  rax
-     mov                  rax,   _string_constant_1
+    call            getString
      mov     qword [rbp - 16],                  rax
-     mov                  rax,   _string_constant_2
-     mov     qword [rbp - 24],                  rax
-     mov                  rdi,     qword [rbp - 24]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
+     mov                  rdi,     qword [rbp - 16]
+    call    _builtin_parseint
+     mov     qword [rbp - 40],                  rax
+     mov                  rax,     qword [rbp - 40]
+     mov           qword [@n],                  rax
+     mov                  rax,           qword [@n]
      mov     qword [rbp - 56],                  rax
+     add     qword [rbp - 56],                    1
+     sal     qword [rbp - 56],                    3
      mov                  rdi,     qword [rbp - 56]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
+    call               malloc
+     mov     qword [rbp - 64],                  rax
+     mov                  rax,           qword [@n]
+     mov     qword [rbp - 72],                  rax
+     mov                  rcx,     qword [rbp - 64]
+     mov                  rax,     qword [rbp - 72]
+     mov          qword [rcx],                  rax
+     add     qword [rbp - 64],                    8
+     mov                  rax,     qword [rbp - 64]
+     mov           qword [@a],                  rax
+     mov                  rax,                    0
      mov     qword [rbp - 88],                  rax
-     mov                  rdi,     qword [rbp - 88]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
+     jmp main.1.loop_condition
+main.1.loop_condition:
+     mov                  rdi,           qword [@a]
+    call        _builtin_size
+     mov    qword [rbp - 112],                  rax
+     mov                  rax,     qword [rbp - 88]
+     cmp                  rax,    qword [rbp - 112]
+     mov                  rax,    qword [rbp - 120]
+     mov                  rax,                    0
+    setl                   al
      mov    qword [rbp - 120],                  rax
-     mov                  rdi,    qword [rbp - 120]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 152],                  rax
-     mov                  rdi,    qword [rbp - 152]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 184],                  rax
-     mov                  rdi,    qword [rbp - 184]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
+     cmp    qword [rbp - 120],                    1
+      je     main.2.loop_body
+     jmp     main.4.loop_exit
+main.2.loop_body:
+     mov                  rax,     qword [rbp - 88]
+     mov    qword [rbp - 128],                  rax
+     sal    qword [rbp - 128],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 136],                  rax
+     mov                  rax,    qword [rbp - 128]
+     add    qword [rbp - 136],                  rax
+     mov                  rcx,    qword [rbp - 136]
+     mov                  rax,     qword [rbp - 88]
+     mov          qword [rcx],                  rax
+     jmp     main.3.loop_next
+main.3.loop_next:
+     mov                  rax,     qword [rbp - 88]
+     mov    qword [rbp - 144],                  rax
+     add    qword [rbp - 144],                    1
+     mov                  rax,    qword [rbp - 144]
+     mov     qword [rbp - 88],                  rax
+     jmp main.1.loop_condition
+main.4.loop_exit:
+    call             makeHeap
+     mov    qword [rbp - 160],                  rax
+    call             heapSort
+     mov    qword [rbp - 176],                  rax
+     mov                  rax,                    0
+     mov     qword [rbp - 88],                  rax
+     jmp main.5.loop_condition
+main.5.loop_condition:
+     mov                  rdi,           qword [@a]
+    call        _builtin_size
+     mov    qword [rbp - 200],                  rax
+     mov                  rax,     qword [rbp - 88]
+     cmp                  rax,    qword [rbp - 200]
+     mov                  rax,    qword [rbp - 208]
+     mov                  rax,                    0
+    setl                   al
+     mov    qword [rbp - 208],                  rax
+     cmp    qword [rbp - 208],                    1
+      je     main.6.loop_body
+     jmp     main.8.loop_exit
+main.6.loop_body:
+     mov                  rax,     qword [rbp - 88]
      mov    qword [rbp - 216],                  rax
-     mov                  rdi,    qword [rbp - 216]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
+     sal    qword [rbp - 216],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 224],                  rax
+     mov                  rax,    qword [rbp - 216]
+     add    qword [rbp - 224],                  rax
+     mov                  rcx,    qword [rbp - 224]
+     mov                  rdi,          qword [rcx]
+    call             toString
      mov    qword [rbp - 248],                  rax
      mov                  rdi,    qword [rbp - 248]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
+     mov                  rsi,   _string_constant_0
+     sub                  rsp,                    8
+    push   _string_constant_0
     call         _builtin_add
-     add                  rsp,                    8
+     add                  rsp,                   16
      mov    qword [rbp - 280],                  rax
      mov                  rdi,    qword [rbp - 280]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 312],                  rax
-     mov                  rdi,    qword [rbp - 312]
-     sub                  rsp,                    8
     call                print
-     add                  rsp,                    8
-     mov                  rdi,     qword [rbp - 24]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 352],                  rax
-     mov                  rdi,    qword [rbp - 352]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 384],                  rax
-     mov                  rdi,    qword [rbp - 384]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 416],                  rax
-     mov                  rdi,    qword [rbp - 416]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 448],                  rax
-     mov                  rdi,    qword [rbp - 448]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 480],                  rax
-     mov                  rdi,    qword [rbp - 480]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 512],                  rax
-     mov                  rdi,    qword [rbp - 512]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 544],                  rax
-     mov                  rdi,    qword [rbp - 544]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 576],                  rax
-     mov                  rdi,    qword [rbp - 576]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 608],                  rax
-     mov                  rdi,    qword [rbp - 608]
-     sub                  rsp,                    8
+     jmp     main.7.loop_next
+main.7.loop_next:
+     mov                  rax,     qword [rbp - 88]
+     mov    qword [rbp - 296],                  rax
+     add    qword [rbp - 296],                39997
+     mov                  rax,    qword [rbp - 296]
+     mov     qword [rbp - 88],                  rax
+     jmp main.5.loop_condition
+main.8.loop_exit:
+     mov                  rdi,   _string_constant_1
     call                print
-     add                  rsp,                    8
-     mov                  rdi,     qword [rbp - 16]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 648],                  rax
-     mov                  rdi,    qword [rbp - 648]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 680],                  rax
-     mov                  rdi,    qword [rbp - 680]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 712],                  rax
-     mov                  rdi,    qword [rbp - 712]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 744],                  rax
-     mov                  rdi,    qword [rbp - 744]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 776],                  rax
-     mov                  rdi,    qword [rbp - 776]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 808],                  rax
-     mov                  rdi,    qword [rbp - 808]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 840],                  rax
-     mov                  rdi,    qword [rbp - 840]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 872],                  rax
-     mov                  rdi,    qword [rbp - 872]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 904],                  rax
-     mov                  rdi,    qword [rbp - 904]
-     sub                  rsp,                    8
-    call                print
-     add                  rsp,                    8
-     mov                  rdi,     qword [rbp - 16]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 944],                  rax
-     mov                  rdi,    qword [rbp - 944]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov    qword [rbp - 976],                  rax
-     mov                  rdi,    qword [rbp - 976]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1008],                  rax
-     mov                  rdi,   qword [rbp - 1008]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1040],                  rax
-     mov                  rdi,   qword [rbp - 1040]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1072],                  rax
-     mov                  rdi,   qword [rbp - 1072]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1104],                  rax
-     mov                  rdi,   qword [rbp - 1104]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1136],                  rax
-     mov                  rdi,   qword [rbp - 1136]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1168],                  rax
-     mov                  rdi,   qword [rbp - 1168]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1200],                  rax
-     mov                  rdi,   qword [rbp - 1200]
-     sub                  rsp,                    8
-    call                print
-     add                  rsp,                    8
-     mov                  rdi,     qword [rbp - 16]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1240],                  rax
-     mov                  rdi,   qword [rbp - 1240]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1272],                  rax
-     mov                  rdi,   qword [rbp - 1272]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1304],                  rax
-     mov                  rdi,   qword [rbp - 1304]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1336],                  rax
-     mov                  rdi,   qword [rbp - 1336]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1368],                  rax
-     mov                  rdi,   qword [rbp - 1368]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1400],                  rax
-     mov                  rdi,   qword [rbp - 1400]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1432],                  rax
-     mov                  rdi,   qword [rbp - 1432]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1464],                  rax
-     mov                  rdi,   qword [rbp - 1464]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1496],                  rax
-     mov                  rdi,   qword [rbp - 1496]
-     sub                  rsp,                    8
-    call                print
-     add                  rsp,                    8
-     mov                  rdi,      qword [rbp - 8]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1536],                  rax
-     mov                  rdi,   qword [rbp - 1536]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1568],                  rax
-     mov                  rdi,   qword [rbp - 1568]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1600],                  rax
-     mov                  rdi,   qword [rbp - 1600]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1632],                  rax
-     mov                  rdi,   qword [rbp - 1632]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1664],                  rax
-     mov                  rdi,   qword [rbp - 1664]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1696],                  rax
-     mov                  rdi,   qword [rbp - 1696]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1728],                  rax
-     mov                  rdi,   qword [rbp - 1728]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1760],                  rax
-     mov                  rdi,   qword [rbp - 1760]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1792],                  rax
-     mov                  rdi,   qword [rbp - 1792]
-     sub                  rsp,                    8
-    call                print
-     add                  rsp,                    8
-     mov                  rdi,     qword [rbp - 16]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1832],                  rax
-     mov                  rdi,   qword [rbp - 1832]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1864],                  rax
-     mov                  rdi,   qword [rbp - 1864]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1896],                  rax
-     mov                  rdi,   qword [rbp - 1896]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1928],                  rax
-     mov                  rdi,   qword [rbp - 1928]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1960],                  rax
-     mov                  rdi,   qword [rbp - 1960]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 1992],                  rax
-     mov                  rdi,   qword [rbp - 1992]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2024],                  rax
-     mov                  rdi,   qword [rbp - 2024]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2056],                  rax
-     mov                  rdi,   qword [rbp - 2056]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2088],                  rax
-     mov                  rdi,   qword [rbp - 2088]
-     sub                  rsp,                    8
-    call                print
-     add                  rsp,                    8
-     mov                  rdi,      qword [rbp - 8]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2128],                  rax
-     mov                  rdi,   qword [rbp - 2128]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2160],                  rax
-     mov                  rdi,   qword [rbp - 2160]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2192],                  rax
-     mov                  rdi,   qword [rbp - 2192]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2224],                  rax
-     mov                  rdi,   qword [rbp - 2224]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2256],                  rax
-     mov                  rdi,   qword [rbp - 2256]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2288],                  rax
-     mov                  rdi,   qword [rbp - 2288]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2320],                  rax
-     mov                  rdi,   qword [rbp - 2320]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2352],                  rax
-     mov                  rdi,   qword [rbp - 2352]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2384],                  rax
-     mov                  rdi,   qword [rbp - 2384]
-     sub                  rsp,                    8
-    call                print
-     add                  rsp,                    8
-     mov                  rdi,     qword [rbp - 24]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2424],                  rax
-     mov                  rdi,   qword [rbp - 2424]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2456],                  rax
-     mov                  rdi,   qword [rbp - 2456]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2488],                  rax
-     mov                  rdi,   qword [rbp - 2488]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2520],                  rax
-     mov                  rdi,   qword [rbp - 2520]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2552],                  rax
-     mov                  rdi,   qword [rbp - 2552]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2584],                  rax
-     mov                  rdi,   qword [rbp - 2584]
-     mov                  rsi,      qword [rbp - 8]
-    push      qword [rbp - 8]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2616],                  rax
-     mov                  rdi,   qword [rbp - 2616]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2648],                  rax
-     mov                  rdi,   qword [rbp - 2648]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2680],                  rax
-     mov                  rdi,   qword [rbp - 2680]
-     sub                  rsp,                    8
-    call                print
-     add                  rsp,                    8
-     mov                  rdi,      qword [rbp - 8]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2720],                  rax
-     mov                  rdi,   qword [rbp - 2720]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2752],                  rax
-     mov                  rdi,   qword [rbp - 2752]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2784],                  rax
-     mov                  rdi,   qword [rbp - 2784]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2816],                  rax
-     mov                  rdi,   qword [rbp - 2816]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2848],                  rax
-     mov                  rdi,   qword [rbp - 2848]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2880],                  rax
-     mov                  rdi,   qword [rbp - 2880]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2912],                  rax
-     mov                  rdi,   qword [rbp - 2912]
-     mov                  rsi,     qword [rbp - 16]
-    push     qword [rbp - 16]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2944],                  rax
-     mov                  rdi,   qword [rbp - 2944]
-     mov                  rsi,     qword [rbp - 24]
-    push     qword [rbp - 24]
-    call         _builtin_add
-     add                  rsp,                    8
-     mov   qword [rbp - 2976],                  rax
-     mov                  rdi,   qword [rbp - 2976]
-     sub                  rsp,                    8
-    call                print
-     add                  rsp,                    8
      mov                  rax,                    0
-     jmp          main.1.exit
-main.1.exit:
-     add                  rsp,                 2984
+     jmp          main.9.exit
+main.9.exit:
+     add                  rsp,                  304
+     pop                  rbp
+     ret
+exchange:
+    push                  rbp
+     mov                  rbp,                  rsp
+     sub                  rsp,                  104
+exchange.0.enter:
+     mov                  rax,                  rdi
+     mov      qword [rbp - 8],                  rax
+     mov                  rax,                  rsi
+     mov     qword [rbp - 16],                  rax
+     mov                  rax,      qword [rbp - 8]
+     mov     qword [rbp - 24],                  rax
+     sal     qword [rbp - 24],                    3
+     mov                  rax,           qword [@a]
+     mov     qword [rbp - 32],                  rax
+     mov                  rax,     qword [rbp - 24]
+     add     qword [rbp - 32],                  rax
+     mov                  rcx,     qword [rbp - 32]
+     mov                  rax,          qword [rcx]
+     mov     qword [rbp - 48],                  rax
+     mov                  rax,      qword [rbp - 8]
+     mov     qword [rbp - 56],                  rax
+     sal     qword [rbp - 56],                    3
+     mov                  rax,           qword [@a]
+     mov     qword [rbp - 64],                  rax
+     mov                  rax,     qword [rbp - 56]
+     add     qword [rbp - 64],                  rax
+     mov                  rax,     qword [rbp - 16]
+     mov     qword [rbp - 72],                  rax
+     sal     qword [rbp - 72],                    3
+     mov                  rax,           qword [@a]
+     mov     qword [rbp - 80],                  rax
+     mov                  rax,     qword [rbp - 72]
+     add     qword [rbp - 80],                  rax
+     mov                  rcx,     qword [rbp - 80]
+     mov                  rax,          qword [rcx]
+     mov     qword [rbp - 88],                  rax
+     mov                  rcx,     qword [rbp - 64]
+     mov                  rax,     qword [rbp - 88]
+     mov          qword [rcx],                  rax
+     mov                  rax,     qword [rbp - 16]
+     mov     qword [rbp - 96],                  rax
+     sal     qword [rbp - 96],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 104],                  rax
+     mov                  rax,     qword [rbp - 96]
+     add    qword [rbp - 104],                  rax
+     mov                  rcx,    qword [rbp - 104]
+     mov                  rax,     qword [rbp - 48]
+     mov          qword [rcx],                  rax
+     jmp      exchange.1.exit
+exchange.1.exit:
+     add                  rsp,                  104
+     pop                  rbp
+     ret
+adjustHeap:
+    push                  rbp
+     mov                  rbp,                  rsp
+     sub                  rsp,                  312
+adjustHeap.0.enter:
+     mov                  rax,                  rdi
+     mov      qword [rbp - 8],                  rax
+     mov                  rax,                    0
+     mov     qword [rbp - 16],                  rax
+     mov                  rax,                    0
+     mov     qword [rbp - 24],                  rax
+     mov                  rax,                    0
+     mov     qword [rbp - 32],                  rax
+     jmp adjustHeap.1.loop_condition
+adjustHeap.1.loop_condition:
+     mov                  rax,     qword [rbp - 16]
+     mov     qword [rbp - 40],                  rax
+     sal     qword [rbp - 40],                    1
+     mov                  rax,     qword [rbp - 40]
+     cmp                  rax,      qword [rbp - 8]
+     mov                  rax,     qword [rbp - 48]
+     mov                  rax,                    0
+    setl                   al
+     mov     qword [rbp - 48],                  rax
+     cmp     qword [rbp - 48],                    1
+      je adjustHeap.2.loop_body
+     jmp adjustHeap.12.loop_exit
+adjustHeap.2.loop_body:
+     mov                  rax,     qword [rbp - 16]
+     mov     qword [rbp - 56],                  rax
+     sal     qword [rbp - 56],                    1
+     mov                  rax,     qword [rbp - 56]
+     mov     qword [rbp - 24],                  rax
+     mov                  rax,     qword [rbp - 16]
+     mov     qword [rbp - 64],                  rax
+     sal     qword [rbp - 64],                    1
+     mov                  rax,     qword [rbp - 64]
+     mov     qword [rbp - 72],                  rax
+     add     qword [rbp - 72],                    1
+     mov                  rax,     qword [rbp - 72]
+     cmp                  rax,      qword [rbp - 8]
+     mov                  rax,     qword [rbp - 80]
+     mov                  rax,                    0
+    setl                   al
+     mov     qword [rbp - 80],                  rax
+     cmp     qword [rbp - 80],                    1
+      je adjustHeap.3.logic_true
+     jmp adjustHeap.4.logic_false
+adjustHeap.3.logic_true:
+     mov                  rax,     qword [rbp - 16]
+     mov     qword [rbp - 88],                  rax
+     sal     qword [rbp - 88],                    1
+     mov                  rax,     qword [rbp - 88]
+     mov     qword [rbp - 96],                  rax
+     add     qword [rbp - 96],                    1
+     mov                  rax,     qword [rbp - 96]
+     mov    qword [rbp - 104],                  rax
+     sal    qword [rbp - 104],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 112],                  rax
+     mov                  rax,    qword [rbp - 104]
+     add    qword [rbp - 112],                  rax
+     mov                  rax,     qword [rbp - 16]
+     mov    qword [rbp - 128],                  rax
+     sal    qword [rbp - 128],                    1
+     mov                  rax,    qword [rbp - 128]
+     mov    qword [rbp - 136],                  rax
+     sal    qword [rbp - 136],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 144],                  rax
+     mov                  rax,    qword [rbp - 136]
+     add    qword [rbp - 144],                  rax
+     mov                  rcx,    qword [rbp - 112]
+     mov                  rax,          qword [rcx]
+     mov    qword [rbp - 152],                  rax
+     mov                  rcx,    qword [rbp - 144]
+     mov                  rax,    qword [rbp - 152]
+     cmp                  rax,          qword [rcx]
+     mov                  rax,    qword [rbp - 160]
+     mov                  rax,                    0
+    setl                   al
+     mov    qword [rbp - 160],                  rax
+     mov                  rax,    qword [rbp - 160]
+     mov    qword [rbp - 168],                  rax
+     jmp adjustHeap.5.logic_exit
+adjustHeap.4.logic_false:
+     mov                  rax,                    0
+     mov    qword [rbp - 168],                  rax
+     jmp adjustHeap.5.logic_exit
+adjustHeap.5.logic_exit:
+     cmp    qword [rbp - 168],                    1
+      je adjustHeap.6.if_true
+     jmp adjustHeap.7.if_false
+adjustHeap.6.if_true:
+     mov                  rax,     qword [rbp - 16]
+     mov    qword [rbp - 176],                  rax
+     sal    qword [rbp - 176],                    1
+     mov                  rax,    qword [rbp - 176]
+     mov    qword [rbp - 184],                  rax
+     add    qword [rbp - 184],                    1
+     mov                  rax,    qword [rbp - 184]
+     mov     qword [rbp - 24],                  rax
+     jmp adjustHeap.8.if_exit
+adjustHeap.7.if_false:
+     jmp adjustHeap.8.if_exit
+adjustHeap.8.if_exit:
+     mov                  rax,     qword [rbp - 16]
+     mov    qword [rbp - 192],                  rax
+     sal    qword [rbp - 192],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 200],                  rax
+     mov                  rax,    qword [rbp - 192]
+     add    qword [rbp - 200],                  rax
+     mov                  rax,     qword [rbp - 24]
+     mov    qword [rbp - 208],                  rax
+     sal    qword [rbp - 208],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 216],                  rax
+     mov                  rax,    qword [rbp - 208]
+     add    qword [rbp - 216],                  rax
+     mov                  rcx,    qword [rbp - 200]
+     mov                  rax,          qword [rcx]
+     mov    qword [rbp - 224],                  rax
+     mov                  rcx,    qword [rbp - 216]
+     mov                  rax,    qword [rbp - 224]
+     cmp                  rax,          qword [rcx]
+     mov                  rax,    qword [rbp - 232]
+     mov                  rax,                    0
+    setg                   al
+     mov    qword [rbp - 232],                  rax
+     cmp    qword [rbp - 232],                    1
+      je adjustHeap.9.if_true
+     jmp adjustHeap.10.if_false
+adjustHeap.9.if_true:
+     mov                  rax,     qword [rbp - 16]
+     mov    qword [rbp - 240],                  rax
+     sal    qword [rbp - 240],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 248],                  rax
+     mov                  rax,    qword [rbp - 240]
+     add    qword [rbp - 248],                  rax
+     mov                  rcx,    qword [rbp - 248]
+     mov                  rax,          qword [rcx]
+     mov    qword [rbp - 256],                  rax
+     mov                  rax,     qword [rbp - 16]
+     mov    qword [rbp - 264],                  rax
+     sal    qword [rbp - 264],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 272],                  rax
+     mov                  rax,    qword [rbp - 264]
+     add    qword [rbp - 272],                  rax
+     mov                  rax,     qword [rbp - 24]
+     mov    qword [rbp - 280],                  rax
+     sal    qword [rbp - 280],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 288],                  rax
+     mov                  rax,    qword [rbp - 280]
+     add    qword [rbp - 288],                  rax
+     mov                  rcx,    qword [rbp - 288]
+     mov                  rax,          qword [rcx]
+     mov    qword [rbp - 296],                  rax
+     mov                  rcx,    qword [rbp - 272]
+     mov                  rax,    qword [rbp - 296]
+     mov          qword [rcx],                  rax
+     mov                  rax,     qword [rbp - 24]
+     mov    qword [rbp - 304],                  rax
+     sal    qword [rbp - 304],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 312],                  rax
+     mov                  rax,    qword [rbp - 304]
+     add    qword [rbp - 312],                  rax
+     mov                  rcx,    qword [rbp - 312]
+     mov                  rax,    qword [rbp - 256]
+     mov          qword [rcx],                  rax
+     mov                  rax,     qword [rbp - 24]
+     mov     qword [rbp - 16],                  rax
+     jmp adjustHeap.11.if_exit
+adjustHeap.10.if_false:
+     jmp adjustHeap.12.loop_exit
+adjustHeap.11.if_exit:
+     jmp adjustHeap.1.loop_condition
+adjustHeap.12.loop_exit:
+     mov                  rax,                    0
+     jmp   adjustHeap.13.exit
+adjustHeap.13.exit:
+     add                  rsp,                  312
+     pop                  rbp
+     ret
+heapSort:
+    push                  rbp
+     mov                  rbp,                  rsp
+     sub                  rsp,                  192
+heapSort.0.enter:
+     mov                  rax,                    0
+     mov      qword [rbp - 8],                  rax
+     mov                  rax,                    0
+     mov     qword [rbp - 16],                  rax
+     jmp heapSort.1.loop_condition
+heapSort.1.loop_condition:
+     mov                  rax,     qword [rbp - 16]
+     cmp                  rax,           qword [@n]
+     mov                  rax,     qword [rbp - 32]
+     mov                  rax,                    0
+    setl                   al
+     mov     qword [rbp - 32],                  rax
+     cmp     qword [rbp - 32],                    1
+      je heapSort.2.loop_body
+     jmp heapSort.4.loop_exit
+heapSort.2.loop_body:
+     mov                  rax,                    0
+     mov     qword [rbp - 40],                  rax
+     sal     qword [rbp - 40],                    3
+     mov                  rax,           qword [@a]
+     mov     qword [rbp - 48],                  rax
+     mov                  rax,     qword [rbp - 40]
+     add     qword [rbp - 48],                  rax
+     mov                  rcx,     qword [rbp - 48]
+     mov                  rax,          qword [rcx]
+     mov      qword [rbp - 8],                  rax
+     mov                  rax,                    0
+     mov     qword [rbp - 64],                  rax
+     sal     qword [rbp - 64],                    3
+     mov                  rax,           qword [@a]
+     mov     qword [rbp - 72],                  rax
+     mov                  rax,     qword [rbp - 64]
+     add     qword [rbp - 72],                  rax
+     mov                  rax,           qword [@n]
+     mov     qword [rbp - 80],                  rax
+     mov                  rax,     qword [rbp - 16]
+     sub     qword [rbp - 80],                  rax
+     mov                  rax,     qword [rbp - 80]
+     mov     qword [rbp - 88],                  rax
+     sub     qword [rbp - 88],                    1
+     mov                  rax,     qword [rbp - 88]
+     mov     qword [rbp - 96],                  rax
+     sal     qword [rbp - 96],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 104],                  rax
+     mov                  rax,     qword [rbp - 96]
+     add    qword [rbp - 104],                  rax
+     mov                  rcx,    qword [rbp - 104]
+     mov                  rax,          qword [rcx]
+     mov    qword [rbp - 112],                  rax
+     mov                  rcx,     qword [rbp - 72]
+     mov                  rax,    qword [rbp - 112]
+     mov          qword [rcx],                  rax
+     mov                  rax,           qword [@n]
+     mov    qword [rbp - 120],                  rax
+     mov                  rax,     qword [rbp - 16]
+     sub    qword [rbp - 120],                  rax
+     mov                  rax,    qword [rbp - 120]
+     mov    qword [rbp - 128],                  rax
+     sub    qword [rbp - 128],                    1
+     mov                  rax,    qword [rbp - 128]
+     mov    qword [rbp - 136],                  rax
+     sal    qword [rbp - 136],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 144],                  rax
+     mov                  rax,    qword [rbp - 136]
+     add    qword [rbp - 144],                  rax
+     mov                  rcx,    qword [rbp - 144]
+     mov                  rax,      qword [rbp - 8]
+     mov          qword [rcx],                  rax
+     mov                  rax,           qword [@n]
+     mov    qword [rbp - 152],                  rax
+     mov                  rax,     qword [rbp - 16]
+     sub    qword [rbp - 152],                  rax
+     mov                  rax,    qword [rbp - 152]
+     mov    qword [rbp - 160],                  rax
+     sub    qword [rbp - 160],                    1
+     mov                  rdi,    qword [rbp - 160]
+    call           adjustHeap
+     mov    qword [rbp - 184],                  rax
+     jmp heapSort.3.loop_next
+heapSort.3.loop_next:
+     mov                  rax,     qword [rbp - 16]
+     mov    qword [rbp - 192],                  rax
+     add    qword [rbp - 192],                    1
+     mov                  rax,    qword [rbp - 192]
+     mov     qword [rbp - 16],                  rax
+     jmp heapSort.1.loop_condition
+heapSort.4.loop_exit:
+     mov                  rax,                    0
+     jmp      heapSort.5.exit
+heapSort.5.exit:
+     add                  rsp,                  192
+     pop                  rbp
+     ret
+makeHeap:
+    push                  rbp
+     mov                  rbp,                  rsp
+     sub                  rsp,                  264
+makeHeap.0.enter:
+     mov                  rax,           qword [@n]
+     mov      qword [rbp - 8],                  rax
+     sub      qword [rbp - 8],                    1
+     mov                  rax,      qword [rbp - 8]
+     mov     qword [rbp - 24],                  rax
+     sar     qword [rbp - 24],                    1
+     mov                  rax,     qword [rbp - 24]
+     mov     qword [rbp - 32],                  rax
+     mov                  rax,                    0
+     mov     qword [rbp - 40],                  rax
+     mov                  rax,                    0
+     mov     qword [rbp - 48],                  rax
+     jmp makeHeap.1.loop_condition
+makeHeap.1.loop_condition:
+     cmp     qword [rbp - 32],                    0
+     mov                  rax,     qword [rbp - 56]
+     mov                  rax,                    0
+   setge                   al
+     mov     qword [rbp - 56],                  rax
+     cmp     qword [rbp - 56],                    1
+      je makeHeap.2.loop_body
+     jmp makeHeap.12.loop_exit
+makeHeap.2.loop_body:
+     mov                  rax,     qword [rbp - 32]
+     mov     qword [rbp - 64],                  rax
+     sal     qword [rbp - 64],                    1
+     mov                  rax,     qword [rbp - 64]
+     mov     qword [rbp - 48],                  rax
+     mov                  rax,     qword [rbp - 32]
+     mov     qword [rbp - 72],                  rax
+     sal     qword [rbp - 72],                    1
+     mov                  rax,     qword [rbp - 72]
+     mov     qword [rbp - 80],                  rax
+     add     qword [rbp - 80],                    1
+     mov                  rax,     qword [rbp - 80]
+     cmp                  rax,           qword [@n]
+     mov                  rax,     qword [rbp - 88]
+     mov                  rax,                    0
+    setl                   al
+     mov     qword [rbp - 88],                  rax
+     cmp     qword [rbp - 88],                    1
+      je makeHeap.3.logic_true
+     jmp makeHeap.4.logic_false
+makeHeap.3.logic_true:
+     mov                  rax,     qword [rbp - 32]
+     mov     qword [rbp - 96],                  rax
+     sal     qword [rbp - 96],                    1
+     mov                  rax,     qword [rbp - 96]
+     mov    qword [rbp - 104],                  rax
+     add    qword [rbp - 104],                    1
+     mov                  rax,    qword [rbp - 104]
+     mov    qword [rbp - 112],                  rax
+     sal    qword [rbp - 112],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 120],                  rax
+     mov                  rax,    qword [rbp - 112]
+     add    qword [rbp - 120],                  rax
+     mov                  rax,     qword [rbp - 32]
+     mov    qword [rbp - 136],                  rax
+     sal    qword [rbp - 136],                    1
+     mov                  rax,    qword [rbp - 136]
+     mov    qword [rbp - 144],                  rax
+     sal    qword [rbp - 144],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 152],                  rax
+     mov                  rax,    qword [rbp - 144]
+     add    qword [rbp - 152],                  rax
+     mov                  rcx,    qword [rbp - 120]
+     mov                  rax,          qword [rcx]
+     mov    qword [rbp - 160],                  rax
+     mov                  rcx,    qword [rbp - 152]
+     mov                  rax,    qword [rbp - 160]
+     cmp                  rax,          qword [rcx]
+     mov                  rax,    qword [rbp - 168]
+     mov                  rax,                    0
+    setl                   al
+     mov    qword [rbp - 168],                  rax
+     mov                  rax,    qword [rbp - 168]
+     mov    qword [rbp - 176],                  rax
+     jmp makeHeap.5.logic_exit
+makeHeap.4.logic_false:
+     mov                  rax,                    0
+     mov    qword [rbp - 176],                  rax
+     jmp makeHeap.5.logic_exit
+makeHeap.5.logic_exit:
+     cmp    qword [rbp - 176],                    1
+      je   makeHeap.6.if_true
+     jmp  makeHeap.7.if_false
+makeHeap.6.if_true:
+     mov                  rax,     qword [rbp - 32]
+     mov    qword [rbp - 184],                  rax
+     sal    qword [rbp - 184],                    1
+     mov                  rax,    qword [rbp - 184]
+     mov    qword [rbp - 192],                  rax
+     add    qword [rbp - 192],                    1
+     mov                  rax,    qword [rbp - 192]
+     mov     qword [rbp - 48],                  rax
+     jmp   makeHeap.8.if_exit
+makeHeap.7.if_false:
+     jmp   makeHeap.8.if_exit
+makeHeap.8.if_exit:
+     mov                  rax,     qword [rbp - 32]
+     mov    qword [rbp - 200],                  rax
+     sal    qword [rbp - 200],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 208],                  rax
+     mov                  rax,    qword [rbp - 200]
+     add    qword [rbp - 208],                  rax
+     mov                  rax,     qword [rbp - 48]
+     mov    qword [rbp - 216],                  rax
+     sal    qword [rbp - 216],                    3
+     mov                  rax,           qword [@a]
+     mov    qword [rbp - 224],                  rax
+     mov                  rax,    qword [rbp - 216]
+     add    qword [rbp - 224],                  rax
+     mov                  rcx,    qword [rbp - 208]
+     mov                  rax,          qword [rcx]
+     mov    qword [rbp - 232],                  rax
+     mov                  rcx,    qword [rbp - 224]
+     mov                  rax,    qword [rbp - 232]
+     cmp                  rax,          qword [rcx]
+     mov                  rax,    qword [rbp - 240]
+     mov                  rax,                    0
+    setg                   al
+     mov    qword [rbp - 240],                  rax
+     cmp    qword [rbp - 240],                    1
+      je   makeHeap.9.if_true
+     jmp makeHeap.10.if_false
+makeHeap.9.if_true:
+     mov                  rdi,     qword [rbp - 32]
+     mov                  rsi,     qword [rbp - 48]
+    push     qword [rbp - 48]
+    call             exchange
+     add                  rsp,                    8
+     jmp  makeHeap.11.if_exit
+makeHeap.10.if_false:
+     jmp  makeHeap.11.if_exit
+makeHeap.11.if_exit:
+     mov                  rax,     qword [rbp - 32]
+     mov    qword [rbp - 264],                  rax
+     sub    qword [rbp - 264],                    1
+     mov                  rax,    qword [rbp - 264]
+     mov     qword [rbp - 32],                  rax
+     jmp makeHeap.1.loop_condition
+makeHeap.12.loop_exit:
+     mov                  rax,                    0
+     jmp     makeHeap.13.exit
+makeHeap.13.exit:
+     add                  rsp,                  264
      pop                  rbp
      ret
 
 section	.data
-      dq                   20
+      dq                    1
 _string_constant_0:
-      db 34, 10, "bda", 92, 34, 10, "dbd", 92, "c", 34, 92, 34, "c", 92, "c", 34, 0
-      dq                   20
+      db               " ", 0
+      dq                    1
 _string_constant_1:
-      db 92, "ab", 10, "ac", 34, 34, "add", 10, 34, 10, "ac", 10, "db", 34, 0
-      dq                   20
-_string_constant_2:
-      db 10, "abbdbdd", 92, 92, 34, "d", 34, "c", 92, "adc", 34, "c", 0
+      db                10, 0
 
 section	.bss
+@a:
+    resq                    1
+@n:
+    resq                    1
 
 
 section	.text
