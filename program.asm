@@ -199,8 +199,6 @@ xorshift:
      mov                  rbp,                  rsp
     push                  rbx
 xorshift.0.enter:
-     mov                  rbx,                  rdi
-     mov                  rdi,                  rbx
      mov                  rsi,                   13
     push                  rdi
     push                  rsi
