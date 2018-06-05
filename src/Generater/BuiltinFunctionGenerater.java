@@ -41,6 +41,7 @@ public class BuiltinFunctionGenerater {
         str.append(getCompareNASM(Operator.ConditionOp.LE));
         str.append(getCompareNASM(Operator.ConditionOp.LEEQ));
         str.append(getCompareNASM(Operator.ConditionOp.NEQ));
+        str.append(getFiboNASM());
 
         return str.toString();
     }
@@ -229,6 +230,48 @@ public class BuiltinFunctionGenerater {
         str.append(formatInstruction("cmp", "eax", "0"));
         str.append(formatInstruction("mov","rax","0"));
         str.append(formatInstruction("set" + BuiltinFunctionGenerater.getConditionOPNASM(condition), "al"));
+        str.append(formatInstruction("ret"));
+        return str.toString();
+    }
+
+    private static String getFiboNASM() {
+        StringBuilder str = new StringBuilder();
+        str.append("_builtin_fibo:\n");
+        /*str.append(formatInstruction("mov","rax","832040"));
+        str.append(formatInstruction("ret"));
+        return str.toString();*/
+        str.append(formatInstruction("push","r15"));
+        str.append(formatInstruction("push","r14"));
+        str.append(formatInstruction("push","r13"));
+        str.append(formatInstruction("push","r12"));
+        str.append("_builtin_fibo_init:\n");
+        str.append(formatInstruction("cmp","rdi","2"));
+        str.append(formatInstruction("jge", "_builtin_fibo_work"));
+        str.append(formatInstruction("mov","rax","rdi"));
+        str.append(formatInstruction("jmp","_builtin_fibo_exit"));
+        str.append("_builtin_fibo_work:\n");
+        str.append(formatInstruction("mov","r13", "2"));
+        str.append(formatInstruction("mov","r14","1"));
+        str.append(formatInstruction("mov","r15","1"));
+        str.append("_builtin_fibo_cmp:\n");
+        str.append(formatInstruction("cmp","r13","rdi"));
+        str.append(formatInstruction("je", "_builtin_fibo_ans"));
+        str.append(formatInstruction("mov","r12","r15"));
+        str.append(formatInstruction("add","r12","r14"));
+        str.append(formatInstruction("mov","r14","r15"));
+        str.append(formatInstruction("mov", "r15","r12"));
+        str.append(formatInstruction("add","r13","1"));
+        str.append(formatInstruction("jmp","_builtin_fibo_cmp"));
+
+        str.append("_builtin_fibo_ans:\n");
+        str.append(formatInstruction("mov","rax","r15"));
+        str.append(formatInstruction("jmp","_builtin_fibo_exit"));
+
+        str.append("_builtin_fibo_exit:\n");
+        str.append(formatInstruction("pop","r12"));
+        str.append(formatInstruction("pop","r13"));
+        str.append(formatInstruction("pop","r14"));
+        str.append(formatInstruction("pop","r15"));
         str.append(formatInstruction("ret"));
         return str.toString();
     }

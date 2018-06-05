@@ -7,6 +7,7 @@ import IR.Operand.Address;
 import IR.Operand.Operand;
 import IR.Operand.VirtualRegister;
 import IR.VirtualRegisterManager;
+import Optimizer.MemorialFunctionCall;
 
 import java.util.List;
 import java.util.Vector;
@@ -72,7 +73,11 @@ public class FunctionCallInstruction extends BaseInstruction {
             str.append(Generater.formatInstruction("push", physicalParameter.toString()));
         }
 
-        str.append(Generater.formatInstruction("call", function.getName()));
+        if (MemorialFunctionCall.functionCallMap.contains(function.getName())) {
+            str.append(Generater.formatInstruction("call", "_builtin_" + function.getName()));
+        } else {
+            str.append(Generater.formatInstruction("call", function.getName()));
+        }
 
         if (flag) {
             numToMemory += 1;

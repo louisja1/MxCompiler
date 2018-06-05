@@ -14,6 +14,7 @@ import Error.CompilationError;
 import AST.Constructor.MxStarErrorListener;
 import IR.IR;
 import Generater.Generater;
+import Optimizer.MemorialFunctionCall;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,6 +26,7 @@ public class Main {
         InputStream fin = System.in;
         //InputStream fin = new FileInputStream(file);
         buildAST(fin);
+        MemorialFunctionCall.calcFunction();
         generateIR();
         optimize();
         codegen();
