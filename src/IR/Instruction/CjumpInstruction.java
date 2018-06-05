@@ -10,6 +10,10 @@ public class CjumpInstruction extends BaseInstruction {
     public CjumpInstruction(Operator.ConditionOp _condition, LabelInstruction _target) {
         this.condition = _condition;
         this.target = _target;
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis(){
     }
 
     @Override

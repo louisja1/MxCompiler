@@ -31,6 +31,22 @@ public class BinaryInstruction extends BaseInstruction {
         if (_target instanceof Address && (_op == Operator.BinaryOp.DIV || _op == Operator.BinaryOp.MOD || _op == Operator.BinaryOp.SHL || _op == Operator.BinaryOp.SHR)) {
             throw new RuntimeError("The target of binary div, mod, shl, shr can not be address");
         }
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis() {
+        if (target instanceof VirtualRegister) {
+            defSet.add((VirtualRegister) target);
+            useSet.add((VirtualRegister) target);
+        } else if (target instanceof Address) {
+            useSet.add(((Address) target).base);
+        }
+
+        if (source instanceof VirtualRegister) {
+            useSet.add((VirtualRegister) source);
+        } else if (source instanceof Address) {
+            useSet.add(((Address) source).base);
+        }
     }
 
     @Override

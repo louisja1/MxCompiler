@@ -10,6 +10,11 @@ public class LabelInstruction extends BaseInstruction {
     public LabelInstruction(String name) {
         this.name = name;
         this.block = null;
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis(){
+
     }
 
     public void setBlock(Block _block) {

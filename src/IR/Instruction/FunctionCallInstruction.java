@@ -3,6 +3,7 @@ package IR.Instruction;
 import AST.Type.FunctionType;
 import Generater.Generater;
 import Generater.PhysicalOperand.PhysicalBaseOperand;
+import IR.Operand.Address;
 import IR.Operand.Operand;
 import IR.Operand.VirtualRegister;
 import IR.VirtualRegisterManager;
@@ -19,6 +20,20 @@ public class FunctionCallInstruction extends BaseInstruction {
         this.function = _function;
         this.returnValue = _returnValue;
         this.parameterList = _parameterList;
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis() {
+        if (returnValue != null) {
+            defSet.add(returnValue);
+        }
+        for (Operand tmp : parameterList) {
+            if (tmp instanceof VirtualRegister) {
+                useSet.add((VirtualRegister) tmp);
+            } else if (tmp instanceof Address) {
+                useSet.add(((Address) tmp).base);
+            }
+        }
     }
 
     @Override

@@ -2,7 +2,9 @@ package IR.Instruction;
 
 import Generater.Generater;
 import Generater.PhysicalOperand.PhysicalBaseOperand;
+import IR.Operand.Address;
 import IR.Operand.Operand;
+import IR.Operand.VirtualRegister;
 import IR.VirtualRegisterManager;
 
 public class ReturnInstruction extends BaseInstruction {
@@ -10,6 +12,15 @@ public class ReturnInstruction extends BaseInstruction {
 
     public ReturnInstruction(Operand _returnValue) {
         this.returnValue = _returnValue;
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis(){
+        if (returnValue instanceof VirtualRegister) {
+            useSet.add((VirtualRegister) returnValue);
+        } else if (returnValue instanceof Address) {
+            useSet.add(((Address) returnValue).base);
+        }
     }
 
     @Override

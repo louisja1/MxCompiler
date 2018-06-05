@@ -2,8 +2,10 @@ package IR.Instruction;
 
 import Generater.Generater;
 import Generater.PhysicalOperand.PhysicalBaseOperand;
+import IR.Operand.Address;
 import IR.Operand.Immediate;
 import IR.Operand.Operand;
+import IR.Operand.VirtualRegister;
 import IR.VirtualRegisterManager;
 import Other.Operator;
 import Error.RuntimeError;
@@ -18,6 +20,16 @@ public class UnaryInstruction extends BaseInstruction {
         }
         this.op = _op;
         this.target = _target;
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis() {
+        if (target instanceof VirtualRegister) {
+            defSet.add((VirtualRegister) target);
+            useSet.add((VirtualRegister) target);
+        } else if (target instanceof Address) {
+            useSet.add(((Address) target).base);
+        }
     }
 
     @Override

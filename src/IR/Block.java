@@ -3,6 +3,7 @@ package IR;
 import IR.Instruction.BaseInstruction;
 import IR.Instruction.JumpInstruction;
 import IR.Instruction.LabelInstruction;
+import IR.Operand.VirtualRegister;
 import Other.Indent;
 
 import java.util.HashSet;
@@ -18,6 +19,7 @@ public class Block {
     public List<BaseInstruction> instructionList;
     public Set<Block> blockIn, blockOut;
     public boolean haveJumpInstruction;
+    public Set<VirtualRegister> useSet, defSet, liveIn, liveOut;
 
     public Block(FunctionIR _function, String _blockName, int _id, LabelInstruction _label) {
         this.function = _function;

@@ -2,6 +2,7 @@ import AST.Constructor.AST;
 import AST.Constructor.ClassNameListener;
 import AST.Constructor.DeclarationListener;
 import AST.Constructor.TreeListener;
+import Optimizer.Optimizer;
 import Parser.MxStarLexer;
 import Parser.MxStarParser;
 import org.antlr.v4.runtime.CharStream;
@@ -25,6 +26,7 @@ public class Main {
         //InputStream fin = new FileInputStream(file);
         buildAST(fin);
         generateIR();
+        optimize();
         codegen();
         //System.exit(0);
     }
@@ -60,5 +62,9 @@ public class Main {
 
     public static void codegen() throws Exception {
         Generater.codegen();
+    }
+
+    public static void optimize() throws Exception {
+        Optimizer.optimize();
     }
 }

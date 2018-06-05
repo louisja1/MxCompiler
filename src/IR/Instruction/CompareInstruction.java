@@ -20,6 +20,21 @@ public class CompareInstruction extends BaseInstruction {
         if (_target instanceof Address && _source instanceof Address) {
             throw new RuntimeError("The target and source of compare instruction can not be address at the same time");
         }
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis(){
+        if (target instanceof VirtualRegister) {
+            useSet.add((VirtualRegister) target);
+        } else if (target instanceof Address) {
+            useSet.add(((Address) target).base);
+        }
+
+        if (source instanceof VirtualRegister) {
+            useSet.add((VirtualRegister) source);
+        } else if (source instanceof Address) {
+            useSet.add(((Address) source).base);
+        }
     }
 
     @Override

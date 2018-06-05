@@ -18,6 +18,11 @@ public class CsetInstruction extends BaseInstruction {
         }
         this.condition = _condition;
         this.target = (VirtualRegister) _target;
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis() {
+        defSet.add(target);
     }
 
     @Override
@@ -41,7 +46,7 @@ public class CsetInstruction extends BaseInstruction {
             str.append(Generater.formatInstruction("mov", physicalTarget.toString(), "rax"));
         } else {
             str.append(Generater.formatInstruction("mov", physicalTarget.toString(), "0"));
-            str.append(Generater.formatInstruction("set" + Generater.getConditionOPNASM(condition), physicalTarget.toString(), Generater.lowest8Reg.get(physicalTarget.toString())));
+            str.append(Generater.formatInstruction("set" + Generater.getConditionOPNASM(condition), Generater.lowest8Reg.get(physicalTarget.toString())));
         }
         return str.toString();
     }

@@ -7,6 +7,11 @@ public class JumpInstruction extends BaseInstruction {
 
     public JumpInstruction(LabelInstruction _target) {
         this.target = _target;
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis() {
+
     }
 
     @Override

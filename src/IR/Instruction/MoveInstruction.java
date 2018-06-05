@@ -6,6 +6,7 @@ import Generater.PhysicalOperand.PhysicalBaseOperand;
 import IR.Operand.Address;
 import IR.Operand.Operand;
 import Error.RuntimeError;
+import IR.Operand.VirtualRegister;
 import IR.VirtualRegisterManager;
 
 public class MoveInstruction extends BaseInstruction {
@@ -18,10 +19,28 @@ public class MoveInstruction extends BaseInstruction {
         }
         this.target = _target;
         this.source = _source;
+        livenessAnalysis();
     }
 
     public void modifyTarget(Operand _target) {
         this.target = _target;
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis() {
+        defSet.clear();
+        useSet.clear();
+        if (target instanceof VirtualRegister) {
+            defSet.add((VirtualRegister) target);
+        } else if (target instanceof Address) {
+            useSet.add(((Address) target).base);
+        }
+
+        if (source instanceof VirtualRegister) {
+            useSet.add((VirtualRegister) source);
+        } else if (source instanceof Address) {
+            useSet.add(((Address) source).base);
+        }
     }
 
     @Override
@@ -40,7 +59,7 @@ public class MoveInstruction extends BaseInstruction {
         StringBuilder str = new StringBuilder();
         PhysicalBaseOperand physicalTarget = PhysicalBaseOperand.get(str, target);
         PhysicalBaseOperand physicalSource = PhysicalBaseOperand.get(str, source);
-        if (physicalTarget instanceof PhysicalAddress && physicalTarget instanceof PhysicalAddress) {
+        if (physicalTarget instanceof PhysicalAddress && physicalSource instanceof PhysicalAddress) {
             str.append(Generater.formatInstruction("mov","rax", physicalSource.toString()));
             str.append(Generater.formatInstruction("mov", physicalTarget.toString(),"rax"));
         } else {

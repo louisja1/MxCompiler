@@ -15,6 +15,16 @@ public class AllocateInstruction extends BaseInstruction {
     public AllocateInstruction(VirtualRegister _target, Operand _allocateSize) {
         this.target = _target;
         this.allocateSize = _allocateSize;
+        livenessAnalysis();
+    }
+
+    private void livenessAnalysis() {
+        defSet.add(target);
+        if (allocateSize instanceof VirtualRegister) {
+            useSet.add((VirtualRegister) allocateSize);
+        } else if (allocateSize instanceof Address) {
+            useSet.add(((Address) allocateSize).base);
+        }
     }
 
     @Override

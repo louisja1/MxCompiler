@@ -79,7 +79,7 @@ public class FunctionExpression extends BaseExpression {
             reg.setPhysicalRegisterName(VirtualRegisterManager.parameterRegList.get(i));
             instructionList.add(new MoveInstruction(reg, parameterList.get(i)));
         }
-        for (int i = 0; i < 6 && i < parameterList.size(); i++) {
+        for (int i = 0; i < 6 && parameterList.size() > 0; i++) {
             parameterList.remove(0);
         }
         instructionList.add(new FunctionCallInstruction(function, returnReg, parameterList));

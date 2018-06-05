@@ -11,632 +11,1495 @@
   extern                 puts
 
 section	.text
+shift_l:
+    push                  rbp
+     mov                  rbp,                  rsp
+    push                  rbx
+shift_l.0.enter:
+     mov                  rbx,                  rsi
+     mov                   r8,                  rdi
+     mov                  rcx,                  rbx
+     sal                   r8,                   cl
+     mov                  rdi,                65535
+     mov                  rsi,                65535
+    push                  rdi
+    push                   r8
+    push                  rsi
+    call                 hilo
+     pop                  rsi
+     pop                   r8
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rsi,                   r8
+     and                  rsi,                  rbx
+     mov                  rax,                  rsi
+     jmp       shift_l.1.exit
+shift_l.1.exit:
+     pop                  rbx
+     pop                  rbp
+     ret
+hilo:
+    push                  rbp
+     mov                  rbp,                  rsp
+    push                  rbx
+hilo.0.enter:
+     mov                  rbx,                  rdi
+     sal                  rbx,                   16
+      or                  rsi,                  rbx
+     mov                  rax,                  rsi
+     jmp          hilo.1.exit
+hilo.1.exit:
+     pop                  rbx
+     pop                  rbp
+     ret
+int2chr:
+    push                  rbp
+     mov                  rbp,                  rsp
+     sub                  rsp,                    8
+    push                  rbx
+int2chr.0.enter:
+     mov                  rsi,                  rdi
+     cmp                  rsi,                   32
+     mov                  rbx,                    0
+   setge                   bl
+     cmp                  rbx,                    1
+      je int2chr.1.logic_true
+     jmp int2chr.2.logic_false
+int2chr.1.logic_true:
+     cmp                  rsi,                  126
+     mov                  rbx,                    0
+   setle                   bl
+     jmp int2chr.3.logic_exit
+int2chr.2.logic_false:
+     mov                  rbx,                    0
+     jmp int2chr.3.logic_exit
+int2chr.3.logic_exit:
+     cmp                  rbx,                    1
+      je    int2chr.4.if_true
+     jmp   int2chr.5.if_false
+int2chr.4.if_true:
+     mov                  rbx,                  rsi
+     sub                  rbx,                   32
+     mov                   r8,                  rsi
+     sub                   r8,                   32
+     mov                  rdi,  qword [@asciiTable]
+     mov                  rsi,                  rbx
+     mov                  rdx,                   r8
+    push                  rdi
+    push                   r8
+    push                  rsi
+     sub                  rsp,                    8
+    call   _builtin_substring
+     add                  rsp,                    8
+     pop                  rsi
+     pop                   r8
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rax,                  rbx
+     jmp       int2chr.7.exit
+int2chr.5.if_false:
+     jmp    int2chr.6.if_exit
+int2chr.6.if_exit:
+     mov                  rax,   _string_constant_7
+     jmp       int2chr.7.exit
+int2chr.7.exit:
+     pop                  rbx
+     add                  rsp,                    8
+     pop                  rbp
+     ret
+assert:
+    push                  rbp
+     mov                  rbp,                  rsp
+    push                  rbx
+assert.0.enter:
+     mov                  rbx,                  rdi
+     cmp                  rbx,                    1
+     mov                  rbx,                    0
+   setne                   bl
+     cmp                  rbx,                    1
+      je     assert.1.if_true
+     jmp    assert.2.if_false
+assert.1.if_true:
+     mov                  rdi,   _string_constant_5
+    push                  rdi
+    call              println
+     pop                  rdi
+     jmp     assert.3.if_exit
+assert.2.if_false:
+     jmp     assert.3.if_exit
+assert.3.if_exit:
+     jmp        assert.4.exit
+assert.4.exit:
+     pop                  rbx
+     pop                  rbp
+     ret
 @GlobalDeclaration:
     push                  rbp
      mov                  rbp,                  rsp
+     sub                  rsp,                    8
 @GlobalDeclaration.0.enter:
+     mov  qword [@asciiTable],   _string_constant_8
      jmp @GlobalDeclaration.1.exit
 @GlobalDeclaration.1.exit:
+     add                  rsp,                    8
+     pop                  rbp
+     ret
+shift_r:
+    push                  rbp
+     mov                  rbp,                  rsp
+    push                  rbx
+shift_r.0.enter:
+     mov                   r9,                  rdi
+     mov                   r8,                  rsi
+     mov                  rdi,                32767
+     mov                  rsi,                65535
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+     sub                  rsp,                    8
+    call                 hilo
+     add                  rsp,                    8
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rcx,                   r8
+     sar                  rbx,                   cl
+     sal                  rbx,                    1
+     add                  rbx,                    1
+     mov                  rsi,                   r9
+     mov                  rcx,                   r8
+     sar                  rsi,                   cl
+     and                  rbx,                  rsi
+     mov                  rdi,                65535
+     mov                  rsi,                65535
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+     sub                  rsp,                    8
+    call                 hilo
+     add                  rsp,                    8
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     mov                  rsi,                  rax
+     and                  rbx,                  rsi
+     mov                  rax,                  rbx
+     jmp       shift_r.1.exit
+shift_r.1.exit:
+     pop                  rbx
+     pop                  rbp
+     ret
+xorshift:
+    push                  rbp
+     mov                  rbp,                  rsp
+    push                  rbx
+xorshift.0.enter:
+     mov                  rbx,                  rdi
+     mov                  rdi,                  rbx
+     mov                  rsi,                   13
+    push                  rdi
+    push                  rsi
+     sub                  rsp,                    8
+    call              shift_l
+     add                  rsp,                    8
+     pop                  rsi
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rsi,                  rdi
+     xor                  rsi,                  rbx
+     mov                  rdi,                  rsi
+     mov                  rsi,                   17
+    push                  rdi
+    push                  rsi
+     sub                  rsp,                    8
+    call              shift_r
+     add                  rsp,                    8
+     pop                  rsi
+     pop                  rdi
+     mov                  rsi,                  rax
+     mov                  rbx,                  rdi
+     xor                  rbx,                  rsi
+     mov                  rdi,                  rbx
+     mov                  rsi,                    5
+    push                  rdi
+    push                  rsi
+     sub                  rsp,                    8
+    call              shift_l
+     add                  rsp,                    8
+     pop                  rsi
+     pop                  rdi
+     mov                  rsi,                  rax
+     mov                  rbx,                  rdi
+     xor                  rbx,                  rsi
+     mov                  rdi,                  rbx
+     mov                  rax,                  rdi
+     jmp      xorshift.1.exit
+xorshift.1.exit:
+     pop                  rbx
      pop                  rbp
      ret
 main:
     push                  rbp
      mov                  rbp,                  rsp
     call   @GlobalDeclaration
-     sub                  rsp,                  304
+     sub                  rsp,                   88
+    push                  r12
+    push                  r14
+    push                  r13
+    push                  r15
+    push                  rbx
 main.0.enter:
-    call            getString
-     mov     qword [rbp - 16],                  rax
-     mov                  rdi,     qword [rbp - 16]
-    call    _builtin_parseint
-     mov     qword [rbp - 40],                  rax
-     mov                  rax,     qword [rbp - 40]
-     mov           qword [@n],                  rax
-     mov                  rax,           qword [@n]
-     mov     qword [rbp - 56],                  rax
-     add     qword [rbp - 56],                    1
-     sal     qword [rbp - 56],                    3
-     mov                  rdi,     qword [rbp - 56]
-    call               malloc
-     mov     qword [rbp - 64],                  rax
-     mov                  rax,           qword [@n]
-     mov     qword [rbp - 72],                  rax
-     mov                  rcx,     qword [rbp - 64]
-     mov                  rax,     qword [rbp - 72]
-     mov          qword [rcx],                  rax
-     add     qword [rbp - 64],                    8
-     mov                  rax,     qword [rbp - 64]
-     mov           qword [@a],                  rax
-     mov                  rax,                    0
-     mov     qword [rbp - 88],                  rax
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call               getInt
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  r11,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call               getInt
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call               getInt
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rsi,                  rax
+     mov                  r12,                  rsi
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call               getInt
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rsi,                  rax
+     mov                  r13,                  rsi
+     mov                  rsi,                  r11
+     add                  rsi,                    1
+     mov                  rdi,                  rsi
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rsi,                  rax
+     mov                  r11,                  rsi
+     mov                  rdi,                32767
+     mov                  rsi,                65535
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call                 hilo
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rsi,                  rax
+     mov                  r14,                  rsi
+     mov      qword [rbp - 8],                    0
+     mov                   r9,                    0
+     mov     qword [rbp - 16],                    0
+     mov     qword [rbp - 24],                    0
+     mov                  rsi,                    0
+     mov     qword [rbp - 32],                  rbx
      jmp main.1.loop_condition
 main.1.loop_condition:
-     mov                  rdi,           qword [@a]
-    call        _builtin_size
-     mov    qword [rbp - 112],                  rax
-     mov                  rax,     qword [rbp - 88]
-     cmp                  rax,    qword [rbp - 112]
-     mov                  rax,    qword [rbp - 120]
-     mov                  rax,                    0
-    setl                   al
-     mov    qword [rbp - 120],                  rax
-     cmp    qword [rbp - 120],                    1
+     cmp     qword [rbp - 32],                  r12
+     mov                  rbx,                    0
+    setl                   bl
+     cmp                  rbx,                    1
       je     main.2.loop_body
-     jmp     main.4.loop_exit
+     jmp    main.13.loop_exit
 main.2.loop_body:
-     mov                  rax,     qword [rbp - 88]
-     mov    qword [rbp - 128],                  rax
-     sal    qword [rbp - 128],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 136],                  rax
-     mov                  rax,    qword [rbp - 128]
-     add    qword [rbp - 136],                  rax
-     mov                  rcx,    qword [rbp - 136]
-     mov                  rax,     qword [rbp - 88]
-     mov          qword [rcx],                  rax
-     jmp     main.3.loop_next
-main.3.loop_next:
-     mov                  rax,     qword [rbp - 88]
-     mov    qword [rbp - 144],                  rax
-     add    qword [rbp - 144],                    1
-     mov                  rax,    qword [rbp - 144]
-     mov     qword [rbp - 88],                  rax
-     jmp main.1.loop_condition
-main.4.loop_exit:
-    call             makeHeap
-     mov    qword [rbp - 160],                  rax
-    call             heapSort
-     mov    qword [rbp - 176],                  rax
-     mov                  rax,                    0
-     mov     qword [rbp - 88],                  rax
-     jmp main.5.loop_condition
-main.5.loop_condition:
-     mov                  rdi,           qword [@a]
-    call        _builtin_size
-     mov    qword [rbp - 200],                  rax
-     mov                  rax,     qword [rbp - 88]
-     cmp                  rax,    qword [rbp - 200]
-     mov                  rax,    qword [rbp - 208]
-     mov                  rax,                    0
-    setl                   al
-     mov    qword [rbp - 208],                  rax
-     cmp    qword [rbp - 208],                    1
-      je     main.6.loop_body
-     jmp     main.8.loop_exit
-main.6.loop_body:
-     mov                  rax,     qword [rbp - 88]
-     mov    qword [rbp - 216],                  rax
-     sal    qword [rbp - 216],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 224],                  rax
-     mov                  rax,    qword [rbp - 216]
-     add    qword [rbp - 224],                  rax
-     mov                  rcx,    qword [rbp - 224]
-     mov                  rdi,          qword [rcx]
-    call             toString
-     mov    qword [rbp - 248],                  rax
-     mov                  rdi,    qword [rbp - 248]
-     mov                  rsi,   _string_constant_0
-     sub                  rsp,                    8
-    push   _string_constant_0
-    call         _builtin_add
-     add                  rsp,                   16
-     mov    qword [rbp - 280],                  rax
-     mov                  rdi,    qword [rbp - 280]
-    call                print
-     jmp     main.7.loop_next
-main.7.loop_next:
-     mov                  rax,     qword [rbp - 88]
-     mov    qword [rbp - 296],                  rax
-     add    qword [rbp - 296],                39997
-     mov                  rax,    qword [rbp - 296]
-     mov     qword [rbp - 88],                  rax
-     jmp main.5.loop_condition
-main.8.loop_exit:
-     mov                  rdi,   _string_constant_1
-    call                print
-     mov                  rax,                    0
-     jmp          main.9.exit
-main.9.exit:
-     add                  rsp,                  304
-     pop                  rbp
-     ret
-exchange:
-    push                  rbp
-     mov                  rbp,                  rsp
-     sub                  rsp,                  104
-exchange.0.enter:
+     mov                  rdi,                  r11
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call             xorshift
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  r11,                  rbx
+     mov                  rbx,                  r11
+     and                  rbx,                  r14
+     mov     qword [rbp - 40],                  rbx
+     mov                  rdi,                  r11
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call             xorshift
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  r11,                  rbx
+     mov                  rbx,                  r11
+     and                  rbx,                  r14
+     mov     qword [rbp - 48],                  rbx
+     mov                  rdi,                  r11
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call             xorshift
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  r11,                  rbx
+     mov                  rbx,                  r11
+     and                  rbx,                  r14
+     mov     qword [rbp - 56],                  rbx
+     mov                  rdi,                  r11
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call             xorshift
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  r11,                  rbx
+     mov                  rbx,                  r11
+     and                  rbx,                  r14
+     mov     qword [rbp - 64],                  rbx
+     mov                  rdi,                  r11
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call             xorshift
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  r11,                  rbx
+     mov                  rbx,                  r11
+     and                  rbx,                  r14
+     mov     qword [rbp - 72],                  rbx
+     mov                  rdi,                  r11
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call             xorshift
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  r11,                  rbx
+     mov                  rbx,                  r11
+     and                  rbx,                  r14
+     mov                  r10,                  rbx
+     mov                  rbx,     qword [rbp - 40]
+     xor                  rbx,     qword [rbp - 48]
+     xor                  rbx,     qword [rbp - 56]
+     mov                   r8,                  rbx
+     mov                  rbx,     qword [rbp - 64]
+     xor                  rbx,     qword [rbp - 72]
+     mov                  rsi,                  rbx
+     xor                  rsi,                  r10
+     mov                  rbx,                   r8
+     xor                  rbx,                  rsi
+     mov                   r8,                  rbx
+     mov                  rbx,                   r8
+     and                  rbx,                  r14
+     mov                   r8,                  rbx
+     mov                  rbx,     qword [rbp - 40]
+     add                  rbx,     qword [rbp - 48]
+     add                  rbx,     qword [rbp - 56]
+     add                  rbx,                    1
+     mov                  rsi,                  rbx
+     mov                  rbx,     qword [rbp - 64]
+     add                  rbx,     qword [rbp - 72]
+     mov                  rdi,                  rbx
+     add                  rdi,                  r10
+     mov                  rbx,                  rsi
+     sub                  rbx,                  rdi
+     mov                  rsi,                  rbx
+     mov                  rbx,                  rsi
+     and                  rbx,                  r14
+     mov                  rsi,                  rbx
+     mov                  rdi,     qword [rbp - 40]
      mov                  rax,                  rdi
-     mov      qword [rbp - 8],                  rax
-     mov                  rax,                  rsi
-     mov     qword [rbp - 16],                  rax
-     mov                  rax,      qword [rbp - 8]
-     mov     qword [rbp - 24],                  rax
-     sal     qword [rbp - 24],                    3
-     mov                  rax,           qword [@a]
-     mov     qword [rbp - 32],                  rax
-     mov                  rax,     qword [rbp - 24]
-     add     qword [rbp - 32],                  rax
-     mov                  rcx,     qword [rbp - 32]
-     mov                  rax,          qword [rcx]
-     mov     qword [rbp - 48],                  rax
-     mov                  rax,      qword [rbp - 8]
-     mov     qword [rbp - 56],                  rax
-     sal     qword [rbp - 56],                    3
-     mov                  rax,           qword [@a]
-     mov     qword [rbp - 64],                  rax
-     mov                  rax,     qword [rbp - 56]
-     add     qword [rbp - 64],                  rax
-     mov                  rax,     qword [rbp - 16]
-     mov     qword [rbp - 72],                  rax
-     sal     qword [rbp - 72],                    3
-     mov                  rax,           qword [@a]
-     mov     qword [rbp - 80],                  rax
-     mov                  rax,     qword [rbp - 72]
-     add     qword [rbp - 80],                  rax
-     mov                  rcx,     qword [rbp - 80]
-     mov                  rax,          qword [rcx]
-     mov     qword [rbp - 88],                  rax
-     mov                  rcx,     qword [rbp - 64]
-     mov                  rax,     qword [rbp - 88]
-     mov          qword [rcx],                  rax
-     mov                  rax,     qword [rbp - 16]
-     mov     qword [rbp - 96],                  rax
-     sal     qword [rbp - 96],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 104],                  rax
-     mov                  rax,     qword [rbp - 96]
-     add    qword [rbp - 104],                  rax
-     mov                  rcx,    qword [rbp - 104]
-     mov                  rax,     qword [rbp - 48]
-     mov          qword [rcx],                  rax
-     jmp      exchange.1.exit
-exchange.1.exit:
-     add                  rsp,                  104
-     pop                  rbp
-     ret
-adjustHeap:
-    push                  rbp
-     mov                  rbp,                  rsp
-     sub                  rsp,                  312
-adjustHeap.0.enter:
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rdi,                  rdx
+     mov                  rbx,     qword [rbp - 48]
+     mov                  rax,                  rbx
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
+    imul                  rdi,                  rbx
+     mov                  rbx,     qword [rbp - 56]
+     mov                  rax,                  rbx
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
+    imul                  rdi,                  rbx
+     mov     qword [rbp - 80],                  rdi
+     mov                  rbx,     qword [rbp - 64]
+     mov                  rax,                  rbx
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
+     mov                  rdi,     qword [rbp - 80]
+    imul                  rdi,                  rbx
+     mov                  rbx,     qword [rbp - 72]
+     mov                  rax,                  rbx
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
+    imul                  rdi,                  rbx
+     mov                  r15,                  r10
+     mov                  rax,                  r15
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  r15,                  rdx
+     mov                  rbx,                  rdi
+    imul                  rbx,                  r15
+     mov     qword [rbp - 80],                  rbx
+     mov                  rbx,     qword [rbp - 80]
+     and                  rbx,                  r14
+     mov     qword [rbp - 80],                  rbx
+     mov                  rbx,     qword [rbp - 40]
+     xor                  rbx,     qword [rbp - 48]
+     mov                  rdi,                  rbx
+     xor                  rdi,     qword [rbp - 56]
+     mov                  rbx,     qword [rbp - 64]
+     xor                  rbx,     qword [rbp - 72]
+     xor                  rbx,                  r10
+     cmp                  rdi,                  rbx
+     mov                  rbx,                    0
+    setg                   bl
+     cmp                  rbx,                    1
+      je       main.3.if_true
+     jmp      main.4.if_false
+main.3.if_true:
+     mov                  rbx,     qword [rbp - 40]
+     add                  rbx,     qword [rbp - 48]
+     and                  rbx,                  r14
+     mov                  rdi,                  rbx
      mov                  rax,                  rdi
-     mov      qword [rbp - 8],                  rax
-     mov                  rax,                    0
-     mov     qword [rbp - 16],                  rax
-     mov                  rax,                    0
-     mov     qword [rbp - 24],                  rax
-     mov                  rax,                    0
-     mov     qword [rbp - 32],                  rax
-     jmp adjustHeap.1.loop_condition
-adjustHeap.1.loop_condition:
-     mov                  rax,     qword [rbp - 16]
-     mov     qword [rbp - 40],                  rax
-     sal     qword [rbp - 40],                    1
-     mov                  rax,     qword [rbp - 40]
-     cmp                  rax,      qword [rbp - 8]
-     mov                  rax,     qword [rbp - 48]
-     mov                  rax,                    0
-    setl                   al
-     mov     qword [rbp - 48],                  rax
-     cmp     qword [rbp - 48],                    1
-      je adjustHeap.2.loop_body
-     jmp adjustHeap.12.loop_exit
-adjustHeap.2.loop_body:
-     mov                  rax,     qword [rbp - 16]
-     mov     qword [rbp - 56],                  rax
-     sal     qword [rbp - 56],                    1
-     mov                  rax,     qword [rbp - 56]
-     mov     qword [rbp - 24],                  rax
-     mov                  rax,     qword [rbp - 16]
-     mov     qword [rbp - 64],                  rax
-     sal     qword [rbp - 64],                    1
-     mov                  rax,     qword [rbp - 64]
-     mov     qword [rbp - 72],                  rax
-     add     qword [rbp - 72],                    1
-     mov                  rax,     qword [rbp - 72]
-     cmp                  rax,      qword [rbp - 8]
-     mov                  rax,     qword [rbp - 80]
-     mov                  rax,                    0
-    setl                   al
-     mov     qword [rbp - 80],                  rax
-     cmp     qword [rbp - 80],                    1
-      je adjustHeap.3.logic_true
-     jmp adjustHeap.4.logic_false
-adjustHeap.3.logic_true:
-     mov                  rax,     qword [rbp - 16]
-     mov     qword [rbp - 88],                  rax
-     sal     qword [rbp - 88],                    1
-     mov                  rax,     qword [rbp - 88]
-     mov     qword [rbp - 96],                  rax
-     add     qword [rbp - 96],                    1
-     mov                  rax,     qword [rbp - 96]
-     mov    qword [rbp - 104],                  rax
-     sal    qword [rbp - 104],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 112],                  rax
-     mov                  rax,    qword [rbp - 104]
-     add    qword [rbp - 112],                  rax
-     mov                  rax,     qword [rbp - 16]
-     mov    qword [rbp - 128],                  rax
-     sal    qword [rbp - 128],                    1
-     mov                  rax,    qword [rbp - 128]
-     mov    qword [rbp - 136],                  rax
-     sal    qword [rbp - 136],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 144],                  rax
-     mov                  rax,    qword [rbp - 136]
-     add    qword [rbp - 144],                  rax
-     mov                  rcx,    qword [rbp - 112]
-     mov                  rax,          qword [rcx]
-     mov    qword [rbp - 152],                  rax
-     mov                  rcx,    qword [rbp - 144]
-     mov                  rax,    qword [rbp - 152]
-     cmp                  rax,          qword [rcx]
-     mov                  rax,    qword [rbp - 160]
-     mov                  rax,                    0
-    setl                   al
-     mov    qword [rbp - 160],                  rax
-     mov                  rax,    qword [rbp - 160]
-     mov    qword [rbp - 168],                  rax
-     jmp adjustHeap.5.logic_exit
-adjustHeap.4.logic_false:
-     mov                  rax,                    0
-     mov    qword [rbp - 168],                  rax
-     jmp adjustHeap.5.logic_exit
-adjustHeap.5.logic_exit:
-     cmp    qword [rbp - 168],                    1
-      je adjustHeap.6.if_true
-     jmp adjustHeap.7.if_false
-adjustHeap.6.if_true:
-     mov                  rax,     qword [rbp - 16]
-     mov    qword [rbp - 176],                  rax
-     sal    qword [rbp - 176],                    1
-     mov                  rax,    qword [rbp - 176]
-     mov    qword [rbp - 184],                  rax
-     add    qword [rbp - 184],                    1
-     mov                  rax,    qword [rbp - 184]
-     mov     qword [rbp - 24],                  rax
-     jmp adjustHeap.8.if_exit
-adjustHeap.7.if_false:
-     jmp adjustHeap.8.if_exit
-adjustHeap.8.if_exit:
-     mov                  rax,     qword [rbp - 16]
-     mov    qword [rbp - 192],                  rax
-     sal    qword [rbp - 192],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 200],                  rax
-     mov                  rax,    qword [rbp - 192]
-     add    qword [rbp - 200],                  rax
-     mov                  rax,     qword [rbp - 24]
-     mov    qword [rbp - 208],                  rax
-     sal    qword [rbp - 208],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 216],                  rax
-     mov                  rax,    qword [rbp - 208]
-     add    qword [rbp - 216],                  rax
-     mov                  rcx,    qword [rbp - 200]
-     mov                  rax,          qword [rcx]
-     mov    qword [rbp - 224],                  rax
-     mov                  rcx,    qword [rbp - 216]
-     mov                  rax,    qword [rbp - 224]
-     cmp                  rax,          qword [rcx]
-     mov                  rax,    qword [rbp - 232]
-     mov                  rax,                    0
-    setg                   al
-     mov    qword [rbp - 232],                  rax
-     cmp    qword [rbp - 232],                    1
-      je adjustHeap.9.if_true
-     jmp adjustHeap.10.if_false
-adjustHeap.9.if_true:
-     mov                  rax,     qword [rbp - 16]
-     mov    qword [rbp - 240],                  rax
-     sal    qword [rbp - 240],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 248],                  rax
-     mov                  rax,    qword [rbp - 240]
-     add    qword [rbp - 248],                  rax
-     mov                  rcx,    qword [rbp - 248]
-     mov                  rax,          qword [rcx]
-     mov    qword [rbp - 256],                  rax
-     mov                  rax,     qword [rbp - 16]
-     mov    qword [rbp - 264],                  rax
-     sal    qword [rbp - 264],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 272],                  rax
-     mov                  rax,    qword [rbp - 264]
-     add    qword [rbp - 272],                  rax
-     mov                  rax,     qword [rbp - 24]
-     mov    qword [rbp - 280],                  rax
-     sal    qword [rbp - 280],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 288],                  rax
-     mov                  rax,    qword [rbp - 280]
-     add    qword [rbp - 288],                  rax
-     mov                  rcx,    qword [rbp - 288]
-     mov                  rax,          qword [rcx]
-     mov    qword [rbp - 296],                  rax
-     mov                  rcx,    qword [rbp - 272]
-     mov                  rax,    qword [rbp - 296]
-     mov          qword [rcx],                  rax
-     mov                  rax,     qword [rbp - 24]
-     mov    qword [rbp - 304],                  rax
-     sal    qword [rbp - 304],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 312],                  rax
-     mov                  rax,    qword [rbp - 304]
-     add    qword [rbp - 312],                  rax
-     mov                  rcx,    qword [rbp - 312]
-     mov                  rax,    qword [rbp - 256]
-     mov          qword [rcx],                  rax
-     mov                  rax,     qword [rbp - 24]
-     mov     qword [rbp - 16],                  rax
-     jmp adjustHeap.11.if_exit
-adjustHeap.10.if_false:
-     jmp adjustHeap.12.loop_exit
-adjustHeap.11.if_exit:
-     jmp adjustHeap.1.loop_condition
-adjustHeap.12.loop_exit:
-     mov                  rax,                    0
-     jmp   adjustHeap.13.exit
-adjustHeap.13.exit:
-     add                  rsp,                  312
-     pop                  rbp
-     ret
-heapSort:
-    push                  rbp
-     mov                  rbp,                  rsp
-     sub                  rsp,                  192
-heapSort.0.enter:
-     mov                  rax,                    0
-     mov      qword [rbp - 8],                  rax
-     mov                  rax,                    0
-     mov     qword [rbp - 16],                  rax
-     jmp heapSort.1.loop_condition
-heapSort.1.loop_condition:
-     mov                  rax,     qword [rbp - 16]
-     cmp                  rax,           qword [@n]
-     mov                  rax,     qword [rbp - 32]
-     mov                  rax,                    0
-    setl                   al
-     mov     qword [rbp - 32],                  rax
-     cmp     qword [rbp - 32],                    1
-      je heapSort.2.loop_body
-     jmp heapSort.4.loop_exit
-heapSort.2.loop_body:
-     mov                  rax,                    0
-     mov     qword [rbp - 40],                  rax
-     sal     qword [rbp - 40],                    3
-     mov                  rax,           qword [@a]
-     mov     qword [rbp - 48],                  rax
-     mov                  rax,     qword [rbp - 40]
-     add     qword [rbp - 48],                  rax
-     mov                  rcx,     qword [rbp - 48]
-     mov                  rax,          qword [rcx]
-     mov      qword [rbp - 8],                  rax
-     mov                  rax,                    0
-     mov     qword [rbp - 64],                  rax
-     sal     qword [rbp - 64],                    3
-     mov                  rax,           qword [@a]
-     mov     qword [rbp - 72],                  rax
-     mov                  rax,     qword [rbp - 64]
-     add     qword [rbp - 72],                  rax
-     mov                  rax,           qword [@n]
-     mov     qword [rbp - 80],                  rax
-     mov                  rax,     qword [rbp - 16]
-     sub     qword [rbp - 80],                  rax
-     mov                  rax,     qword [rbp - 80]
-     mov     qword [rbp - 88],                  rax
-     sub     qword [rbp - 88],                    1
-     mov                  rax,     qword [rbp - 88]
-     mov     qword [rbp - 96],                  rax
-     sal     qword [rbp - 96],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 104],                  rax
-     mov                  rax,     qword [rbp - 96]
-     add    qword [rbp - 104],                  rax
-     mov                  rcx,    qword [rbp - 104]
-     mov                  rax,          qword [rcx]
-     mov    qword [rbp - 112],                  rax
-     mov                  rcx,     qword [rbp - 72]
-     mov                  rax,    qword [rbp - 112]
-     mov          qword [rcx],                  rax
-     mov                  rax,           qword [@n]
-     mov    qword [rbp - 120],                  rax
-     mov                  rax,     qword [rbp - 16]
-     sub    qword [rbp - 120],                  rax
-     mov                  rax,    qword [rbp - 120]
-     mov    qword [rbp - 128],                  rax
-     sub    qword [rbp - 128],                    1
-     mov                  rax,    qword [rbp - 128]
-     mov    qword [rbp - 136],                  rax
-     sal    qword [rbp - 136],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 144],                  rax
-     mov                  rax,    qword [rbp - 136]
-     add    qword [rbp - 144],                  rax
-     mov                  rcx,    qword [rbp - 144]
-     mov                  rax,      qword [rbp - 8]
-     mov          qword [rcx],                  rax
-     mov                  rax,           qword [@n]
-     mov    qword [rbp - 152],                  rax
-     mov                  rax,     qword [rbp - 16]
-     sub    qword [rbp - 152],                  rax
-     mov                  rax,    qword [rbp - 152]
-     mov    qword [rbp - 160],                  rax
-     sub    qword [rbp - 160],                    1
-     mov                  rdi,    qword [rbp - 160]
-    call           adjustHeap
-     mov    qword [rbp - 184],                  rax
-     jmp heapSort.3.loop_next
-heapSort.3.loop_next:
-     mov                  rax,     qword [rbp - 16]
-     mov    qword [rbp - 192],                  rax
-     add    qword [rbp - 192],                    1
-     mov                  rax,    qword [rbp - 192]
-     mov     qword [rbp - 16],                  rax
-     jmp heapSort.1.loop_condition
-heapSort.4.loop_exit:
-     mov                  rax,                    0
-     jmp      heapSort.5.exit
-heapSort.5.exit:
-     add                  rsp,                  192
-     pop                  rbp
-     ret
-makeHeap:
-    push                  rbp
-     mov                  rbp,                  rsp
-     sub                  rsp,                  264
-makeHeap.0.enter:
-     mov                  rax,           qword [@n]
-     mov      qword [rbp - 8],                  rax
-     sub      qword [rbp - 8],                    1
-     mov                  rax,      qword [rbp - 8]
-     mov     qword [rbp - 24],                  rax
-     sar     qword [rbp - 24],                    1
-     mov                  rax,     qword [rbp - 24]
-     mov     qword [rbp - 32],                  rax
-     mov                  rax,                    0
-     mov     qword [rbp - 40],                  rax
-     mov                  rax,                    0
-     mov     qword [rbp - 48],                  rax
-     jmp makeHeap.1.loop_condition
-makeHeap.1.loop_condition:
-     cmp     qword [rbp - 32],                    0
-     mov                  rax,     qword [rbp - 56]
-     mov                  rax,                    0
-   setge                   al
-     mov     qword [rbp - 56],                  rax
-     cmp     qword [rbp - 56],                    1
-      je makeHeap.2.loop_body
-     jmp makeHeap.12.loop_exit
-makeHeap.2.loop_body:
-     mov                  rax,     qword [rbp - 32]
-     mov     qword [rbp - 64],                  rax
-     sal     qword [rbp - 64],                    1
-     mov                  rax,     qword [rbp - 64]
-     mov     qword [rbp - 48],                  rax
-     mov                  rax,     qword [rbp - 32]
-     mov     qword [rbp - 72],                  rax
-     sal     qword [rbp - 72],                    1
-     mov                  rax,     qword [rbp - 72]
-     mov     qword [rbp - 80],                  rax
-     add     qword [rbp - 80],                    1
-     mov                  rax,     qword [rbp - 80]
-     cmp                  rax,           qword [@n]
-     mov                  rax,     qword [rbp - 88]
-     mov                  rax,                    0
-    setl                   al
-     mov     qword [rbp - 88],                  rax
-     cmp     qword [rbp - 88],                    1
-      je makeHeap.3.logic_true
-     jmp makeHeap.4.logic_false
-makeHeap.3.logic_true:
-     mov                  rax,     qword [rbp - 32]
-     mov     qword [rbp - 96],                  rax
-     sal     qword [rbp - 96],                    1
-     mov                  rax,     qword [rbp - 96]
-     mov    qword [rbp - 104],                  rax
-     add    qword [rbp - 104],                    1
-     mov                  rax,    qword [rbp - 104]
-     mov    qword [rbp - 112],                  rax
-     sal    qword [rbp - 112],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 120],                  rax
-     mov                  rax,    qword [rbp - 112]
-     add    qword [rbp - 120],                  rax
-     mov                  rax,     qword [rbp - 32]
-     mov    qword [rbp - 136],                  rax
-     sal    qword [rbp - 136],                    1
-     mov                  rax,    qword [rbp - 136]
-     mov    qword [rbp - 144],                  rax
-     sal    qword [rbp - 144],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 152],                  rax
-     mov                  rax,    qword [rbp - 144]
-     add    qword [rbp - 152],                  rax
-     mov                  rcx,    qword [rbp - 120]
-     mov                  rax,          qword [rcx]
-     mov    qword [rbp - 160],                  rax
-     mov                  rcx,    qword [rbp - 152]
-     mov                  rax,    qword [rbp - 160]
-     cmp                  rax,          qword [rcx]
-     mov                  rax,    qword [rbp - 168]
-     mov                  rax,                    0
-    setl                   al
-     mov    qword [rbp - 168],                  rax
-     mov                  rax,    qword [rbp - 168]
-     mov    qword [rbp - 176],                  rax
-     jmp makeHeap.5.logic_exit
-makeHeap.4.logic_false:
-     mov                  rax,                    0
-     mov    qword [rbp - 176],                  rax
-     jmp makeHeap.5.logic_exit
-makeHeap.5.logic_exit:
-     cmp    qword [rbp - 176],                    1
-      je   makeHeap.6.if_true
-     jmp  makeHeap.7.if_false
-makeHeap.6.if_true:
-     mov                  rax,     qword [rbp - 32]
-     mov    qword [rbp - 184],                  rax
-     sal    qword [rbp - 184],                    1
-     mov                  rax,    qword [rbp - 184]
-     mov    qword [rbp - 192],                  rax
-     add    qword [rbp - 192],                    1
-     mov                  rax,    qword [rbp - 192]
-     mov     qword [rbp - 48],                  rax
-     jmp   makeHeap.8.if_exit
-makeHeap.7.if_false:
-     jmp   makeHeap.8.if_exit
-makeHeap.8.if_exit:
-     mov                  rax,     qword [rbp - 32]
-     mov    qword [rbp - 200],                  rax
-     sal    qword [rbp - 200],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 208],                  rax
-     mov                  rax,    qword [rbp - 200]
-     add    qword [rbp - 208],                  rax
-     mov                  rax,     qword [rbp - 48]
-     mov    qword [rbp - 216],                  rax
-     sal    qword [rbp - 216],                    3
-     mov                  rax,           qword [@a]
-     mov    qword [rbp - 224],                  rax
-     mov                  rax,    qword [rbp - 216]
-     add    qword [rbp - 224],                  rax
-     mov                  rcx,    qword [rbp - 208]
-     mov                  rax,          qword [rcx]
-     mov    qword [rbp - 232],                  rax
-     mov                  rcx,    qword [rbp - 224]
-     mov                  rax,    qword [rbp - 232]
-     cmp                  rax,          qword [rcx]
-     mov                  rax,    qword [rbp - 240]
-     mov                  rax,                    0
-    setg                   al
-     mov    qword [rbp - 240],                  rax
-     cmp    qword [rbp - 240],                    1
-      je   makeHeap.9.if_true
-     jmp makeHeap.10.if_false
-makeHeap.9.if_true:
-     mov                  rdi,     qword [rbp - 32]
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rdi,                  rdx
+     mov                  rbx,     qword [rbp - 56]
+     mov                  rax,                  rbx
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
+     add                  rbx,                    1
+     mov                  rax,                  rdi
+     mov                  rcx,                  rbx
+     cdq
+    idiv                  ecx
+     mov                  rdi,                  rdx
+     mov                  r15,                  rdi
+     jmp       main.5.if_exit
+main.4.if_false:
+     mov                  rbx,     qword [rbp - 56]
+     add                  rbx,     qword [rbp - 48]
+     and                  rbx,                  r14
+     mov                  rdi,                  rbx
+     mov                  rax,                  rdi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rdi,                  rdx
+     mov                  rbx,     qword [rbp - 40]
+     mov                  rax,                  rbx
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
+     add                  rbx,                    1
+     mov                  rax,                  rdi
+     mov                  rcx,                  rbx
+     cdq
+    idiv                  ecx
+     mov                  rdi,                  rdx
+     mov                  r15,                  rdi
+     jmp       main.5.if_exit
+main.5.if_exit:
+     mov                  rbx,                   r8
+     xor                  rbx,                10001
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rdi,                  rax
+     mov                  rbx,      qword [rbp - 8]
+     add                  rbx,                  rdi
+     mov      qword [rbp - 8],                  rbx
+     mov                  rbx,                  rsi
+     xor                  rbx,                10002
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rsi,                  rax
+     mov                  rbx,                   r9
+     add                  rbx,                  rsi
+     mov                   r9,                  rbx
+     mov                  rbx,     qword [rbp - 80]
+     xor                  rbx,                10003
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rsi,                  rax
+     mov                  rbx,     qword [rbp - 16]
+     add                  rbx,                  rsi
+     mov     qword [rbp - 16],                  rbx
+     mov                  rbx,                  r15
+     xor                  rbx,                10004
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rsi,     qword [rbp - 24]
+     add                  rsi,                  rbx
+     mov     qword [rbp - 24],                  rsi
+     mov                  rbx,     qword [rbp - 64]
+     xor                  rbx,     qword [rbp - 48]
+     xor                  rbx,     qword [rbp - 56]
+     mov                  r15,                  rbx
+     mov                  rbx,                  r15
+     xor                  rbx,     qword [rbp - 40]
+     xor                  rbx,                  r10
+     xor                  rbx,     qword [rbp - 72]
+     mov                  r15,                  rbx
+     mov                  rbx,                  r15
+     and                  rbx,                  r14
+     mov                  r15,                  rbx
+     mov                  rbx,     qword [rbp - 64]
+     neg                  rbx
+     add                  rbx,     qword [rbp - 48]
+     add                  rbx,     qword [rbp - 56]
+     mov     qword [rbp - 88],                  rbx
+     mov                  rbx,     qword [rbp - 88]
+     add                  rbx,     qword [rbp - 40]
+     sub                  rbx,                  r10
+     sub                  rbx,     qword [rbp - 72]
+     add                  rbx,                    1
+     mov     qword [rbp - 88],                  rbx
+     mov                  rbx,     qword [rbp - 88]
+     and                  rbx,                  r14
+     mov     qword [rbp - 88],                  rbx
+     mov                  rbx,     qword [rbp - 64]
+     mov                  rax,                  rbx
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
      mov                  rsi,     qword [rbp - 48]
-    push     qword [rbp - 48]
-    call             exchange
-     add                  rsp,                    8
-     jmp  makeHeap.11.if_exit
-makeHeap.10.if_false:
-     jmp  makeHeap.11.if_exit
-makeHeap.11.if_exit:
-     mov                  rax,     qword [rbp - 32]
-     mov    qword [rbp - 264],                  rax
-     sub    qword [rbp - 264],                    1
-     mov                  rax,    qword [rbp - 264]
-     mov     qword [rbp - 32],                  rax
-     jmp makeHeap.1.loop_condition
-makeHeap.12.loop_exit:
+     mov                  rax,                  rsi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+    imul                  rbx,                  rsi
+     mov                  rsi,     qword [rbp - 56]
+     mov                  rax,                  rsi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+    imul                  rbx,                  rsi
+     mov                  rsi,                  rbx
+     mov                  rdi,     qword [rbp - 40]
+     mov                  rax,                  rdi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rdi,                  rdx
+     mov                  rbx,                  rsi
+    imul                  rbx,                  rdi
+     mov                  rsi,                  r10
+     mov                  rax,                  rsi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+    imul                  rbx,                  rsi
+     mov                  rsi,     qword [rbp - 72]
+     mov                  rax,                  rsi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+    imul                  rbx,                  rsi
+     mov                  rsi,                  rbx
+     mov                  rbx,                  rsi
+     and                  rbx,                  r14
+     mov                  rsi,                  rbx
+     mov                  rbx,     qword [rbp - 40]
+     xor                  rbx,     qword [rbp - 48]
+     xor                  rbx,     qword [rbp - 56]
+     mov                  rdi,     qword [rbp - 64]
+     xor                  rdi,     qword [rbp - 72]
+     xor                  rdi,                  r10
+     cmp                  rbx,                  rdi
+     mov                  rbx,                    0
+   setle                   bl
+     cmp                  rbx,                    1
+      je       main.6.if_true
+     jmp      main.7.if_false
+main.6.if_true:
+     mov                  rbx,     qword [rbp - 56]
+     add                  rbx,     qword [rbp - 48]
+     and                  rbx,                  r14
+     mov                  rdi,                  rbx
+     mov                  rax,                  rdi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rdi,                  rdx
+     mov                  rbx,     qword [rbp - 40]
+     mov                  rax,                  rbx
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
+     mov                   r8,                  rbx
+     add                   r8,                    1
+     mov                  rbx,                  rdi
+     mov                  rax,                  rbx
+     mov                  rcx,                   r8
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
+     mov                   r8,                  rbx
+     jmp       main.8.if_exit
+main.7.if_false:
+     mov                  rbx,     qword [rbp - 40]
+     add                  rbx,     qword [rbp - 48]
+     and                  rbx,                  r14
+     mov                  rdi,                  rbx
+     mov                  rax,                  rdi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rdi,                  rdx
+     mov                  rbx,     qword [rbp - 56]
+     mov                  rax,                  rbx
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
+     mov                   r8,                  rbx
+     add                   r8,                    1
+     mov                  rbx,                  rdi
+     mov                  rax,                  rbx
+     mov                  rcx,                   r8
+     cdq
+    idiv                  ecx
+     mov                  rbx,                  rdx
+     mov                   r8,                  rbx
+     jmp       main.8.if_exit
+main.8.if_exit:
+     mov                  rbx,                  r15
+     xor                  rbx,                10001
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rdi,                  rax
+     mov                  rbx,      qword [rbp - 8]
+     add                  rbx,                  rdi
+     mov      qword [rbp - 8],                  rbx
+     mov                  rbx,     qword [rbp - 88]
+     xor                  rbx,                10002
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rdi,                   r9
+     add                  rdi,                  rbx
+     mov                   r9,                  rdi
+     mov                  rbx,                  rsi
+     xor                  rbx,                10003
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rsi,     qword [rbp - 16]
+     add                  rsi,                  rbx
+     mov     qword [rbp - 16],                  rsi
+     mov                  rbx,                   r8
+     xor                  rbx,                10004
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rsi,     qword [rbp - 24]
+     add                  rsi,                  rbx
+     mov     qword [rbp - 24],                  rsi
+     mov                  rbx,     qword [rbp - 64]
+     xor                  rbx,     qword [rbp - 40]
+     xor                  rbx,     qword [rbp - 56]
+     xor                  rbx,     qword [rbp - 48]
+     xor                  rbx,                  r10
+     xor                  rbx,     qword [rbp - 72]
+     and                  rbx,                  r14
+     mov                  rsi,     qword [rbp - 64]
+     sub                  rsi,     qword [rbp - 48]
+     mov                  rdi,     qword [rbp - 56]
+     neg                  rdi
+     add                  rsi,                  rdi
+     mov                  r15,                  rsi
+     mov                  rsi,                  r15
+     sub                  rsi,     qword [rbp - 40]
+     add                  rsi,                  r10
+     add                  rsi,     qword [rbp - 72]
+     sub                  rsi,                    1
+     mov                  r15,                  rsi
+     mov                  rsi,                  r15
+     neg                  rsi
+     and                  rsi,                  r14
+     mov                  r15,                  rsi
+     mov                  rdi,     qword [rbp - 64]
+     mov                  rax,                  rdi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rdi,                  rdx
+     mov                  rsi,     qword [rbp - 72]
+     mov                  rax,                  rsi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+    imul                  rdi,                  rsi
+     mov                   r8,                  r10
+     mov                  rax,                   r8
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                   r8,                  rdx
+     mov                  rsi,                  rdi
+    imul                  rsi,                   r8
+     mov                   r8,                  rsi
+     mov                  rsi,     qword [rbp - 40]
+     mov                  rax,                  rsi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+     mov                  rdi,                   r8
+    imul                  rdi,                  rsi
+     mov                  rsi,     qword [rbp - 48]
+     mov                  rax,                  rsi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+    imul                  rdi,                  rsi
+     mov                  rsi,     qword [rbp - 56]
+     mov                  rax,                  rsi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+    imul                  rdi,                  rsi
+     mov                   r8,                  rdi
+     mov                  rsi,                   r8
+     and                  rsi,                  r14
+     mov                   r8,                  rsi
+     mov                  rsi,     qword [rbp - 64]
+     xor                  rsi,     qword [rbp - 72]
+     mov                  rdi,                  rsi
+     xor                  rdi,                  r10
+     mov                  rsi,     qword [rbp - 56]
+     xor                  rsi,     qword [rbp - 48]
+     xor                  rsi,     qword [rbp - 40]
+     cmp                  rdi,                  rsi
+     mov                  rsi,                    0
+    setl                  sil
+     cmp                  rsi,                    1
+      je       main.9.if_true
+     jmp     main.10.if_false
+main.9.if_true:
+     mov                  rsi,     qword [rbp - 40]
+     add                  rsi,     qword [rbp - 48]
+     and                  rsi,                  r14
+     mov                  rax,                  rsi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+     mov                  rdi,     qword [rbp - 56]
+     mov                  rax,                  rdi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rdi,                  rdx
+     add                  rdi,                    1
+     mov                  rax,                  rsi
+     mov                  rcx,                  rdi
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+     jmp      main.11.if_exit
+main.10.if_false:
+     mov                  rsi,     qword [rbp - 56]
+     add                  rsi,     qword [rbp - 48]
+     and                  rsi,                  r14
+     mov                  r10,                  rsi
+     mov                  rax,                  r10
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  r10,                  rdx
+     mov                  rsi,     qword [rbp - 40]
+     mov                  rax,                  rsi
+     mov                  rcx,                  r13
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+     mov                  rdi,                  rsi
+     add                  rdi,                    1
+     mov                  rsi,                  r10
+     mov                  rax,                  rsi
+     mov                  rcx,                  rdi
+     cdq
+    idiv                  ecx
+     mov                  rsi,                  rdx
+     jmp      main.11.if_exit
+main.11.if_exit:
+     xor                  rbx,                10001
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rdi,                  rax
+     mov                  rbx,      qword [rbp - 8]
+     add                  rbx,                  rdi
+     mov      qword [rbp - 8],                  rbx
+     mov                  rbx,                  r15
+     xor                  rbx,                10002
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rdi,                  rax
+     mov                  rbx,                   r9
+     add                  rbx,                  rdi
+     mov                   r9,                  rbx
+     mov                  rbx,                   r8
+     xor                  rbx,                10003
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rdi,     qword [rbp - 16]
+     add                  rdi,                  rbx
+     mov     qword [rbp - 16],                  rdi
+     mov                  rbx,                  rsi
+     xor                  rbx,                10004
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call           xorshift10
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rsi,     qword [rbp - 24]
+     add                  rsi,                  rbx
+     mov     qword [rbp - 24],                  rsi
+     jmp    main.12.loop_next
+main.12.loop_next:
+     mov                  rbx,     qword [rbp - 32]
+     add     qword [rbp - 32],                    1
+     jmp main.1.loop_condition
+main.13.loop_exit:
+     mov                  rdi,      qword [rbp - 8]
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call          toStringHex
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+     mov                  rsi,   _string_constant_0
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call         _builtin_add
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call                print
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rdi,                   r9
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call          toStringHex
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+     mov                  rsi,   _string_constant_1
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call         _builtin_add
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call                print
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rdi,     qword [rbp - 16]
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call          toStringHex
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+     mov                  rsi,   _string_constant_2
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call         _builtin_add
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call                print
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rdi,     qword [rbp - 24]
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call          toStringHex
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+     mov                  rsi,   _string_constant_3
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call         _builtin_add
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call                print
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
+     mov                  rdi,   _string_constant_4
+    push                  r10
+    push                  r11
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+    call              println
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     pop                  r11
+     pop                  r10
      mov                  rax,                    0
-     jmp     makeHeap.13.exit
-makeHeap.13.exit:
-     add                  rsp,                  264
+     jmp         main.14.exit
+main.14.exit:
+     pop                  rbx
+     pop                  r15
+     pop                  r13
+     pop                  r14
+     pop                  r12
+     add                  rsp,                   88
+     pop                  rbp
+     ret
+xorshift10:
+    push                  rbp
+     mov                  rbp,                  rsp
+    push                  rbx
+xorshift10.0.enter:
+     mov                  rbx,                  rdi
+     mov                  rdi,                  rbx
+    push                  rdi
+    call             xorshift
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  rdi
+    call             xorshift
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  rdi
+    call             xorshift
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  rdi
+    call             xorshift
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  rdi
+    call             xorshift
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  rdi
+    call             xorshift
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  rdi
+    call             xorshift
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  rdi
+    call             xorshift
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  rdi
+    call             xorshift
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rdi,                  rbx
+    push                  rdi
+    call             xorshift
+     pop                  rdi
+     mov                  rbx,                  rax
+     mov                  rax,                  rbx
+     jmp    xorshift10.1.exit
+xorshift10.1.exit:
+     pop                  rbx
+     pop                  rbp
+     ret
+toStringHex:
+    push                  rbp
+     mov                  rbp,                  rsp
+    push                  rbx
+toStringHex.0.enter:
+     mov                  rbx,                  rdi
+     mov                  rsi,   _string_constant_6
+     mov                   r8,                   28
+     jmp toStringHex.1.loop_condition
+toStringHex.1.loop_condition:
+     cmp                   r8,                    0
+     mov                  rdi,                    0
+   setge                  dil
+     cmp                  rdi,                    1
+      je toStringHex.2.loop_body
+     jmp toStringHex.7.loop_exit
+toStringHex.2.loop_body:
+     mov                  rdi,                  rbx
+     mov                  rcx,                   r8
+     sar                  rdi,                   cl
+     and                  rdi,                   15
+     cmp                  rdi,                   10
+     mov                   r9,                    0
+    setl                  r9b
+     cmp                   r9,                    1
+      je toStringHex.3.if_true
+     jmp toStringHex.4.if_false
+toStringHex.3.if_true:
+     mov                   r9,                   48
+     add                   r9,                  rdi
+     mov                  rdi,                   r9
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+     sub                  rsp,                    8
+    call              int2chr
+     add                  rsp,                    8
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     mov                   r9,                  rax
+     mov                  rdi,                  rsi
+     mov                  rsi,                   r9
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+     sub                  rsp,                    8
+    call         _builtin_add
+     add                  rsp,                    8
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     mov                  rsi,                  rax
+     jmp toStringHex.5.if_exit
+toStringHex.4.if_false:
+     mov                   r9,                   65
+     add                   r9,                  rdi
+     mov                  rdi,                   r9
+     sub                  rdi,                   10
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+     sub                  rsp,                    8
+    call              int2chr
+     add                  rsp,                    8
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     mov                   r9,                  rax
+     mov                  rdi,                  rsi
+     mov                  rsi,                   r9
+    push                  rdi
+    push                   r8
+    push                   r9
+    push                  rsi
+     sub                  rsp,                    8
+    call         _builtin_add
+     add                  rsp,                    8
+     pop                  rsi
+     pop                   r9
+     pop                   r8
+     pop                  rdi
+     mov                  rsi,                  rax
+     jmp toStringHex.5.if_exit
+toStringHex.5.if_exit:
+     jmp toStringHex.6.loop_next
+toStringHex.6.loop_next:
+     mov                  rdi,                   r8
+     sub                  rdi,                    4
+     mov                   r8,                  rdi
+     jmp toStringHex.1.loop_condition
+toStringHex.7.loop_exit:
+     mov                  rax,                  rsi
+     jmp   toStringHex.8.exit
+toStringHex.8.exit:
+     pop                  rbx
      pop                  rbp
      ret
 
@@ -646,12 +1509,31 @@ _string_constant_0:
       db               " ", 0
       dq                    1
 _string_constant_1:
-      db                10, 0
+      db               " ", 0
+      dq                    1
+_string_constant_2:
+      db               " ", 0
+      dq                    1
+_string_constant_3:
+      db               " ", 0
+      dq                    0
+_string_constant_4:
+      db                    0
+      dq                   17
+_string_constant_5:
+      db "Assertion Failed!", 0
+      dq                    0
+_string_constant_6:
+      db                    0
+      dq                    0
+_string_constant_7:
+      db                    0
+      dq                   95
+_string_constant_8:
+      db " !", 34, "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[", 92, "]^_`abcdefghijklmnopqrstuvwxyz{|}~", 0
 
 section	.bss
-@a:
-    resq                    1
-@n:
+@asciiTable:
     resq                    1
 
 
