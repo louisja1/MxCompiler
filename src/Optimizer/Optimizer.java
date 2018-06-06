@@ -9,6 +9,7 @@ public class Optimizer {
             //LivenessAnalysis.livenessAnalysis(functionIR);
             //TrickOptimizer.eliminateUselessMoveInstruction(functionIR);
             EliminateUselessLoop.eliminateUselessLoop(functionIR);
+            EliminateEmptyBlock.eliminateEmptyBlock(functionIR);
             LivenessAnalysis.livenessAnalysis(functionIR);
             RegisterAllocater.registerAllocate(functionIR, LivenessAnalysis.conflictEdge);
             EliminateUselessJump.eliminateUselessJump(functionIR);

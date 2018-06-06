@@ -1220,7 +1220,7 @@ public class MxStarParser extends Parser {
 						setState(139);
 						((LogicAndExpressionContext)_localctx).op = match(LogicAnd);
 						setState(140);
-						expression(4);
+						expression(3);
 						}
 						break;
 					case 10:
@@ -1232,7 +1232,7 @@ public class MxStarParser extends Parser {
 						setState(142);
 						((LogicOrExpressionContext)_localctx).op = match(LogicOr);
 						setState(143);
-						expression(3);
+						expression(2);
 						}
 						break;
 					case 11:
@@ -2260,8 +2260,8 @@ public class MxStarParser extends Parser {
 		"\t\7\2\2\u0082\u00ad\5\16\b\n\u0083\u0084\f\b\2\2\u0084\u0085\7*\2\2\u0085"+
 		"\u00ad\5\16\b\t\u0086\u0087\f\7\2\2\u0087\u0088\7,\2\2\u0088\u00ad\5\16"+
 		"\b\b\u0089\u008a\f\6\2\2\u008a\u008b\7+\2\2\u008b\u00ad\5\16\b\7\u008c"+
-		"\u008d\f\5\2\2\u008d\u008e\7\'\2\2\u008e\u00ad\5\16\b\6\u008f\u0090\f"+
-		"\4\2\2\u0090\u0091\7(\2\2\u0091\u00ad\5\16\b\5\u0092\u0093\f\3\2\2\u0093"+
+		"\u008d\f\5\2\2\u008d\u008e\7\'\2\2\u008e\u00ad\5\16\b\5\u008f\u0090\f"+
+		"\4\2\2\u0090\u0091\7(\2\2\u0091\u00ad\5\16\b\4\u0092\u0093\f\3\2\2\u0093"+
 		"\u0094\7&\2\2\u0094\u00ad\5\16\b\3\u0095\u0096\f\22\2\2\u0096\u009f\7"+
 		"\63\2\2\u0097\u009c\5\16\b\2\u0098\u0099\7\61\2\2\u0099\u009b\5\16\b\2"+
 		"\u009a\u0098\3\2\2\2\u009b\u009e\3\2\2\2\u009c\u009a\3\2\2\2\u009c\u009d"+

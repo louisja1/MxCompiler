@@ -50,8 +50,8 @@ expression
     |   expression op = '&' expression                                              #binaryAndExpression
     |   expression op = '^' expression                                              #binaryXorExpression
     |   expression op = '|' expression                                              #binaryOrExpression
-    |   expression op = '&&' expression                                             #logicAndExpression
-    |   expression op = '||' expression                                             #logicOrExpression
+    |   <assoc=right> expression op = '&&' expression                               #logicAndExpression
+    |   <assoc=right> expression op = '||' expression                               #logicOrExpression
     |   <assoc=right> expression op = '=' expression                                #assignExpression
     ;
 

@@ -10,6 +10,11 @@ public class JumpInstruction extends BaseInstruction {
         livenessAnalysis();
     }
 
+    public void modifyTarget(LabelInstruction _target) {
+        this.target = _target;
+        livenessAnalysis();
+    }
+
     private void livenessAnalysis() {
 
     }
