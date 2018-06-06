@@ -18,4 +18,9 @@ public class Address extends Operand {
     public String toString() {
         return String.format("Address(%s + %s)", base, offset);
     }
+
+    @Override
+    public boolean isMemoryRelated() {
+        return true;
+    }
 }

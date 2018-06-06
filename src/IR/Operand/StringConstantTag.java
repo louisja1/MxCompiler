@@ -19,4 +19,9 @@ public class StringConstantTag extends Operand {
     public String toString() {
         return tagName;
     }
+
+    @Override
+    public boolean isMemoryRelated() {
+        return true;
+    }
 }

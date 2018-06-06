@@ -8,8 +8,10 @@ public class Optimizer {
         for (FunctionIR functionIR : IR.functionMap.values()) {
             //LivenessAnalysis.livenessAnalysis(functionIR);
             //TrickOptimizer.eliminateUselessMoveInstruction(functionIR);
+            EliminateUselessLoop.eliminateUselessLoop(functionIR);
             LivenessAnalysis.livenessAnalysis(functionIR);
             RegisterAllocater.registerAllocate(functionIR, LivenessAnalysis.conflictEdge);
+            EliminateUselessJump.eliminateUselessJump(functionIR);
         }
     }
 }

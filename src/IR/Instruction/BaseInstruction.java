@@ -23,4 +23,6 @@ public abstract class BaseInstruction {
     public abstract void prepareRegister();
 
     public abstract String toNASM();
+
+    public abstract boolean isNotAllowedToEliminate();
 }

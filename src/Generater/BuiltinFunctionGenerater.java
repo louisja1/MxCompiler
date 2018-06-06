@@ -236,6 +236,7 @@ public class BuiltinFunctionGenerater {
 
     private static String getFiboNASM() {
         StringBuilder str = new StringBuilder();
+        //rsp = 1;
         str.append("_builtin_fibo:\n");
         /*str.append(formatInstruction("mov","rax","832040"));
         str.append(formatInstruction("ret"));

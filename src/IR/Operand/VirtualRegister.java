@@ -34,4 +34,9 @@ public class VirtualRegister extends Operand {
             return "$" + name + "(" + physicalRegisterName + ")";
         }
     }
+
+    @Override
+    public boolean isMemoryRelated() {
+        return false;
+    }
 }

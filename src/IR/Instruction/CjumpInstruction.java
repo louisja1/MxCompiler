@@ -29,4 +29,9 @@ public class CjumpInstruction extends BaseInstruction {
     public String toNASM() {
         return Generater.formatInstruction("j" + Generater.getConditionOPNASM(condition), target.block.getName());
     }
+
+    @Override
+    public boolean isNotAllowedToEliminate() {
+        return false;
+    }
 }

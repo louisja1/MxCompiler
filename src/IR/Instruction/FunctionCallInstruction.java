@@ -91,4 +91,9 @@ public class FunctionCallInstruction extends BaseInstruction {
 
         return str.toString();
     }
+
+    @Override
+    public boolean isNotAllowedToEliminate() {
+        return true;
+    }
 }

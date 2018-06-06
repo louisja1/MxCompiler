@@ -62,4 +62,9 @@ public class UnaryInstruction extends BaseInstruction {
         }
         throw new RuntimeError("There is no a nasm instruction for this unary opreator");
     }
+
+    @Override
+    public boolean isNotAllowedToEliminate() {
+        return target.isMemoryRelated();
+    }
 }

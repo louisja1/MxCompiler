@@ -63,11 +63,16 @@ public class ForStatement extends LoopStatement {
 
     @Override
     public void generateIR(List<BaseInstruction> instructionList) {
+        this.loopEntryLabel = new LabelInstruction("loop_entry");
         this.loopConditionLabel = new LabelInstruction("loop_condition");
         this.loopBodyLabel = new LabelInstruction("loop_body");
         this.loopNextLabel = new LabelInstruction("loop_next");
         this.loopExitLabel = new LabelInstruction("loop_exit");
 
+        loopEntryLabel.setEntry(loopExitLabel);
+
+        instructionList.add(new JumpInstruction(loopEntryLabel));
+        instructionList.add(loopEntryLabel);
         if (initiate != null) {
             initiate.generateIR(instructionList);
         }

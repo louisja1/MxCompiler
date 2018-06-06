@@ -45,11 +45,16 @@ public class WhileStatement extends LoopStatement {
 
     @Override
     public void generateIR(List<BaseInstruction> instructionList) {
+        this.loopEntryLabel = new LabelInstruction("loop_entry");
         this.loopConditionLabel = new LabelInstruction("loop_condition");
         this.loopBodyLabel = new LabelInstruction("loop_body");
         this.loopNextLabel = this.loopConditionLabel;
         this.loopExitLabel = new LabelInstruction("loop_exit");
 
+        loopEntryLabel.setEntry(loopExitLabel);
+
+        instructionList.add(new JumpInstruction(loopEntryLabel));
+        instructionList.add(loopEntryLabel);
         instructionList.add(new JumpInstruction(loopConditionLabel));
 
         instructionList.add(loopConditionLabel);

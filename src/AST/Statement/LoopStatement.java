@@ -4,12 +4,12 @@ import AST.SymbolTable.Scope;
 import IR.Instruction.LabelInstruction;
 
 public abstract class LoopStatement extends BaseStatement implements Scope {
-    public LabelInstruction loopConditionLabel, loopBodyLabel, loopNextLabel, loopExitLabel;
+    public LabelInstruction loopConditionLabel, loopBodyLabel, loopNextLabel, loopExitLabel, loopEntryLabel;
 }
 
 /*
 FOR :
-    %... :
+    %loop_entry :
         (initiate)
         jump loop_condition
     %loop_condition :

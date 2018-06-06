@@ -28,4 +28,9 @@ public class JumpInstruction extends BaseInstruction {
     public String toNASM() {
         return Generater.formatInstruction("jmp", target.block.getName());
     }
+
+    @Override
+    public boolean isNotAllowedToEliminate() {
+        return false;
+    }
 }

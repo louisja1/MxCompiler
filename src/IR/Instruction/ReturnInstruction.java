@@ -40,4 +40,9 @@ public class ReturnInstruction extends BaseInstruction {
         str.append(Generater.formatInstruction("mov", "rax", physicalReturnValue.toString()));
         return str.toString();
     }
+
+    @Override
+    public boolean isNotAllowedToEliminate() {
+        return returnValue.isMemoryRelated();
+    }
 }

@@ -11,4 +11,9 @@ public class Immediate extends Operand {
     public String toString() {
         return String.valueOf(value);
     }
+
+    @Override
+    public boolean isMemoryRelated() {
+        return false;
+    }
 }

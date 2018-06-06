@@ -1,49 +1,446 @@
+func shift_l(x, n) { 
+	shift_l.0.enter :
+		mov $x(null) $t189(rdi)
+		mov $n(null) $t190(rsi)
+		mov $t191(null) $x(null)
+		SHL $t191(null) $n(null)
+		mov $t193(rdi) 32767
+		mov $t194(rsi) 65535
+		call hilo
+		mov $t195(null) $t192(rax)
+		mov $t196(null) $t191(null)
+		AND $t196(null) $t195(null)
+		ret $t196(null)
+		jump shift_l.1.exit
+	shift_l.1.exit :
+}
+func getnumber(seed, num, y) { 
+	getnumber.0.enter :
+		mov $seed(null) $t110(rdi)
+		mov $num(null) $t111(rsi)
+		mov $y(null) $t112(rdx)
+		mov $t113(null) $y(null)
+		AND $t113(null) 31
+		mov $shift(null) $t113(null)
+		mov $t115(rdi) $seed(null)
+		mov $t116(rsi) $num(null)
+		call xorshift
+		mov $t117(null) $t114(rax)
+		mov $val(null) $t117(null)
+		mov $t119(rdi) $val(null)
+		mov $t120(rsi) $shift(null)
+		call shift_l
+		mov $t121(null) $t118(rax)
+		mov $t122(null) 32
+		SUB $t122(null) $shift(null)
+		mov $t124(rdi) $val(null)
+		mov $t125(rsi) $t122(null)
+		call shift_r
+		mov $t126(null) $t123(rax)
+		mov $t127(null) $t121(null)
+		OR $t127(null) $t126(null)
+		ret $t127(null)
+		jump getnumber.1.exit
+	getnumber.1.exit :
+}
+func hilo(hi, lo) { 
+	hilo.0.enter :
+		mov $hi(null) $t197(rdi)
+		mov $lo(null) $t198(rsi)
+		mov $t199(null) $hi(null)
+		SHL $t199(null) 16
+		mov $t200(null) $lo(null)
+		OR $t200(null) $t199(null)
+		ret $t200(null)
+		jump hilo.1.exit
+	hilo.1.exit :
+}
+func int2chr(x) { 
+	int2chr.0.enter :
+		mov $x(null) $t201(rdi)
+		cmp $x(null) 32
+		set GREQ $t202(null)
+		cmp $t202(null) 1
+		cjump EQ int2chr.1.logic_true
+		jump int2chr.2.logic_false
+	int2chr.1.logic_true :
+		cmp $x(null) 126
+		set LEEQ $t204(null)
+		mov $t203(null) $t204(null)
+		jump int2chr.3.logic_exit
+	int2chr.2.logic_false :
+		mov $t203(null) 0
+		jump int2chr.3.logic_exit
+	int2chr.3.logic_exit :
+		cmp $t203(null) 1
+		cjump EQ int2chr.4.if_true
+		jump int2chr.5.if_false
+	int2chr.4.if_true :
+		mov $t205(null) $x(null)
+		SUB $t205(null) 32
+		mov $t206(null) $x(null)
+		SUB $t206(null) 32
+		mov $t208(rdi) Address($asciiTable(@asciiTable) + 0)
+		mov $t209(rsi) $t205(null)
+		mov $t210(rdx) $t206(null)
+		call _builtin_substring
+		mov $t211(null) $t207(rax)
+		ret $t211(null)
+		jump int2chr.7.exit
+	int2chr.5.if_false :
+		jump int2chr.6.if_exit
+	int2chr.6.if_exit :
+		ret _string_constant_6
+		jump int2chr.7.exit
+	int2chr.7.exit :
+}
 void @GlobalDeclaration() { 
 	@GlobalDeclaration.0.enter :
+		mov Address($asciiTable(@asciiTable) + 0) _string_constant_7
 		jump @GlobalDeclaration.1.exit
 	@GlobalDeclaration.1.exit :
 }
+func shift_r(x, n) { 
+	shift_r.0.enter :
+		mov $x(null) $t128(rdi)
+		mov $n(null) $t129(rsi)
+		mov $t131(rdi) 32767
+		mov $t132(rsi) 65535
+		call hilo
+		mov $t133(null) $t130(rax)
+		mov $tmp(null) $t133(null)
+		mov $t134(null) $tmp(null)
+		SHR $t134(null) $n(null)
+		mov $t135(null) $t134(null)
+		SHL $t135(null) 1
+		mov $t136(null) $t135(null)
+		ADD $t136(null) 1
+		mov $tmp(null) $t136(null)
+		mov $t137(null) $x(null)
+		SHR $t137(null) $n(null)
+		mov $t138(null) $tmp(null)
+		AND $t138(null) $t137(null)
+		mov $tmp(null) $t138(null)
+		mov $t140(rdi) 32767
+		mov $t141(rsi) 65535
+		call hilo
+		mov $t142(null) $t139(rax)
+		mov $t143(null) $tmp(null)
+		AND $t143(null) $t142(null)
+		ret $t143(null)
+		jump shift_r.1.exit
+	shift_r.1.exit :
+}
+func xorshift(seed, num) { 
+	xorshift.0.enter :
+		mov $seed(null) $t144(rdi)
+		mov $num(null) $t145(rsi)
+		mov $t146(null) $seed(null)
+		ADD $t146(null) 1
+		mov $x(null) $t146(null)
+		jump xorshift.1.loop_entry
+	xorshift.1.loop_entry :
+		mov $i(null) 0
+		jump xorshift.2.loop_condition
+	xorshift.2.loop_condition :
+		mov $t147(null) $num(null)
+		MUL $t147(null) 10
+		cmp $i(null) $t147(null)
+		set LE $t148(null)
+		cmp $t148(null) 1
+		cjump EQ xorshift.3.loop_body
+		jump xorshift.5.loop_exit
+	xorshift.3.loop_body :
+		mov $t150(rdi) $x(null)
+		mov $t151(rsi) 13
+		call shift_l
+		mov $t152(null) $t149(rax)
+		mov $t153(null) $x(null)
+		XOR $t153(null) $t152(null)
+		mov $x(null) $t153(null)
+		mov $t155(rdi) $x(null)
+		mov $t156(rsi) 17
+		call shift_r
+		mov $t157(null) $t154(rax)
+		mov $t158(null) $x(null)
+		XOR $t158(null) $t157(null)
+		mov $x(null) $t158(null)
+		mov $t160(rdi) $x(null)
+		mov $t161(rsi) 5
+		call shift_l
+		mov $t162(null) $t159(rax)
+		mov $t163(null) $x(null)
+		XOR $t163(null) $t162(null)
+		mov $x(null) $t163(null)
+		jump xorshift.4.loop_next
+	xorshift.4.loop_next :
+		mov $t164(null) $i(null)
+		INC $i(null)
+		jump xorshift.2.loop_condition
+	xorshift.5.loop_exit :
+		mov $t165(null) $x(null)
+		XOR $t165(null) 123456789
+		ret $t165(null)
+		jump xorshift.6.exit
+	xorshift.6.exit :
+}
 func main() { 
 	main.0.enter :
-		mov $t1(rdi) 30
-		call fibo
-		mov $t2(null) $t0(rax)
-		mov $t4(rdi) $t2(null)
-		call toString
-		mov $t5(null) $t3(rax)
-		mov $t6(rdi) $t5(null)
+		call getInt
+		mov $t1(null) $t0(rax)
+		mov $l1(null) $t1(null)
+		call getInt
+		mov $t3(null) $t2(rax)
+		mov $r1(null) $t3(null)
+		call getInt
+		mov $t5(null) $t4(rax)
+		mov $l2(null) $t5(null)
+		call getInt
+		mov $t7(null) $t6(rax)
+		mov $r2(null) $t7(null)
+		call getInt
+		mov $t9(null) $t8(rax)
+		mov $l3(null) $t9(null)
+		call getInt
+		mov $t11(null) $t10(rax)
+		mov $r3(null) $t11(null)
+		mov $round(null) 30
+		mov $ans0(null) 0
+		mov $ans1(null) 0
+		mov $ans2(null) 0
+		mov $ans3(null) 0
+		jump main.1.loop_entry
+	main.1.loop_entry :
+		mov $i(null) $l1(null)
+		jump main.2.loop_condition
+	main.2.loop_condition :
+		cmp $i(null) $r1(null)
+		set LE $t12(null)
+		cmp $t12(null) 1
+		cjump EQ main.3.loop_body
+		jump main.15.loop_exit
+	main.3.loop_body :
+		jump main.4.loop_entry
+	main.4.loop_entry :
+		mov $j(null) $l2(null)
+		jump main.5.loop_condition
+	main.5.loop_condition :
+		cmp $j(null) $r2(null)
+		set LE $t13(null)
+		cmp $t13(null) 1
+		cjump EQ main.6.loop_body
+		jump main.13.loop_exit
+	main.6.loop_body :
+		jump main.7.loop_entry
+	main.7.loop_entry :
+		mov $k(null) $l3(null)
+		jump main.8.loop_condition
+	main.8.loop_condition :
+		cmp $k(null) $r3(null)
+		set LE $t14(null)
+		cmp $t14(null) 1
+		cjump EQ main.9.loop_body
+		jump main.11.loop_exit
+	main.9.loop_body :
+		mov $t16(rdi) $l1(null)
+		mov $t17(rsi) $round(null)
+		mov $t18(rdx) $k(null)
+		call getnumber
+		mov $t19(null) $t15(rax)
+		mov $x0(null) $t19(null)
+		mov $t21(rdi) $i(null)
+		mov $t22(rsi) $round(null)
+		mov $t23(rdx) $k(null)
+		call getnumber
+		mov $t24(null) $t20(rax)
+		mov $x1(null) $t24(null)
+		mov $t26(rdi) $j(null)
+		mov $t27(rsi) $round(null)
+		mov $t28(rdx) $k(null)
+		call getnumber
+		mov $t29(null) $t25(rax)
+		mov $x2(null) $t29(null)
+		mov $t30(null) $i(null)
+		XOR $t30(null) $j(null)
+		mov $t32(rdi) $t30(null)
+		mov $t33(rsi) $round(null)
+		mov $t34(rdx) $k(null)
+		call getnumber
+		mov $t35(null) $t31(rax)
+		mov $x3(null) $t35(null)
+		mov $t37(rdi) $k(null)
+		mov $t38(rsi) 1
+		call xorshift
+		mov $t39(null) $t36(rax)
+		mov $t41(rdi) $j(null)
+		mov $t42(rsi) 1
+		call xorshift
+		mov $t43(null) $t40(rax)
+		mov $t44(null) $t39(null)
+		XOR $t44(null) $t43(null)
+		mov $t46(rdi) $i(null)
+		mov $t47(rsi) 1
+		call xorshift
+		mov $t48(null) $t45(rax)
+		mov $t49(null) $t44(null)
+		XOR $t49(null) $t48(null)
+		mov $y(null) $t49(null)
+		mov $t50(null) $x0(null)
+		XOR $t50(null) $y(null)
+		mov $t52(rdi) $t50(null)
+		mov $t53(rsi) 1
+		call xorshift
+		mov $t54(null) $t51(rax)
+		mov $t55(null) $ans0(null)
+		ADD $t55(null) $t54(null)
+		mov $ans0(null) $t55(null)
+		mov $t56(null) $x1(null)
+		XOR $t56(null) $y(null)
+		mov $t58(rdi) $t56(null)
+		mov $t59(rsi) 1
+		call xorshift
+		mov $t60(null) $t57(rax)
+		mov $t61(null) $ans1(null)
+		ADD $t61(null) $t60(null)
+		mov $ans1(null) $t61(null)
+		mov $t62(null) $x2(null)
+		XOR $t62(null) $y(null)
+		mov $t64(rdi) $t62(null)
+		mov $t65(rsi) 1
+		call xorshift
+		mov $t66(null) $t63(rax)
+		mov $t67(null) $ans2(null)
+		ADD $t67(null) $t66(null)
+		mov $ans2(null) $t67(null)
+		mov $t68(null) $x3(null)
+		XOR $t68(null) $y(null)
+		mov $t70(rdi) $t68(null)
+		mov $t71(rsi) 1
+		call xorshift
+		mov $t72(null) $t69(rax)
+		mov $t73(null) $ans3(null)
+		ADD $t73(null) $t72(null)
+		mov $ans3(null) $t73(null)
+		jump main.10.loop_next
+	main.10.loop_next :
+		mov $t74(null) $k(null)
+		INC $k(null)
+		jump main.8.loop_condition
+	main.11.loop_exit :
+		jump main.12.loop_next
+	main.12.loop_next :
+		mov $t75(null) $j(null)
+		INC $j(null)
+		jump main.5.loop_condition
+	main.13.loop_exit :
+		jump main.14.loop_next
+	main.14.loop_next :
+		mov $t76(null) $i(null)
+		INC $i(null)
+		jump main.2.loop_condition
+	main.15.loop_exit :
+		mov $t78(rdi) $ans0(null)
+		call toStringHex
+		mov $t79(null) $t77(rax)
+		mov $t81(rdi) $t79(null)
+		mov $t82(rsi) _string_constant_0
+		call _builtin_add
+		mov $t83(null) $t80(rax)
+		mov $t84(rdi) $t83(null)
+		call print
+		mov $t86(rdi) $ans1(null)
+		call toStringHex
+		mov $t87(null) $t85(rax)
+		mov $t89(rdi) $t87(null)
+		mov $t90(rsi) _string_constant_1
+		call _builtin_add
+		mov $t91(null) $t88(rax)
+		mov $t92(rdi) $t91(null)
+		call print
+		mov $t94(rdi) $ans2(null)
+		call toStringHex
+		mov $t95(null) $t93(rax)
+		mov $t97(rdi) $t95(null)
+		mov $t98(rsi) _string_constant_2
+		call _builtin_add
+		mov $t99(null) $t96(rax)
+		mov $t100(rdi) $t99(null)
+		call print
+		mov $t102(rdi) $ans3(null)
+		call toStringHex
+		mov $t103(null) $t101(rax)
+		mov $t105(rdi) $t103(null)
+		mov $t106(rsi) _string_constant_3
+		call _builtin_add
+		mov $t107(null) $t104(rax)
+		mov $t108(rdi) $t107(null)
+		call print
+		mov $t109(rdi) _string_constant_4
 		call println
 		ret 0
-		jump main.1.exit
-	main.1.exit :
+		jump main.16.exit
+	main.16.exit :
 }
-func fibo(x) { 
-	fibo.0.enter :
-		mov $x(null) $t7(rdi)
-		cmp $x(null) 2
-		set LE $t8(null)
-		cmp $t8(null) 1
-		cjump EQ fibo.1.if_true
-		jump fibo.2.if_false
-	fibo.1.if_true :
-		ret $x(null)
-		jump fibo.4.exit
-	fibo.2.if_false :
-		jump fibo.3.if_exit
-	fibo.3.if_exit :
-		mov $t9(null) $x(null)
-		SUB $t9(null) 1
-		mov $t11(rdi) $t9(null)
-		call fibo
-		mov $t12(null) $t10(rax)
-		mov $t13(null) $x(null)
-		SUB $t13(null) 2
-		mov $t15(rdi) $t13(null)
-		call fibo
-		mov $t16(null) $t14(rax)
-		mov $t17(null) $t12(null)
-		ADD $t17(null) $t16(null)
-		ret $t17(null)
-		jump fibo.4.exit
-	fibo.4.exit :
+func toStringHex(x) { 
+	toStringHex.0.enter :
+		mov $x(null) $t166(rdi)
+		mov $ret(null) _string_constant_5
+		jump toStringHex.1.loop_entry
+	toStringHex.1.loop_entry :
+		mov $i(null) 28
+		jump toStringHex.2.loop_condition
+	toStringHex.2.loop_condition :
+		cmp $i(null) 0
+		set GREQ $t167(null)
+		cmp $t167(null) 1
+		cjump EQ toStringHex.3.loop_body
+		jump toStringHex.8.loop_exit
+	toStringHex.3.loop_body :
+		mov $t168(null) $x(null)
+		SHR $t168(null) $i(null)
+		mov $t169(null) $t168(null)
+		AND $t169(null) 15
+		mov $digit(null) $t169(null)
+		cmp $digit(null) 10
+		set LE $t170(null)
+		cmp $t170(null) 1
+		cjump EQ toStringHex.4.if_true
+		jump toStringHex.5.if_false
+	toStringHex.4.if_true :
+		mov $t171(null) 48
+		ADD $t171(null) $digit(null)
+		mov $t173(rdi) $t171(null)
+		call int2chr
+		mov $t174(null) $t172(rax)
+		mov $t176(rdi) $ret(null)
+		mov $t177(rsi) $t174(null)
+		call _builtin_add
+		mov $t178(null) $t175(rax)
+		mov $ret(null) $t178(null)
+		jump toStringHex.6.if_exit
+	toStringHex.5.if_false :
+		mov $t179(null) 65
+		ADD $t179(null) $digit(null)
+		mov $t180(null) $t179(null)
+		SUB $t180(null) 10
+		mov $t182(rdi) $t180(null)
+		call int2chr
+		mov $t183(null) $t181(rax)
+		mov $t185(rdi) $ret(null)
+		mov $t186(rsi) $t183(null)
+		call _builtin_add
+		mov $t187(null) $t184(rax)
+		mov $ret(null) $t187(null)
+		jump toStringHex.6.if_exit
+	toStringHex.6.if_exit :
+		jump toStringHex.7.loop_next
+	toStringHex.7.loop_next :
+		mov $t188(null) $i(null)
+		SUB $t188(null) 4
+		mov $i(null) $t188(null)
+		jump toStringHex.2.loop_condition
+	toStringHex.8.loop_exit :
+		ret $ret(null)
+		jump toStringHex.9.exit
+	toStringHex.9.exit :
 }
