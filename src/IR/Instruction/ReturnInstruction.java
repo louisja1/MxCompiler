@@ -43,6 +43,6 @@ public class ReturnInstruction extends BaseInstruction {
 
     @Override
     public boolean isNotAllowedToEliminate() {
-        return returnValue.isMemoryRelated();
+        return true;
     }
 }

@@ -2,88 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a635b1c4-7009-4249-8ba9-6353d1f80267" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Optimizer/EliminateUselessJump.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Optimizer/EliminateUselessLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IR.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IR.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/AST/Statement/ForStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AST/Statement/ForStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/AST/Statement/LoopStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AST/Statement/LoopStatement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/AST/Statement/WhileStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AST/Statement/WhileStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Generater/BuiltinFunctionGenerater$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Generater/BuiltinFunctionGenerater$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Generater/BuiltinFunctionGenerater.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Generater/BuiltinFunctionGenerater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/IR.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/IR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/AllocateInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/AllocateInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/BaseInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/BaseInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/BinaryInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/BinaryInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/CjumpInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/CjumpInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/CompareInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/CompareInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/CsetInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/CsetInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/FunctionCallInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/FunctionCallInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/JumpInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/JumpInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/LabelInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/LabelInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/MoveInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/MoveInstruction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/ReturnInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/ReturnInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Instruction/UnaryInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Instruction/UnaryInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Operand/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Operand/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Operand/Immediate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Operand/Immediate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Operand/Operand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Operand/Operand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Operand/StringConstantTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Operand/StringConstantTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/IR/Operand/VirtualRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/IR/Operand/VirtualRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Optimizer/Optimizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Optimizer/Optimizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Optimizer/EliminateUselessLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Optimizer/EliminateUselessLoop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program" beforeDir="false" afterPath="$PROJECT_DIR$/program" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program.asm" beforeDir="false" afterPath="$PROJECT_DIR$/program.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program.in" beforeDir="false" afterPath="$PROJECT_DIR$/program.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program.o" beforeDir="false" afterPath="$PROJECT_DIR$/program.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/program.txt" beforeDir="false" afterPath="$PROJECT_DIR$/program.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AST/Statement/ForStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/ForStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AST/Statement/LoopStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/LoopStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AST/Statement/WhileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AST/Statement/WhileStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/AllocateInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/AllocateInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/BaseInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/BaseInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/BinaryInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/BinaryInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/CjumpInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/CjumpInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/CompareInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/CompareInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/CsetInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/CsetInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/FunctionCallInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/FunctionCallInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/JumpInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/JumpInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/LabelInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/LabelInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/MoveInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/MoveInstruction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IR/Instruction/ReturnInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/ReturnInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Instruction/UnaryInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Instruction/UnaryInstruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Operand/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Operand/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Operand/Immediate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Operand/Immediate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Operand/Operand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Operand/Operand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Operand/StringConstantTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Operand/StringConstantTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IR/Operand/VirtualRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IR/Operand/VirtualRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Optimizer/LivenessAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Optimizer/LivenessAnalysis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Optimizer/Optimizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Optimizer/Optimizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Optimizer/RegisterAllocater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Optimizer/RegisterAllocater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AST/Statement/ForStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AST/Statement/ForStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AST/Statement/LoopStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AST/Statement/LoopStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Optimizer/EliminateUselessLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Optimizer/EliminateUselessLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/AST/Statement/WhileStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AST/Statement/WhileStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generater/BuiltinFunctionGenerater$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generater/BuiltinFunctionGenerater$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generater/BuiltinFunctionGenerater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generater/BuiltinFunctionGenerater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/AllocateInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/AllocateInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/BaseInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/BaseInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/BinaryInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/BinaryInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/CjumpInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/CjumpInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/CompareInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/CompareInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/CsetInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/CsetInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/FunctionCallInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/FunctionCallInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/JumpInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/JumpInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/LabelInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/LabelInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/MoveInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/MoveInstruction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/ReturnInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/ReturnInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Instruction/UnaryInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Instruction/UnaryInstruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Operand/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Operand/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Operand/Immediate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Operand/Immediate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Operand/Operand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Operand/Operand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Operand/StringConstantTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Operand/StringConstantTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IR/Operand/VirtualRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IR/Operand/VirtualRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Optimizer/Optimizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Optimizer/Optimizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Optimizer/EliminateUselessLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Optimizer/EliminateUselessLoop.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -99,29 +33,8 @@
       <file leaf-file-name="program.asm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/program.asm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LivenessAnalysis.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Optimizer/LivenessAnalysis.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="101" column="61" lean-forward="true" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForStatement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AST/Statement/ForStatement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="87" column="32" lean-forward="true" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+            <state relative-caret-position="385">
+              <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -129,8 +42,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <state relative-caret-position="3">
+              <caret line="36" column="17" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,13 +51,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EliminateUselessLoop.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Optimizer/EliminateUselessLoop.java">
+      <file leaf-file-name="Optimizer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Optimizer/Optimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+            <state relative-caret-position="150">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EliminateUselessLoop.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Optimizer/EliminateUselessLoop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReturnInstruction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/IR/Instruction/ReturnInstruction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+              <folding>
+                <element signature="e#1320#1321#0" expanded="true" />
+                <element signature="e#1372#1373#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,29 +91,8 @@
       <file leaf-file-name="program.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/program.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Optimizer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Optimizer/Optimizer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuiltinFunctionGenerater.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="224" column="72" selection-start-line="224" selection-start-column="72" selection-end-line="224" selection-end-column="72" />
+            <state relative-caret-position="45">
+              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -193,7 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_format</find>
       <find>@</find>
       <find>\te</find>
       <find>\n&quot;</find>
@@ -223,6 +139,7 @@
       <find>&quot;rcx&quot;</find>
       <find>call</find>
       <find>addSymbol</find>
+      <find>loop_entry</find>
     </findStrings>
     <replaceStrings>
       <replace>vwvvvvv</replace>
@@ -275,23 +192,23 @@
         <option value="$PROJECT_DIR$/src/IR/Instruction/CompareInstruction.java" />
         <option value="$PROJECT_DIR$/src/IR/Instruction/CsetInstruction.java" />
         <option value="$PROJECT_DIR$/src/IR/Instruction/FunctionCallInstruction.java" />
-        <option value="$PROJECT_DIR$/src/IR/Instruction/JumpInstruction.java" />
-        <option value="$PROJECT_DIR$/src/IR/Instruction/LabelInstruction.java" />
         <option value="$PROJECT_DIR$/src/IR/Instruction/MoveInstruction.java" />
-        <option value="$PROJECT_DIR$/src/IR/Instruction/ReturnInstruction.java" />
         <option value="$PROJECT_DIR$/src/IR/Instruction/UnaryInstruction.java" />
         <option value="$PROJECT_DIR$/src/Optimizer/RemoveUselessLoop.java" />
         <option value="$PROJECT_DIR$/src/Optimizer/EliminateUselessJump.java" />
-        <option value="$PROJECT_DIR$/src/Optimizer/EliminateUselessLoop.java" />
         <option value="$PROJECT_DIR$/src/Generater/BuiltinFunctionGenerater.java" />
-        <option value="$PROJECT_DIR$/program.txt" />
         <option value="$PROJECT_DIR$/src/Optimizer/LivenessAnalysis.java" />
         <option value="$PROJECT_DIR$/src/Optimizer/RegisterAllocater.java" />
         <option value="$PROJECT_DIR$/program.asm" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/LabelInstruction.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/JumpInstruction.java" />
         <option value="$PROJECT_DIR$/src/AST/Statement/ForStatement.java" />
         <option value="$PROJECT_DIR$/src/AST/Statement/WhileStatement.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/IR/Instruction/ReturnInstruction.java" />
+        <option value="$PROJECT_DIR$/program.txt" />
         <option value="$PROJECT_DIR$/src/Optimizer/Optimizer.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Optimizer/EliminateUselessLoop.java" />
       </list>
     </option>
   </component>
@@ -318,8 +235,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="120" />
-    <option name="y" value="61" />
+    <option name="x" value="47" />
+    <option name="y" value="30" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
   </component>
@@ -362,14 +279,14 @@
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AST" type="462c0819:PsiDirectoryNode" />
-              <item name="SymbolTable" type="462c0819:PsiDirectoryNode" />
+              <item name="IR" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="MxCompiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="IR" type="462c0819:PsiDirectoryNode" />
+              <item name="Instruction" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MxCompiler" type="b2602c69:ProjectViewProjectNode" />
@@ -523,15 +440,15 @@
       <workItem from="1528017155981" duration="557000" />
       <workItem from="1528123646307" duration="1843000" />
       <workItem from="1528130651983" duration="14914000" />
-      <workItem from="1528202738077" duration="21291000" />
+      <workItem from="1528202738077" duration="26621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352485000" />
+    <option name="totallyTimeSpent" value="357815000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="120" y="61" width="1280" height="777" extended-state="0" />
+    <frame x="47" y="30" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
@@ -616,13 +533,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AST/Statement/BrunchStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AST/Statement/ContinueStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -744,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IR.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AST/Statement/VariableDeclarationStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-163">
@@ -823,16 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/BaseInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IR/Instruction/AllocateInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -901,28 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/JumpInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="e#662#663#0" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/LabelInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-          <folding>
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IR/Instruction/MoveInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -930,17 +801,6 @@
           <folding>
             <element signature="e#2461#2462#0" expanded="true" />
             <element signature="e#2516#2517#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/ReturnInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
-          <folding>
-            <element signature="e#1320#1321#0" expanded="true" />
-            <element signature="e#1372#1373#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -980,13 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/program.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Optimizer/RegisterAllocater.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -994,13 +847,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/program.asm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1014,44 +860,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AST/Statement/WhileStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="55" column="65" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Optimizer/LivenessAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="101" column="61" lean-forward="true" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
+        <state relative-caret-position="1138">
+          <caret line="101" column="61" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/IR/Block.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        <state relative-caret-position="37">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/BaseInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/JumpInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AST/Statement/ForStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="87" column="32" lean-forward="true" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+        <state relative-caret-position="108">
+          <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Optimizer/EliminateUselessLoop.java">
+    <entry file="file://$PROJECT_DIR$/src/AST/Statement/WhileStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+        <state relative-caret-position="142">
+          <caret line="53" column="47" lean-forward="true" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/LabelInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IR.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IR/Instruction/ReturnInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+          <folding>
+            <element signature="e#1320#1321#0" expanded="true" />
+            <element signature="e#1372#1373#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1060,8 +959,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Optimizer/Optimizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        <state relative-caret-position="150">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Optimizer/EliminateUselessLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -55,6 +55,7 @@ public class WhileStatement extends LoopStatement {
 
         instructionList.add(new JumpInstruction(loopEntryLabel));
         instructionList.add(loopEntryLabel);
+
         instructionList.add(new JumpInstruction(loopConditionLabel));
 
         instructionList.add(loopConditionLabel);
